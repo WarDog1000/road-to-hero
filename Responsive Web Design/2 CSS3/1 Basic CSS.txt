@@ -326,3 +326,106 @@ body {
 }
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza código hexadecimal (hex code) para mezclar colores
+Repasemos: En código hexadecimal se utilizan 6 dígitos hexadecimales para representar los colores, dos para el componente rojo (R), verde (G) y azul (B).
+¡A partir de estos tres colores puros (rojo, verde y azul) podemos variar las cantidades de cada componente de color para crear más de 16 millones de colores distintos!
+Por ejemplo, el naranja es rojo puro mezclado con algo de verde y nada de azul. En hex code, esto se traduce como #FFA500.
+El dígito 0 es el número más bajo en hex code, y representa la ausencia total de color.
+El dígito F es el número más alto en hex code, y representa el brillo máximo.
+
+Color	Hex Code
+Dodger Blue (azul dodger)	#1E90FF
+Green (verde)	#00FF00
+Orange (naranja)	#FFA500
+Red (rojo)	#FF0000
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa código hexadecimal (hex code) abreviado
+Muchas personas se sienten abrumadas por tener más de 16 millones de colores posibles. Además, los códigos hexadecimales resultan difíciles de recordar. Afortunadamente, puedes abreviar gran parte de ellos.
+Por ejemplo, el código hexadecimal #FF0000 del color rojo puede acortarse a #F00. Esta forma abreviada utiliza un dígito para el rojo, un dígito para el verde, y un dígito para el azul.
+Esto reduce el número total de colores posibles a alrededor de 4.000. Sin embargo, los navegadores interpretarán que #FF0000 y #F00 son exactamente el mismo color.
+Color	Hex code abreviado
+Cyan (cian)	#0FF
+Green (verde)	#0F0
+Red (rojo)	#F00
+Fuchsia (fucsia)	#F0F
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza valores RGB para asignar color a los elementos
+Otra forma de representar colores en CSS es utilizar valores RGB.
+El valor RGB del color negro se ve así:
+rgb(0, 0, 0)
+El valor RGB del color blanco se ve así:
+rgb(255, 255, 255)
+En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexadecimal, en RGB se especifica el brillo de cada color con un número que va de 0 a 255.
+Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, RGB, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código hexadecimal.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa variables CSS para modificar varios elementos a la vez
+Las Variables CSS son una manera poderosa de modificar varias propiedades de estilos CSS a la vez, cambiando su valor en un único sitio.
+
+Sigue las instrucciones a continuación para ver cómo puedes cambiar el estilo de varios elementos modificando únicamente tres valores.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea una variable de CSS personalizada
+Para crear una variable CSS, solo tienes que darle un nombre que comience con dos guiones (--) y asignarle un valor, como se muestra a continuación:
+
+--penguin-skin: gray;
+Esto creará una variable llamada --penguin-skin y le asignará el valor gray. Ahora puedes usar esa variable en cualquier lugar de tu CSS para cambiar el valor de otras propiedades a gris.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza una variable de CSS personalizada
+Luego de crear tu variable, puedes asignar su valor a otras propiedades CSS haciendo referencia a su nombre.
+
+background: var(--penguin-skin);
+Esto cambiará el fondo de cualquier elemento que utilice esta variable a "gray" (gris) porque ese es el valor de la variable --penguin-skin. Ten en cuenta que los estilos no se aplicarán a menos que los nombres de las variables utilizados estén escritos exactamente igual.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Agrega un valor de respaldo (fallback) a una variable CSS
+Cuando utilices tu variable como valor de una propiedad CSS, puedes adjuntar un valor de respaldo o "fallback", que será utilizado por el navegador si la variable dada no es válida.
+Nota: Este valor de respaldo no se utiliza para aumentar la compatibilidad con otras versiones de navegadores y no funcionará en navegadores IE (Internet Explorer). Más bien, se utiliza para que el navegador tenga un color para mostrar si no encuentra tu variable.
+
+A continuación te mostramos como se hace:
+background: var(--penguin-skin, black);
+Esto establecerá el "background" (color de fondo) a black (negro) si tu variable no está establecida. Fíjate que esto puede ser útil para la depuración de errores.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Hereda variables CSS
+Cuando creas una variable, queda disponible para que la utilices dentro del selector en el que la hayas creado. Esa variable también estará disponible en cualquiera de los descendientes de ese selector. Esto ocurre porque las variables CSS son heredadas, al igual que las propiedades comunes.
+Para hacer uso de la herencia, las variables CSS suelen ser definidas en el elemento :root.
+:root es un "pseudo-class selector" (selector de pseudo-clase) que corresponde al elemento raíz o "root" del documento, que generalmente es el elemento html. Al crear tus variables en :root, estarán disponibles globalmente y se podrán acceder desde cualquier otro selector en la hoja de estilo.
+:root {
+    --penguin-skin: gray;
+    --penguin-belly: pink;
+    --penguin-beak: orange;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Cambia una variable para un área específica
+Cuando creas tus variables en :root, el valor de esa variable quedará establecido para toda la página.
+
+Puedes entonces sobreescribir estas variables configurándolas nuevamente con un selector específico.
+Cambia el valor de --penguin-belly a white en la clase penguin.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa un media query para cambiar una variable
+Las variables CSS pueden simplificar la forma en que utilizas "media queries" (consultas sobre el tipo de dispositivo donde se muestra el documento HTML).
+
+Por ejemplo, cuando la pantalla es más pequeña o más grande que el breakpoint de tu media query, puedes cambiar el valor de una variable, y su estilo se aplicará dondequiera que la utilices.
+Modifica el selector de la media query :root para que --penguin-size se redefina y asigne el valor de 200px. Además, redefine --penguin-skin y asígnale el valor black (negro). Luego, cambia el tamaño de la vista previa para ver este cambio en acción.
+
+:root {
+    --penguin-size: 300px;
+    --penguin-skin: gray;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+  }
+
+  @media (max-width: 350px) {
+    :root {
+      /* Cambia solo el código debajo de esta línea */
+--penguin-size: 200px;
+    --penguin-skin: black;
+      /* Cambia solo el código encima de esta línea */
+    }
+  }
