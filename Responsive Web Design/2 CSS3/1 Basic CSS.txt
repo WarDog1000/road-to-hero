@@ -1,0 +1,328 @@
+Cambia el color del texto
+La propiedad que es responsable del color del texto de un elemento es la propiedad de estilo color
+<h2 style="color: blue;">CatPhotoApp</h2>
+Ten en cuenta que es una buena práctica terminar las declaraciones de inline style usando punto y coma (;)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza selectores CSS para dar estilo a elementos
+En CSS tienes a tu disposición cientos de propiedades CSS que puedes usar para cambiar el aspecto de un elemento de tu página.
+Cuando escribiste <h2 style="color: red;">CatPhotoApp</h2>, estabas aplicando un estilo a ese elemento h2 específico usando CSS en línea; CSS significa hojas de estilo en cascada (Cascading Style Sheets).
+Inline CSS es una de las formas de especificar el estilo de un elemento, pero existe una mejor forma de aplicar estilos CSS.
+En la parte superior de tu código, crea un bloque style como el que se ve a continuación:
+<style>
+</style>
+Dentro de ese bloque de estilo (style), puedes crear un selector CSS para todos los elementos h2. Por ejemplo, para que todos los elementos h2 sean de color rojo puedes añadir una regla de estilo como la siguiente:
+<style>
+  h2 {
+    color: red;
+  }
+</style>
+Ten en cuenta que es importante tener tanto llaves de apertura como de cierre ({ y }) alrededor de la(s) regla(s) de estilo de cada elemento. También debes asegurarte de que tu definición de estilo para ese elemento esté dentro de las etiquetas de apertura y cierre de estilo. Por último, asegúrate de añadir un punto y coma (;) al final de cada una de las reglas de estilo de tu elemento.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa una clase CSS para aplicar estilos a un elemento
+Las clases son estilos reutilizables que se pueden agregar a los elementos HTML.
+A continuación te presentamos un ejemplo de cómo declarar una clase CSS:
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+Puedes ver que hemos creado una clase CSS llamada blue-text dentro de la etiqueta <style>. Puedes aplicar una clase a un elemento HTML de este modo: <h2 class="blue-text">CatPhotoApp</h2>. Ten en cuenta que en tu elemento CSS style, los nombres de clase comienzan con un punto. En el atributo "class" de tus elementos HTML, el nombre de la clase no lleva punto delante.
+Aplica un estilo a múltiples elementos usando una clase CSS
+Las clases te permiten usar los mismos estilos CSS en múltiples elementos HTML. Puedes ver esto aplicando tu clase de red-text al primer elemento p.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Cambia el tamaño de fuente de un elemento
+El tamaño de la fuente es controlado por la propiedad CSS font-size, como se muestra a continuación:
+h1 {
+  font-size: 30px;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Establece la familia de fuentes de un elemento
+Puedes utilizar la propiedad font-family (familia de fuente) para establecer qué fuente debe usar un elemento.
+Por ejemplo, si quieres establecer la fuente de tu elemento h2 a sans-serif, usarías el siguiente CSS:
+h2 {
+  font-family: sans-serif;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Importa una fuente de Google Fonts
+Además de especificar fuentes comunes disponibles en la mayoría de los sistemas operativos, también podemos especificar fuentes web no estándar y personalizadas para usarlas en nuestro sitio web. En Internet hay muchos lugares donde podemos conseguir web fonts. Para este ejemplo nos centraremos en la biblioteca de Google Fonts.
+Google Font es una biblioteca de fuentes web que puedes usar en tu CSS haciendo referencia a la dirección URL de la fuente.
+Entonces, importemos y apliquemos una fuente de Google (ten en cuenta que si Google está bloqueado en tu país, tendrás que pasar por alto este desafío).
+Para importar una fuente de Google, puedes copiar la URL de la fuente desde la librería de Google Fonts y luego pegarla en tu código HTML. Para este desafío, importaremos la fuente Lobster. Para ello, copia el siguiente fragmento de código y pégalo en la parte superior de tu editor de código (antes de abrir el elemento style):
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+Ahora puedes usar la fuente Lobster en tu CSS usando Lobster como FAMILY_NAME como en el siguiente ejemplo:
+font-family: FAMILY_NAME, GENERIC_NAME;
+GENERIC_NAME es opcional, y es el modo de especificar una fuente de reserva o "fallback font" en caso de que la otra fuente especificada no esté disponible. Veremos esto en el siguiente desafío.
+Los nombres de familia de fuentes son sensibles a mayúsculas y minúsculas, y si incluyen espacios deben estar envueltos entre comillas. Por ejemplo, necesitas comillas para usar la fuente "Open Sans", pero no las necesitas para usar la fuente Lobster.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Especifica cómo deben degradarse las fuentes
+Hay varias fuentes por defecto disponibles en todos los navegadores. Estas familias de fuentes genéricas incluyen monospace, serif y sans-serif.
+Cuando una fuente no está disponible en el sistema, puedes indicarle al navegador que "degrade" a otra fuente alternativa.
+Por ejemplo, si quieres que un elemento utilice la fuente Helvetica pero que degrade a la fuente sans-serif en caso que Helvetica no esté disponible, se especifica de la siguiente manera:
+p {
+  font-family: Helvetica, sans-serif;
+  font-family: Lobster, monospace;
+}
+Los nombres de las fuentes genéricas no distinguen entre mayúsculas y minúsculas. Además, no necesitan comillas porque son palabras clave CSS.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Cambia el tamaño de tus imágenes
+CSS tiene una propiedad llamada width que controla el ancho de un elemento. Al igual que con las fuentes, usaremos la unidad de medida px (píxeles) para especificar el ancho de la imagen.
+Por ejemplo, si queremos crear una clase CSS llamada larger-image que le asigne a los elementos HTML un ancho de 500 píxeles, usamos el siguiente código:
+<style>
+  .larger-image {
+    width: 500px;
+  }
+</style>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Añade bordes alrededor de tus elementos
+Los bordes CSS tienen propiedades como style (estilo), color y width (ancho).
+
+Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar la siguiente clase:
+
+<style>
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+  }
+</style>
+
+Añade esquinas redondeadas usando border-radius
+Actualmente, las esquinas de tu foto de gato son puntiagudas. Podemos redondear esas esquinas con una propiedad CSS llamada border-radius (radio del borde).
+Puedes especificar un border-radius usando píxeles como unidad de medida. Dale a tu foto de gato un border-radius de 10px.
+Nota: Este desafío acepta múltiples soluciones posibles. Por ejemplo, puedes añadir border-radius a la clase .thick-green-border o a la clase .smaller-image.
+
+Haz imágenes circulares usando border-radius (radio de borde)
+Además de los píxeles, también puedes especificar el border-radius usando un porcentaje.
+Dale a tu foto de gato un border-radius de 50%.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Establece el color de fondo de un elemento div
+Puedes establecer el color de fondo de un elemento con la propiedad background-color.
+
+Por ejemplo, si quieres que el color de fondo de un elemento sea green, lo harías dentro de tu elemento style:
+
+.green-background {
+  background-color: green;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Establece el id de un elemento
+Además de las clases, cada elemento HTML también puede tener un atributo id.
+Existen varios beneficios de usar atributos de id: Puedes usar un id para dar estilo a un elemento específico; más adelante aprenderás que puedes usar atributos "id" para seleccionar y modificar elementos específicos por medio de JavaScript.
+Los atributos id deben ser únicos. Los navegadores no verifican esta regla, pero es una buena práctica ampliamente aceptada. Entonces, por favor ten cuidado de no asignar a más de un elemento el mismo atributo id.
+
+A continuación te mostramos un ejemplo de cómo asignar a tu elemento h2 el id cat-photo-app:
+<h2 id="cat-photo-app">
+
+Usa un atributo de id para aplicar estilo a un elemento
+Una cosa genial de los atributos id es que, al igual que las clases, puedes aplicarles estilos con CSS.
+Sin embargo, un id no es reutilizable y solo debe aplicarse a un único elemento. Un id también tiene mayor especificidad (importancia) que una clase, así que si aplicas un id y una clase al mismo elemento y sus estilos se contradicen, se aplicarán los estilos del id.
+
+A continuación te mostramos un ejemplo de cómo puedes tomar tu elemento con el atributo id llamado cat-photo-element y asignarle el color de fondo verde. En tu elemento style agrega la siguiente declaración:
+#cat-photo-element {
+  background-color: green;
+}
+Ten en cuenta que dentro de tu elemento style siempre debes hacer referencia a las clases agregándoles un punto . adelante del nombre. Para hacer referencia a un id, debes agregar # delante de su nombre.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Ajusta el padding (relleno) de un elemento
+Dejaremos de lado por un momento nuestra Cat Photo App y aprenderemos un poco más sobre como aplicar estilos al HTML.
+Quizás ya te hayas dado cuenta, pero todos los elementos HTML son, esencialmente, pequeños rectángulos.
+Hay tres propiedades importantes que controlan el espacio que rodea cada elemento HTML: padding (relleno), border (borde) y margin (margen).
+El padding o relleno de un elemento controla la cantidad de espacio entre su contenido y su border.
+
+Aquí podemos ver que la caja azul y la caja roja están anidadas dentro de la caja amarilla. Fíjate que la caja roja tiene más padding (relleno) que la caja azul.
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+
+Cuando aumentas el padding de la caja azul, esto aumenta la distancia (padding) entre el texto y el borde que lo rodea.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+El margin (margen) de un elemento controla la cantidad de espacio entre su border y los elementos que lo rodean.
+Aquí podemos ver que la caja azul y la caja roja están anidadas dentro de la caja amarilla. Ten en cuenta que la caja roja tiene un margin más grande que el de la caja azul, lo que hace que aparezca más pequeña.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+  }
+Cuando aumentas el margin de la caja azul, esto aumenta la distancia entre su borde y los elementos que la rodean.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Añade un margen negativo a un elemento
+El margin (margen) de un elemento controla la cantidad de espacio entre su border y los elementos que lo rodean.
+
+Si estableces el margin de un elemento a un valor negativo, el elemento crecerá de tamaño.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: -15px;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Añade un "padding" o relleno diferente a cada lado de un elemento
+En ocasiones, querrás personalizar un elemento para que tenga un padding o relleno diferente en cada uno de sus lados.
+CSS te permite controlar por separado el padding de los cuatro lados individuales de un elemento por medio de las propiedades padding-top, padding-right, padding-bottom y padding-left.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Añade márgenes diferentes a cada lado de un elemento
+En ocasiones, querrás personalizar un elemento para que tenga un margin diferente en cada uno de sus lados.
+CSS te permite controlar por separado el margin de los cuatro lados individuales de un elemento por medio de las propiedades margin-top, margin-right, margin-bottom y margin-left.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza clockwise notation para especificar el relleno (padding) de un elemento
+En lugar de especificar las propiedades padding-top, padding-right, padding-bottom, y padding-left individualmente, puedes especificarlas todas en una sola línea, como se muestra a continuación:
+
+padding: 10px 20px 10px 20px;
+Estos cuatro valores se leen en el sentido de las agujas del reloj: arriba, derecha, abajo, izquierda, (top, right, bottom, left) y producirán exactamente el mismo resultado que usar las instrucciones específicas de padding.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px 40px 20px 40px;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza clockwise notation para especificar el margen de un elemento
+Intentemos de nuevo, pero esta vez con margin.
+
+En lugar de especificar las propiedades margin-top, margin-right, margin-bottom, y margin-left individualmente, puedes especificarlas todas en una sola línea, como se muestra a continuación:
+
+margin: 10px 20px 10px 20px;
+Estos cuatro valores se leen en el sentido de las agujas del reloj: arriba, derecha, abajo, izquierda, (top, right, bottom, left) y producirán exactamente el mismo resultado que usar las instrucciones específicas de margen.
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    margin: 20px 40px 20px 40px;
+  }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa selectores de atributos para dar estilo a elementos
+Hasta ahora, has añadido atributos id o class a elementos para aplicarles estilos específicos. Estos se conocen también como selectores de ID y de clase. Sin embargo, existen otros selectores CSS que puedes utilizar para seleccionar grupos personalizados de elementos a los que quieras aplicar el mismo estilo.
+
+Volvamos a nuestra CatPhotoApp para practicar el uso de selectores CSS.
+
+Para este desafío, usarás el selector de atributos [attr=value] para aplicar estilo a las casillas de verificación (checkboxes) en CatPhotoApp. Este selector busca estilos que tengan un valor de atributo específico. Por ejemplo, el código a continuación cambia los márgenes de todos los elementos que tengan el atributo type con el valor radio:
+
+[type='radio'] {
+  margin: 20px 0px 20px 0px;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Unidades absolutas y relativas de medida
+Varios de los últimos desafíos establecen el "margin" o "padding" de un elemento usando píxeles (px). Los píxeles son un tipo de unidad de longitud que le indica al navegador qué tamaño o cuánto espaciado asignarle a un elemento. Además de px, CSS cuenta con variedad de opciones de unidades de longitud que puedes utilizar.
+Los dos tipos principales de unidades de longitud son las unidades absolutas y relativas. Las unidades absolutas están relacionadas con unidades físicas de longitud. Por ejemplo, in y mm se refieren a pulgadas y milímetros, respectivamente. Las unidades de longitud absoluta aproximan la medición real sobre una pantalla, pero existen cierta variación que depende de la resolución de la pantalla utilizada.
+Las unidades relativas, como em o rem son relativas a otro valor de longitud. Por ejemplo, em se basa en el tamaño de fuente de un elemento. Si la utilizas para establecer la propiedad font-size, es relativa al font-size del elemento padre.
+Nota: Hay varias opciones de unidades relativas que están vinculadas al tamaño del viewport. Veremos estas unidades relativas de medida en la sección de principios de diseño web responsivo.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Aplica un estilo al elemento HTML body
+Ahora vamos comenzar de cero y hablaremos sobre la herencia CSS (en inglés: "CSS inheritance").
+Toda página HTML tiene un elemento body.
+Para demostrar que el elemento body existe aquí, podemos asignarle un background-color black (negro).
+Para ello, agregamos la siguiente declaración a nuestro elemento style:
+
+body {
+  background-color: black;
+}
+
+Hereda estilos del elemento body
+Ahora hemos demostrado que cada página HTML tiene un elemento body, y que a este elemento body también se le puede dar estilo con CSS.
+
+Recuerda, puedes dar estilo a tu elemento body como a cualquier otro elemento HTML, y todos los demás elementos heredarán los estilos del elemento body.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Sobreescribe declaraciones de clase con inline styles (estilos en línea)
+Hemos demostrado que las declaraciones de id tienen prioridad por sobre las declaraciones de clase, independientemente de dónde hayan sido declaradas en el código CSS del elemento style.
+Pero existen otras formas de sobreescribir código CSS. ¿Recuerdas los "inline styles" (estilos en línea)?
+Usa un inline style para hacer que nuestro elemento h1 sea de color blanco. 
+Recuerda, los estilos en línea se ven así:
+<h1 style="color: green;">
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Sobreescribe todos los demás estilos usando !important
+¡Excelente! Acabamos de demostrar que los estilos en línea sobrescribirán todas las declaraciones CSS en tu elemento style.
+Pero, ¡aguarda! Existe una última forma de sobreescribir CSS. Este es el método más poderoso de todos. Pero antes de utilizarlo, consideremos por qué querrías sobreescribir una regla CSS.
+En muchas situaciones usarás librerías de CSS. Estas librerías pueden sobreescribir accidentalmente tu propio código CSS. Entonces, cuando necesites asegurarte de que a un elemento se le aplique un código CSS específico, puedes usar !important.
+Volvamos a nuestra declaración de la clase pink-text. Recuerda que nuestra clase pink-text fue sobreescrita por declaraciones posteriores de clases, declaraciones de id e "inline styles".
+Añade la palabra clave !important a la declaración de color de pink-text para asegurarte completamente de que tu elemento h1 será de color rosado.
+
+Aquí te mostramos un ejemplo de cómo hacerlo:
+color: red !important;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza código hexadecimal (hex code) para indicar colores específicos
+¿Sabías que hay otras maneras de representar colores en CSS? Una de estas formas se llama código hexadecimal, o código hex (hex code) para abreviar.
+Generalmente usamos decimales, o números de base 10, los cuales utilizan los símbolos del 0 al 9 para representar cada dígito. Los números hexadecimales (o hex) son números de base 16. Esto significa que utilizan dieciseis símbolos distintos. Al igual que en los números decimales, en hexadecimal los símbolos 0-9 representan los valores de cero a nueve. Luego A,B,C,D,E,F representan los valores de diez a quince. Todos estos símbolos juntos, de 0 a F, pueden representar un dígito en hexadecimal, lo que da un total de 16 valores posibles. Puedes encontrar más información sobre los números hexadecimales aquí.
+En CSS, podemos representar colores utilizando 6 dígitos hexadecimales, dos para los componentes de rojo (R), verde (G) y azul (B). 
+Por ejemplo, #000000 corresponde al color negro, y también es el valor más bajo posible. Puedes encontrar más información sobre sistema de colores RGB aquí.
+body {
+  color: #000000;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
