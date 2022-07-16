@@ -1,0 +1,168 @@
+<section>
+	<elements detro de un sector>
+	<otro elemento dentro de un sector>
+	</>
+	<h2></h2>
+	<p></p>
+	<img>
+	<a>anchor</a>
+</section>
+
+<figure>
+	<img src="imagen dentro de un elemento figure>
+	<figcaption>texto al indice de una imagen</figcamtion>
+<figure>
+
+<em>italica</em>
+<strong>negrita</strong>
+
+<form action="/submit-url"> el atributo de acción indica dónde se deben enviar los datos del formulario
+	<input>
+	<button></button>
+</form>
+
+<input type="text">Hay muchos tipos de entradas que puede crear usando el atributo de tipo. Puede crear fácilmente un campo de contraseña, un botón de reinicio o un control para que los usuarios puedan seleccionar un archivo de su computadora.
+
+<input name="catphotourl"> debe otorgar al campo de texto un atributo de nombre y asignarle un valor para representar los datos que se envían	
+
+<input placeholder="cat photo URL"> el texto de marcador de posición se usa para dar a las personas una pista sobre qué tipo de información ingresar en una entrada
+
+<input required> Para evitar que un usuario envíe su formulario cuando falta la información requerida,
+
+<button>Submit</button>
+
+<button type="submit"></button>
+
+<input type="radio"> Indoor
+los elementos de etiqueta se utilizan para ayudar a asociar el texto de un elemento de entrada con el propio elemento de entrada.
+Por ejemplo, <label><input type="radio"> gato</label> hace que al hacer clic en la palabra gato también se seleccione el botón de opción correspondiente
+
+<input type="checkbox> a checkbox  //Asegúrese de que haya un espacio entre el elemento y el text
+
+<input type="radio" name="Tenga en cuenta que ambos botones de radio se pueden seleccionar al mismo tiempo. Para que sea así, al seleccionar un botón de radio automáticamente se anula la selección del otro, ambos botones deben tener un atributo de nombre con el mismo valor.>
+
+<input type="radio" value="se enviara al formulario, los datos del formulario para el botón se basan en su nombre y atributos de valor">
+
+<elemento id="idenificador"> el atributo id se utiliza para identificar elementos HTML específicos. 
+
+El elemento fieldset se usa para agrupar entradas y etiquetas relacionadas en un formulario web. Los elementos fieldset son elementos a nivel de bloque, lo que significa que aparecen en una nueva línea.
+<form>
+	<fieldset>//recuadro
+		<input type="radio">
+	</fieldset>
+</form>
+
+El elemento de leyenda actúa como un título para el contenido del elemento fieldset. Brinda a los usuarios contexto sobre lo que deben ingresar en esa parte del formulario.
+La etiqueta LEGEND se coloca después de la etiqueta FIELDSET.
+<fieldset>//recuadro
+	<legend>leyenda</legend>
+</fieldset>
+
+Hay otra forma de asociar el texto de un elemento de entrada con el propio elemento. Puede anidar el texto dentro de un elemento de etiqueta y agregar un atributo for con el mismo valor que el atributo id del elemento de entrada.
+ <input id="loving" type="checkbox" name="personality"> 
+ <label for="loving">loving</label>
+
+Para marcar una casilla de verificación o seleccionar un botón de radio de forma predeterminada, debe agregarle el atributo marcado
+<input type="radio" checked>
+<input type="checkbox" checked>
+
+
+El Elemento HTML Footer (<footer>) representa un pie de página,
+	para el contenido de sección más cercano o el elemento  raíz de sección.
+	Un pie de página típicamente contiene información acerca de el autor de la sección, datos de derechos de autor o enlaces a documentos relacionados.
+	
+	<footer</footer>
+
+Observe que todo lo que ha agregado a la página hasta ahora está dentro del elemento del cuerpo. Todos los elementos de contenido de la página que deben representarse en la página van dentro del elemento del cuerpo. Sin embargo, otra información importante va dentro del elemento principal.
+<head></head>
+
+El elemento de título determina lo que los navegadores muestran en la barra de título o en la pestaña de la página.
+<head>
+	<title>Titulo de la pagina web</title>
+</head>
+
+Observe que todo el contenido de la página está anidado dentro de un elemento html. Todos los demás elementos deben ser descendientes de este elemento html.
+El atributo lang con el valor en a la etiqueta html de apertura, especifica que el idioma maneja la pagina.
+<html lang="en"></html>
+
+Todas las páginas deben comenzar con <!DOCTYPE html>. Esta cadena especial se conoce como declaración y garantiza que el navegador intente cumplir con las especificaciones de toda la industria.
+
+Una cosa más. Debe permitir que las personas usen su idioma nativo. Dígale al navegador que codifique varios idiomas agregando un metaelemento como elemento secundario del elemento principal.
+Establezca su atributo charset en UTF-8.
+<head>
+	<meta charset="UTF-8>
+</head>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>CatPhotoApp</title>
+    <meta charset="UTF-8"
+  </head>
+
+  <body>
+
+    <h1>CatPhotoApp</h1>
+
+    <main>
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        <ul>
+          <li>cat nip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
+        </figure>
+        <h3>Top 3 things cats hate:</h3>
+        <ol>
+          <li>flea treatment</li>
+          <li>thunder</li>
+          <li>other cats</li>
+        </ol>
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+        </figure>
+      </section>
+      <section>
+        <h2>Cat Form</h2>
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+          </fieldset>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
+
+  </body>
+
+</html>

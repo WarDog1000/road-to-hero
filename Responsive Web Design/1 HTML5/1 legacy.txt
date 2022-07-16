@@ -1,0 +1,327 @@
+Di hola a los elementos HTML
+Bienvenido a los desafíos de programación HTML de freeCodeCamp. Estos te guiarán paso a paso a través del mundo del desarrollo web.
+
+Primero, comenzarás construyendo una página web simple usando HTML. Puedes editar el código desde tu editor de código, el cual está insertado en esta página web.
+
+¿Ves el código en tu editor de código que dice <h1>Hello</h1>? Ese es un elemento HTML.
+
+La mayoría de elementos HTML tienen una etiqueta de apertura y una etiqueta de cierre.
+
+Las etiquetas de apertura se ven así:
+
+<h1>
+Las etiquetas de cierre se ven así:
+
+</h1>
+La única diferencia entre las etiquetas de apertura y cierre es la barra frontal después del corchete de ángulo abierto.
+
+Cada desafío tiene pruebas que puedes ejecutar en cualquier momento haciendo clic en el botón "Ejecutar pruebas". Cuando pases todas las pruebas, te pedirán que envíes tu solución e ir al siguiente desafío de programación.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Título con el elemento h2
+Durante las próximas lecciones, construiremos pieza a pieza una aplicación web en HTML5 de fotos de gatos.
+
+El elemento h2 que añadirás en este paso agregará un título nivel dos a la página web.
+
+Este elemento le informa al navegador sobre la estructura de tu sitio web. Los elementos h1 se utilizan a menudo para títulos principales, mientras que los elementos h2 se utilizan generalmente para subtítulos. También hay elementos h3, h4, h5 y h6 para indicar diferentes niveles de subtítulos.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Informa con el elemento párrafo
+El elemento p es el elemento preferido para el texto de los párrafos en los sitios web. p es la abreviatura de "párrafo" (paragraph).
+
+Puedes crear un elemento párrafo de esta manera:
+
+<p>I'm a p tag!</p>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rellena el espacio en blanco con texto provisional
+Los desarrolladores web tradicionalmente usan texto lorem ipsum como texto provisional. El texto lorem ipsum se extrajo aleatoriamente de un famoso pasaje de Cicerón de la Antigua Roma.
+
+El texto lorem ipsum ha sido utilizado como texto provisional por los tipógrafos desde el siglo XVI, y esta tradición continúa en la web.
+
+Pues bien, 5 siglos es suficiente. Puesto que estamos construyendo una aplicación de fotos de gatos, utilicemos algo llamado "kitty ipsum text".
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Descomenta código HTML
+Comentar es una forma en la que puedes dejar comentarios dentro de tu código para otros desarrolladores, sin que eso afecte el resultado que se muestra al usuario final.
+
+Comentar es también una forma conveniente de desactivar código sin tener que borrarlo por completo.
+
+Los comentarios en HTML comienzan con <!-- y terminan con -->
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Introducción a los elementos HTML5
+HTML5 introduce etiquetas HTML más descriptivas. Estas incluyen main, header, footer, nav, video, article, section, entre otras.
+
+Estas etiquetas dan una estructura descriptiva a tu HTML, hacen que tu HTML sea más fácil de leer, ayudan con la Optimización de Motores de Búsqueda (SEO) y mejoran la accesibilidad. La etiqueta HTML5 main ayuda a los motores de búsqueda y otros desarrolladores a encontrar el contenido principal de tu página.
+
+Por ejemplo, un elemento main con dos elementos hijos anidados en su interior:
+
+<main> 
+  <h1>Hello World</h1>
+  <p>Hello Paragraph</p>
+</main>
+Note: Muchas de las nuevas etiquetas HTML5 y sus beneficios están cubiertos en la sección Accesibilidad Aplicada.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puedes agregar imágenes a tu sitio web utilizando el elemento img, y apuntar a la URL de una imagen específica usando el atributo src.
+
+Un ejemplo de esto sería:
+
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
+Ten en cuenta que los elementos img se cierran automáticamente.
+
+Todos los elementos img deben tener un atributo alt. El texto dentro de un atributo alt es utilizado por los lectores de pantalla para mejorar la accesibilidad y se muestra si la imagen falla en cargar.
+
+Note: Si la imagen es puramente decorativa, usar un atributo alt vacío es una buena práctica.
+
+Idealmente, el atributo alt no debe contener caracteres especiales a menos que sea necesario.
+
+Agreguemos un atributo alt a nuestro ejemplo img anterior:
+
+<img src="https://www.freecatphotoapp.com/y
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Enlaza hacia páginas externas con los elementos anchor
+Puedes usar los elementos a (anchor) para enlazar a contenido fuera de tu página web.
+
+Los elementos a requieren un atributo href con la dirección web de destino. También necesitan un texto anchor. Por ejemplo:
+
+<a href="https://www.freecodecamp.org">this links to freecodecamp.org</a>
+Entonces tu navegador mostrará el texto this links to freecodecamp.org como un enlace que puedes hacer clic. Y ese enlace te llevará a la dirección web https://www.freecodecamp.org.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Enlaza hacia secciones internas de una página con los elementos anchor
+Los elementos a (anchor) también pueden utilizarse para crear enlaces internos para saltar a diferentes secciones dentro de una página web.
+
+Para crear un enlace interno, asignas el atributo href de un enlace con un símbolo hash # más el valor del atributo id para el elemento al que deseas enlazar internamente, normalmente más abajo de la página. Luego necesitas agregar el mismo atributo id al elemento que estás enlazando. Un id es un atributo que describe un elemento de forma única.
+
+A continuación hay un ejemplo de un enlace interno y su elemento destino:
+
+<a href="#contacts-header">Contacts</a>
+...
+<h2 id="contacts-header">Contacts</h2>
+Cuando los usuarios hagan clic en el enlace Contacts, serán llevados a la sección de la página con el elemento título Contacts.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+target="_blank" de la etiqueta anchor ya que esto provoca que el documento enlazado se abra en una nueva pestaña.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Anida un elemento anchor dentro de un párrafo
+Puedes anidar enlaces dentro de otros elementos de texto.
+
+<p>
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
+</p>
+Desglosemos el ejemplo. El texto normal está envuelto en el elemento p:
+
+<p> Here's a ... for you to follow. </p>
+A continuación está el elemento anchor <a> (que requiere una etiqueta de cierre </a>):
+
+<a> ... </a>
+target es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor _blank especifica abrir el enlace en una nueva pestaña. El href es un atributo de etiqueta anchor que contiene la dirección URL del enlace:
+
+<a href="https://www.freecodecamp.org" target="_blank"> ... </a>
+El texto, link to www.freecodecamp.org, dentro de un elemento a se llama texto de anclaje, y mostrará el enlace para hacer clic:
+
+<a href=" ... " target="...">link to freecodecamp.org</a>
+El resultado final del ejemplo se verá así:
+
+Here's a link to www.freecodecamp.org for you to follow.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea enlaces muertos utilizando el símbolo hash
+A veces quieres agregar elementos a en tu sitio web antes de saber dónde se enlazarán.
+
+Esto también es útil cuando estás cambiando el comportamiento de un enlace usando JavaScript, sobre el cual aprenderemos más adelante.
+<a href="#" target="_blank">cat photos</a>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Convierte una imagen en un enlace
+Puedes convertir elementos en enlaces, anidándolos dentro de un elemento a.
+
+Anida tu imagen dentro de un elemento a. A continuación, te presentamos un ejemplo:
+
+<a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="Three kittens running towards the camera."></a>
+Recuerda usar # como propiedad href de tu elemento a para convertirlo en un enlace muerto.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea una lista no ordenada
+HTML tiene un elemento especial para crear listas no ordenadas, o listas con estilo de viñetas.
+
+Las listas no ordenadas comienzan con un elemento <ul> de apertura, seguido de cualquier número de elementos <li>. Por último, las listas no ordenadas cierran con un </ul>.
+
+Por ejemplo:
+
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea una lista ordenada
+HTML tiene otro elemento especial para crear listas ordenadas, o listas numeradas.
+
+Las listas ordenadas comienzan con un elemento de apertura <ol>, seguido de cualquier número de elementos <li>. Por último, las listas ordenadas se cierran con la etiqueta </ol>.
+
+Por ejemplo:
+
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea un campo de texto
+Ahora crearemos un formulario web.
+
+Los elementos de entrada input son una forma conveniente de obtener información de tu usuario.
+
+Puedes crear una entrada de texto de esta manera:
+
+<input type="text">
+Ten en cuenta que los elementos input se cierran automáticamente.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Agrega texto provisional a un campo de texto
+El texto provisional es lo que se muestra en tu elemento de entrada input antes de que el usuario haya ingresado nada.
+
+Puedes crear texto provisional así:
+
+<input type="text" placeholder="this is placeholder text">
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea un elemento de formulario
+Puedes construir formularios web que realmente envíen datos a un servidor usando sólo HTML puro. Puedes hacer esto especificando un atributo action en tu elemento form.
+
+Por ejemplo:
+
+<form action="url-where-you-want-to-submit-form-data">
+  <input>
+</form>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Agrega un botón de envío a un formulario
+Agreguemos un botón submit a tu formulario. Al hacer clic en este botón se enviarán los datos de tu formulario a la URL especificada con el atributo action de tu formulario.
+
+Aquí hay un ejemplo de botón de envío:
+
+<button type="submit">this button submits the form</button>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa HTML5 para requerir un campo
+Puedes requerir campos específicos de un formulario para que tu usuario no pueda enviarlo hasta que no los haya rellenado.
+
+Por ejemplo, si deseas hacer obligatorio un campo de entrada de texto, puedes agregar el atributo required dentro de tu elemento input, de esta forma: <input type="text" required>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea un conjunto de botones de radio
+Puedes usar botones de radio para preguntas en las que quieres que el usuario solo te dé una respuesta a partir de múltiples opciones.
+
+Los botones de radio son un tipo de entrada input.
+
+Cada uno de tus botones de radio puede anidarse dentro de su propio elemento label. Envolver un elemento input dentro de un elemento label asociará automáticamente la entrada del botón de radio con el elemento label que lo rodea.
+
+Todos los botones de radio relacionados deben tener el mismo atributo name para crear un grupo de botones de radio. Al crear un grupo de radio, si se selecciona cualquier botón de radio se deselecciona automáticamente los otros botones dentro del mismo grupo, asegurándose que el usuario proporcione solo una respuesta.
+
+Aquí hay un ejemplo de un botón de radio:
+
+<label> 
+  <input type="radio" name="indoor-outdoor">Indoor 
+</label>
+Se considera buena práctica establecer un atributo for en el elemento label, con un valor que coincida con el valor del atributo id del elemento input. Esto permite a las tecnologías asistivas establecer una relación de vínculo entre la etiqueta y el elemento input relacionado. Por ejemplo:
+
+<input id="indoor" type="radio" name="indoor-outdoor">
+<label for="indoor">Indoor</label>
+También podemos anidar el elemento input dentro de las etiquetas label:
+
+<label for="indoor"> 
+  <input id="indoor" type="radio" name="indoor-outdoor">Indoor 
+</label>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Crea un conjunto de casillas de verificación
+Los formularios suelen usar casillas de verificación (checkboxes) para preguntas que puedan tener más de una respuesta.
+
+Las casillas de verificación son un tipo de input (entrada).
+
+Cada una de tus casillas de verificación puede anidarse dentro de su propio elemento label. Envolver un elemento input dentro de un elemento label asociará automáticamente ese input de tipo checkbox con el elemento label que lo rodea.
+
+Todos los inputs de tipo casilla de verificación que están relacionados entre sí deben tener el mismo atributo name.
+
+Se considera buena práctica definir explícitamente la relación entre un input de tipo checkbox (casilla de verificación) y su correspondiente label (etiqueta), estableciendo el atributo for en el elemento label para que coincida con el atributo id del input asociado.
+
+A continuación te presentamos un ejemplo de una casilla de verificación:
+
+<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+Agrega a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe anidarse dentro de su propio elemento label. Las tres deben compartir el atributo name con el valor personality (personalidad).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa el atributo value con botones de radio y casillas de verificación
+Cuando se envía un formulario, los datos se envían al servidor e incluyen entradas para las opciones seleccionadas. Los inputs de tipo radio y checkbox reportan sus valores desde el atributo value.
+
+Por ejemplo:
+
+<label for="indoor">
+  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor
+</label>
+<label for="outdoor">
+  <input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor">Outdoor
+</label>
+Aquí tienes dos inputs de tipo radio. Cuando el usuario envía el formulario con la opción indoor seleccionada, los datos del formulario incluirán la línea: indoor-outdoor=indoor. Esto proviene de los atributos name y value del input "indoor".
+
+Si omites el atributo value, los datos del formulario enviado utilizarán el valor por defecto, que es on. En este escenario, si el usuario hizo click en la opción "indoor" y envió el formulario, el dato resultante del formulario sería indoor-outdoor=on, lo cual no resulta útil. Por lo que el atributo value debe establecerse a un valor que identifique la opción claramente.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Marca botones de radio y casillas de verificación por defecto
+Puedes hacer que una casilla de verificación o botón de radio se marque por defecto usando el atributo checked.
+
+Para hacer esto, simplemente agrega la palabra checked al interior de un elemento input. Por ejemplo:
+
+<input type="radio" name="test-name" checked>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Anida muchos elementos dentro de un solo elemento div
+El elemento div, también conocido como elemento de división, es un contenedor de propósito general para otros elementos.
+
+El elemento div es probablemente el elemento HTML más utilizado de todos.
+
+Al igual que cualquier otro elemento sin cierre automático, puedes abrir un elemento div con <div> y cerrarlo en otra línea con </div>.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Declara el Doctype de un documento HTML
+Hasta el momento, los desafíos han cubierto elementos HTML específicos y sus usos. Sin embargo, hay algunos elementos que dan una estructura general a tu página, y deben incluirse en cada documento HTML.
+
+En la parte superior de tu documento, necesitas decirle al navegador qué versión de HTML está utilizando tu página. HTML es un lenguaje en evolución, y se actualiza regularmente. La mayoría de los navegadores principales soportan la última especificación, que es HTML5. Sin embargo, páginas web más antiguas puede que hagan uso de versiones anteriores del lenguaje.
+
+Proporcionas al navegador esta información agregando la etiqueta <!DOCTYPE ...> en la primera línea, donde la parte ... es la versión de HTML. Para HTML5, utilizas <!DOCTYPE html>.
+
+El ! y DOCTYPE en mayúsculas es importante, especialmente para los navegadores más antiguos. El html no es sensible a mayúsculas y minúsculas.
+
+A continuación, el resto de tu código HTML necesita ser envuelto en etiquetas html. La apertura <html> va directamente debajo de la línea <!DOCTYPE html>, y el cierre </html> va en el final de la página.
+
+Aquí hay un ejemplo de estructura de página. Tu código HTML iría en el espacio entre las dos etiquetas html.
+
+<!DOCTYPE html>
+<html>
+</html>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Define el encabezado y el cuerpo de un Documento HTML
+Puedes agregar otro nivel de organización en tu documento HTML dentro de las etiquetas html con los elementos head y body. Cualquier código con información sobre tu página iría dentro de la etiqueta head. Entonces, cualquier código con el contenido de la página (lo que se muestra para un usuario) iría dentro de la etiqueta body.
+
+Elementos de metadatos, tales como link, meta, title, y style, típicamente van dentro del elemento head.
+
+Aquí hay un ejemplo de la disposición de una página:
+
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+   <title>Titulo De Ejemplo</title>
+  </head>
+  <body>
+    <div>
+    </div>
+  </body>
+</html>
