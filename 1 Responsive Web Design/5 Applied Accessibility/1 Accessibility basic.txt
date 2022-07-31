@@ -187,3 +187,21 @@ El bajo contraste entre los colores de primer plano y de fondo puede dificultar 
 Las Directrices de Accesibilidad al Contenido Web (WCAG) recomiendan al menos una relación de contraste de 4.5 a 1 para el texto normal. La relación se calcula comparando los valores de luminancia relativa de dos colores. Esto varía de 1:1 para el mismo color, o ningún contraste, a 21:1 para blanco contra negro, el contraste más sustancial. Hay muchas herramientas de comprobación de contraste disponibles en línea que calculan esta relación por ti.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Evita problemas de percepción del color usando el suficiente contraste
+El color es una parte importante del diseño visual, pero su aplicación presenta dos problemas de accesibilidad. El primer problema es que no se debe utilizar el color como la única forma de transmitir información importante, porque los lectores de pantalla no lo distinguen. En segundo lugar, los colores de primer plano y de fondo necesitan tener suficiente contraste para que los usuarios sean capaces de distinguirlos.
+
+Los desafíos anteriores explicaron la existencia de texto alternativo para remediar el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar con el segundo problema. El índice de contraste de 4.5:1 recomendado por WCAG se aplica tanto para los colores como para combinaciones de escalas de grises.
+
+Los usuarios daltónicos tienen problemas para distinguir algunos colores de otros. Esto generalmente depende del tono pero también depende a veces de su luminosidad. Posiblemente recuerdes que el índice de contraste se calcula utilizando los valores de luminancia (o luminosidad) relativa de los colores de primer plano y del fondo.
+
+En la práctica, la relación de contraste de 4.5:1 puede alcanzarse oscureciendo el color más oscuro (o sea, añadiendo negro) y aclarando el color más claro (añadiéndole blanco). Se considera que los tonos más oscuros en la rueda de color son los azules, violetas, magentas y los rojos, mientras que los colores más claros son los naranjas, amarillos, verdes y azul-verdosos.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Evita problemas de color para usuarios daltónicos eligiendo cuidadosamente los colores que transmiten información
+Existen varias formas de daltonismo o ceguera al color. Estos pueden ir desde tener una sensibilidad reducida a una longitud de onda de luz específica, hasta la incapacidad total de ver algún color. La forma más común en que se presenta es una sensibilidad reducida para detectar tonos de verde.
+
+Por ejemplo, si dos colores verdes similares son el color usado en el primer plano y el fondo de tu contenido, un usuario daltónico podría no ser capaz de distinguirlos entre sí. Podemos pensar en los colores cercanos como aquellos colores que son vecinos o adyacentes en la rueda de color. Por este motivo, las combinaciones de estos colores deben evitarse cuando se usan para transmitir información importante.
+
+Nota: Algunas herramientas de selección de colores disponibles en Internet incluyen simulaciones visuales de cómo serían vistos por usuarios con diversos tipos de daltonismo. Estos son excelentes recursos que puedes aprovechar, sumados a las calculadoras para verificar el contraste de color que puedes encontrar en Internet.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
