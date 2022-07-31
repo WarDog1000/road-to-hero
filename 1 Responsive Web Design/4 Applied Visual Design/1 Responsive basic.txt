@@ -13,7 +13,7 @@ Y text-align: left; (opción por defecto) alinea el texto hacia la izquierda.
 
 Alinea el texto de la etiqueta h4, que dice "Google", al centro. Luego justifica la etiqueta párrafo que contiene información sobre cómo Google fue fundado.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta la altura de un elemento utilizando la propiedad height
 Puedes especificar la altura de un elemento con la propiedad height en CSS como lo haces con la propiedad width (ancho). En el siguiente ejemplo, se cambia la altura de una imagen a 20px:
 
@@ -24,27 +24,27 @@ Añadir la propiedad height a la etiqueta h4 y establecerlo a 25px.
 
 Nota: Puede que necesites tener un zoom de 100% para pasar la prueba de este desafío.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la etiqueta strong para poner el texto en negrita
 Para poner el texto en negrita, puedes usar la etiqueta strong. Esto se usa a menudo para llamar la atención sobre el texto y simbolizar que es importante. Con la etiqueta strong, el navegador aplica el CSS de font-weight: bold; al elemento.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la etiqueta u para subrayar texto
 Para subrayar texto, puedes usar la etiqueta u. Esto se utiliza a menudo para indicar que una sección del texto es importante, o algo que hay que recordar. Con la etiqueta u, el navegador aplica el CSS de text-decoration: underline; al elemento.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa la etiqueta em para poner texto en cursiva
 Para enfatizar el texto, puedes usar la etiqueta em. Esto muestra el texto en cursiva, ya que el navegador aplica el CSS de font-style: italic; al elemento.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa la etiqueta s para tachar texto
 Para tachar el texto, que es cuando una línea horizontal atraviesa los caracteres, puede usar la etiqueta s. Muestra que una sección de texto ya no es válida. Con la etiqueta s, el navegador aplica el CSS de text-decoration: line-through; al elemento.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea una línea horizontal usando el elemento hr
 Puedes usar la etiqueta hr para agregar una línea horizontal a través del ancho de su elemento contenedor. Esto se puede usar para definir un cambio de tema o para separa grupos de contenido visualmente.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta la propiedad background-color del texto
 En lugar de ajustar el fondo general o el color del texto para que el primer plano sea fácilmente legible, puedes agregar un background-color al elemento que contiene el texto que deseas destacar. Este reto utiliza rgba() en lugar de códigos hex o rgb() normal.
 
@@ -57,13 +57,13 @@ Los valores RGB pueden variar de 0 a 255. El valor alfa puede variar de 1, que e
 
 Utilizarás background-color: rgba(45, 45, 45, 0.1) para este desafío. Produce un color gris oscuro que es casi transparente dado el bajo valor de opacidad de 0.1.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajustar el tamaño de un elemento de encabezado frente a un elemento de párrafo
 El tamaño de fuente de las etiquetas de encabezado (h1 a h6) generalmente debe ser mayor que el tamaño de fuente de las etiquetas de párrafos. Esto hace que sea más sencillo para que el usuario entienda visualmente el diseño y el nivel de importancia de cada elemento en la página. Utiliza la propiedad font-size para ajustar el tamaño del texto en un elemento.
 
 Para que el encabezado sea significativamente más grande que el párrafo, cambia el font-size del elemento h4 a 27 píxeles.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Agrega box-shadow a un elemento tipo tarjeta
 La propiedad box-shadow aplica una o más sombras a un elemento.
 
@@ -82,7 +82,7 @@ A continuación un ejemplo de CSS para crear múltiples sombras con un poco de d
 
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Disminuir la opacidad de un elemento
 La propiedad opacity en CSS se usa para ajustar la opacidad o, por el contrario, la transparencia de un elemento.
 
@@ -91,7 +91,7 @@ Un valor de 0.5 es la mitad transparente.
 Un valor de 0 es completamente transparente.
 El valor dado se aplicará a todo el elemento, ya sea una imagen con cierta transparencia, o los colores de primer plano y fondo para un bloque de texto.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa la propiedad text-transform para hacer el texto mayúsculas
 La propiedad text-transform en CSS se utiliza para cambiar la apariencia del texto. Es una forma conveniente de asegurarse de que el texto en una página web aparezca de manera consistente, sin tener que cambiar el contenido del texto de los elementos HTML reales.
 
@@ -105,25 +105,25 @@ initial	Usa el valor predeterminado
 inherit	Utiliza el valor text-transform del elemento principal
 none	Predeterminado: Usa el texto original
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece el tamaño de fuente para varios elementos de títulos
 La propiedad font-size se usa para especificar que tan grande es el texto en un elemento dado. Esta regla se puede utilizar para varios elementos para crear coherencia visual del texto en una página. En este desafío, establecerá los valores para todas las etiquetas h1 a h6 para equilibrar los tamaños de los títulos.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece el font-weight para varios elementos de títulos
 Se establece el font-size de cada etiqueta de título en el último desafío, aquí podrás ajustar el font-weight.
 
 La propiedad font-weight establece que tan gruesos o delgados son los caracteres en una sección de texto.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece el tamaño de fuente del texto del párrafo
 La propiedad font-size en CSS no se limita a los títulos, se puede aplicar a cualquier elemento que contenga texto.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece la line-height de los párrafos
 CSS ofrece la propiedad line-height para cambiar la altura de cada línea en un bloque de texto. Como sugiere el nombre, cambia la cantidad de espacio vertical que recibe cada línea de texto.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta el hover de una etiqueta anchor
 Este desafío mostrará el uso de las pseudo-clases. Una pseudo-clase es una palabra clave que se puede agregar a los selectores para seleccionar un estado específico de un elemento.
 
@@ -133,7 +133,7 @@ a:hover {
   color: red;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia la posición relativa de un elemento
 CSS trata cada elemento HTML como su propia caja, esto es a lo que usualmente se refiere como el Modelo de Caja de CSS. Los elementos bloque automáticamente empiezan en una nueva línea (piensa en las etiquetas título, párrafos y divs) mientras que los elementos en línea se ubican entre el contenido al rededor (como imágenes o spans). El diseño por defecto de los elementos en esta manera se llama el flujo normal de un documento, pero CSS ofrece la propiedad position para sobreescribirlo.
 
@@ -147,26 +147,26 @@ Cambiando la posición de un elemento a relative no lo quita del flujo normal; o
 
 Nota: el posicionamiento te da mucha flexibilidad y poder sobre el diseño visual de una página. Es bueno recordar que no importa la posición de los elementos, el lenguaje de marcado HTML subyacente debe organizarse y tener sentido cuando se lee de arriba a abajo. Así es como los usuarios con discapacidades visuales (que dependen de dispositivos de asistencia como lectores de pantalla) acceden a tu contenido.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Los desplazamientos CSS de top o bottom y left o right indican al navegador hasta que punto debe compensar un elemento en relación con el lugar donde se ubicara en el flujo normal del documento. Está compensando un elemento lejos de un punto dado, lo que aleja el elemento del lado al que se hace referencia (efectivamente, en la dirección opuesta). Como viste en el último desafío, usando el desplazamiento top movió el h2 hacia abajo. Del mismo modo, usando un desplazamiento left mueve un elemento hacia la derecha.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Bloquea un elemento con relación a su padre con el posicionamiento absoluto
 La siguiente opción para la propiedad CSS position es absolute, que bloquea el elemento en su lugar en relación con su contenedor principal. A diferencia de la posición relative, esto elimina el elemento del flujo normal del documento, por lo que los elementos circundantes lo ignoran. Las propiedades de desplazamiento de CSS (superior o inferior e izquierda o derecha) se utilizan para ajustar la posición.
 
 Un matiz del posicionamiento absoluto es que estará bloqueado en relación con su antepasado posicionado más cercano. Si olvidas agregar una regla de posición al elemento principal, (esto generalmente se hace usando position: relative;), el navegador seguirá buscando en la jerarquía de elementos y, en última instancia tomará por defecto la etiqueta body.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Bloquea un elemento a la ventana del navegador con el posicionamiento fijo
 El siguiente esquema de diseño que ofrece CSS es la posición fixed, que es un tipo de posicionamiento absoluto que bloquea un elemento relativo a la ventana del navegador. Similar al posicionamiento absoluto, se usa con las propiedades de desplazamiento CSS y también elimina el elemento del flujo normal del documento. Otros elementos ya no "se dan cuenta" de donde se coloca, lo que puede requerir algunos ajustes de diseño en otros lugares.
 
 Una diferencia clave entre las posiciones fixed y absolute es que un elemento con una posición fija (fixed) no se moverá cuando el usuario se desplace.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Empuja elementos hacia la izquierda o hacia la derecha con la propiedad float
 La siguiente herramienta de posicionamiento en realidad no usa position, sino que establece la propiedad float de un elemento. Los elementos flotantes se eliminan del flujo normal de un documento y se empujan a left o right de su elemento padre contenedor. Se usa comúnmente con la propiedad width para especificar cuanto espacio horizontal requiere el elemento flotante.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia la posición de los elementos superpuestos con la propiedad z-index
 Cuando los elementos son posicionados para superponerse (i.e. usando position: absolute | relative | fixed | sticky), el elemento que viene después dentro del marcado HTML aparecerá, por defecto, encima de los otros elementos. Sin embargo, la propiedad z-index puede especificar el orden de cómo los elementos están apilados unos sobre otros. Debe ser un entero (i.e. un número entero y no un decimal), y los elementos que mayor valor tengan en z-index serán movidos más arriba en la pila de elementos que aquellos con valores menores.
 .first {
@@ -183,14 +183,14 @@ Cuando los elementos son posicionados para superponerse (i.e. usando position: a
     z-index: 1;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Centra un elemento horizontalmente usando la propiedad margin
 Otra técnica de posicionamiento consiste en centrar un elemento de bloque horizontalmente. Una manera de hacer esto es que margin tenga valor auto.
 
 Este método también funciona para imágenes. Las imágenes son elementos en línea de forma predeterminada, pero se pueden cambiar a elementos de bloque cuando se establece la propiedad display en block.
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Aprende sobre colores complementarios
 La teoría del color y su impacto en el diseño es un tema pesado y solo cubriremos los aspectos básicos en los próximos desafíos. En un sitio web, los colores llaman la atención, provocan emociones y crean una armonía visual. Con diferentes combinaciones de colores se puede cambiar el aspecto de un sitio web y requiere una planificación extensa decidirse por una paleta de color que se integre con nuestro contenido.
 
@@ -207,7 +207,7 @@ Hay muchas herramientas de selección de color disponibles en línea que tienen 
 
 Nota: El uso del color puede ser una forma poderosa de agregar interés visual a una página. Sin embargo, el color por sí solo no debe utilizarse como la única manera de transmitir información importante porque los usuarios con deficiencias visuales pueden no entender ese contenido. Esta cuestión se tratará con más detalle en los desafíos de accesibilidad aplicada.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Aprende sobre colores terciarios
 Los monitores y las pantallas crean diferentes colores al combinar cantidades de luz roja, verde y azul. Esto se conoce como modelo aditivo de color RGB en la teoría de moderna de color. Rojo (R), verde (G) y azul (B) «por sus siglas en inglés» son colores primarios. Al combinar dos colores primarios se los colores secundarios cian (G + B), magenta (R + B) y amarillo (R + G). Ya viste estos colores en los desafíos de colores complementarios. Estos colores secundarios son el complemento del color primario no utilizado en su creación y están frente a ese color primario en el círculo cromático. Por ejemplo, el magenta está compuesto de rojo y azul y es el complemento del verde.
 
@@ -222,11 +222,11 @@ anaranjado	#FF7F00
 cian	#00FFFF
 frambuesa	#FF007F
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Adjustar los colores de varios elementos para colores complementarios
 En el desafío de colores complementarios vimos que al colocar dos colores opuestos del círculo cromático, parecen más vivos. Sin embargo, el contraste visual fuerte puede ser molesto si se utiliza en un sitio web y algunos veces pueden hacer que el texto sea difícil de leer si está dentro de un complementary-color background. En la práctica, usualmente se usa uno de los colores como dominante y los complementarios se usan para atraer atención visual a cierto contenido dentro de la página.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta el matiz de un color
 Los colores tienen varias características tales como el matiz, la saturación y la ligereza. CSS3 introdujo la función hsl() como una forma alternativa para elegir un color declarando directamente estas características.
 
@@ -246,11 +246,11 @@ cian	hsl(180, 100 %, 50 %)
 azul	hsl(240, 100 %, 50 %)
 magenta	hsl(300, 100 %, 50 %)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta el tono de un color
 La opción hsl() en CSS también hace que sencillo ajustar el tono de un color. Mezclar blanco con un tono puro crea un tinte de ese color y añadir negro hará una sombra. De forma alternativa, un tono se produce al añadir gris o tintes y sombras. Recuerda que la 's' y 'l' del hsl() representan saturación y ligereza, respectivamente. El porcentaje de saturación cambia la cantidad de gris y el porcentaje de luz determina el porcentaje de blanco o de negro que hay en el color. Esto es útil cuando se tiene un tono base que se quiere, pero necesita variaciones diferentes del mismo.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea un gradiente lineal de CSS gradual
 La aplicación de un color en elementos HTML no se limita a un tono plano. CSS proporciona la capacidad de usar transiciones de color, también conocidas como degradados, en los elementos. Esto se accede a través de la función linear-gradient() de la propiedad background. Aquí está la sintaxis general:
 
@@ -261,7 +261,7 @@ Ejemplo:
 
 background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza un degradado lineal CSS para crear un elemento rayado
 La función repeating-linear-gradient() es muy similar a linear-gradient() con la principal diferencia de que repite el patrón de degradado especificado. repeating-linear-gradient() acepta una variedad de valores, pero para simplificar, trabajarás con un valor de ángulo y valores de parada de color en este desafío.
 
@@ -274,11 +274,11 @@ Para este ejemplo, ayuda a pensar en las paradas de color como pares donde cada 
 0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
 Si cada dos valores de parada de color son del mismo color, la mezcla no es visible porque está entre el mismo color, seguido de una dura transición hacia el siguiente color, así que terminas con rayas.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea textura agregando un patrón sutil como imagen de fondo
 Una forma de agregar textura e interés a un fondo y hacer que se destaque más es agregar un patrón sutil. La clave está en el balance, dado que no querrás que el fondo destaque demasiado y quite atención al primer plano. La propiedad background acepta la función url() para enlazar una imagen de la textura o patrón elegido. El enlace es cubierto entre comillas dentro del paréntesis.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la propiedad de escala de transformación CSS para cambiar el tamaño de un elemento
 Para cambiar la escala de un elemento, CSS tiene la propiedad transform, junto con su función scale(). En el ejemplo de código siguiente se duplica el tamaño de todos los elementos de párrafo de la página:
 
@@ -286,7 +286,7 @@ p {
   transform: scale(2);
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la propiedad de escala de transformación CSS para escalar un elemento al desplazarse
 La propiedad transform tiene una variedad de funciones que te permiten escalar, mover, rotar, sesgar, etc., sus elementos. Cuando se usa con pseudo-classes como :hover que especifican un cierto estado de un elemento, la propiedad transform puede agregar fácilmente interactividad a sus elementos.
 
@@ -297,7 +297,7 @@ p:hover {
 }
 Nota: La aplicación de una transformación a un elemento div también afectará a cualquier elemento secundario contenido del div.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la propiedad de transformación CSS skewX para inclinar un elemento a lo largo del eje X
 La siguiente función de la propiedad transform es skewX(), que inclinar el elemento seleccionado a lo largo de su eje X (horizontal).
 
@@ -307,11 +307,11 @@ p {
   transform: skewX(-32deg);
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza la propiedad de transformación CSS skewY para inclinar un elemento a lo largo del eje Y
 Dado que la función skewX() inclina el elemento seleccionado a lo largo del eje X en un grado dado, no sorprende que la propiedad skewY() incline un elemento a lo largo del eje Y (vertical).
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea un gráfico usando CSS
 Al manipular diferentes selectores y propiedades, puedes hacer figuras interesantes. Una de las figuras más fáciles de intentar es la luna creciente. Para este desafío necesitas trabajar con la propiedad box-shadow que aplica la sombra de un elemento, junto con la propiedad border-radius que controla la redondez de las esquinas del elemento.
 
@@ -321,7 +321,7 @@ Para crear un objeto redondo, la propiedad border-radius se le debe asignar un v
 
 Puede que recuerdes de un desafío anterior que la propiedad box-shadow toma valores para offset-x, offset-y, blur-radius, spread-radius y un valor para el color, en ese orden. Los valores blur-radius y spread-radius son opcionales.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea una forma más compleja usando CSS y HTML
 Una de las formas más populares en el mundo es la forma del corazón, y en este desafío crearás una usando CSS puro. Pero primero, debes comprender los pseudo-elements ::before y ::after. ::before crea un pseudo-elemento que es el primer hijo del elemento seleccionado; ::after crea un pseudo-elemento que es el último hijo del elemento seleccionado. En el siguiente ejemplo, se utiliza un pseudo-elemento ::before para agregar un rectángulo a un elemento con la clase heart:
 
@@ -372,7 +372,7 @@ Para que los pseudo-elements ::before y ::after funcionen correctamente, deben t
 </style>
 <div class="heart"></div>
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Aprende como funcionan las propiedades de CSS @keyframes y animación
 Para animar un elemento, necesitas conocer las propiedades de animación y la regla @keyframes. Las propiedades de animación controlan como debe comportarse la animación y la regla @keyframes controla lo que sucede durante esa animación. Hay ocho propiedades de animación en total. Este desafío lo mantendrá simple y cubrirá primero los dos más importantes:
 
@@ -397,7 +397,7 @@ animation-duration establece el tiempo de la animación.
 }
 Para el elemento anim id, el fragmento de codigo anterior establece el animation-name para colorful y establece el animation-duration a 3 segundos. A continuación, la regla @keyframes vincula a las propiedades de animación con el nombre colorful. Establece el color en azul al principio de la animación (0%) que pasara a amarillo al final de la animación (100%). No estás limitado solo a las transiciones de principio a fin, puedes establecer propiedades para el elemento para cualquier porcentaje entre 0% y 100%.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa animación CSS para cambiar el estado del desplazamiento de un botón
 Puedes usar CSS @keyframes para cambiar el color de un botón en su estado de desplazamiento.
 
@@ -422,7 +422,7 @@ Aquí hay un ejemplo de como cambiar el ancho de una imagen al pasar sobre ella:
 <img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Google's Logo" />
 Ten en cuenta que ms significa milisegundos, donde 1000ms es igual a 1s.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Modifica el modo de relleno de una animación (animation-fill-mode)
 Eso es genial, pero aún no funciona bien. Observa como la animación se restablece después de que haya pasado 500ms, haciendo que el botón vuelva al color original. Lo que quieres es que el botón permanezca resaltado.
 
@@ -430,7 +430,7 @@ Esto se puede hacer estableciendo la propiedad animation-fill-mode en forwards. 
 
 animation-fill-mode: forwards;
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crear movimiento usando animación CSS
 Cuando los elementos tienen una position, como fixed o relative, las propiedades de desplazamiento CSS right, left, top y bottom se pueden usar en las reglas de animación para crear movimiento.
 
@@ -451,7 +451,7 @@ Como se muestra en el siguiente ejemplo, puedes empujar el elemento hacia abajo 
   }
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crear dirección visual desvaneciendo un elemento de izquierda a derecha
 Para este desafío, cambiarás la opacidad (opacity) de un elemento animado para que se desvanezca gradualmente a medida que llega al lado derecho de la pantalla.
 
@@ -480,14 +480,14 @@ En la animación mostrada, el elemento redondo con el fondo degradado se mueve h
 </style>
 <div id="ball"></div>
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Animar los elementos continuamente utilizando un contador de animaciones infinitas
 En los desafíos anteriores, vimos cómo utilizar algunas de las propiedades de la animación y la regla @keyframes. Otra propiedad de animación es la animation-iteration-count la cual te permite controlar cuántas veces te gustaría hacer un bucle a través de la animación. Por ejemplo:
 
 animation-iteration-count: 3;
 En este caso, la animación se detendrá después de ejecutarse 3 veces, pero es posible hacer que la animación se ejecute continuamente estableciendo ese valor en infinite.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia la duración de las animaciones con palabras clave
 En las animaciones CSS, la propiedad animation-timing-function controla qué tan rápido un elemento animado cambia sobre la duración total de la animación. Si la animación es un carro moviéndose de un punto A a un punto B en un tiempo establecido (tu animation-duration), la animation-timing-function dicta cómo el carro acelera y desacelera durante el transcurso en marcha.
 
@@ -512,7 +512,7 @@ Existe un número de palabras clave predefinidas disponibles para las opciones p
     animation-timing-function: ease-out;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Descubre como funcionan las curvas de Bezier
 El último desafío introdujo la propiedad animation-timing-function y algunas palabras clave que cambian la velocidad de una animación a lo largo de su duración. CSS ofrece una opción distinta a las palabras clave que proporciona un control aún más fino sobre cómo se desarrolla la animación, a través del uso de curvas Bezier.
 
@@ -523,7 +523,7 @@ La función cubic-bezier consta de cuatro puntos principales que se encuentran e
 animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
 En el ejemplo anterior, los valores x e y son equivalentes para cada punto (x1 = 0.25 = y1 y x2 = 0.75 = y2), que si recuerdas la clase de geometría, da como resultado una línea que se extiende desde el origen hasta el punto (1, 1). Esta animación es un cambio lineal de un elemento durante la duración de una animación, y es lo mismo que usar la palabra clave linear. En otras palabras, cambia a una velocidad constante.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa una curva de Bezier para mover un gráfico
 Un desafío anterior discutió la palabra clave ease-out que describe un cambio de animación que se acelera primero y luego se ralentiza al final de la animación. A la derecha, se muestra la diferencia entre la palabra clave ease-out (para el elemento azul) y la palabra clave linear (para el elemento rojo). Se pueden lograr progresiones de animación similares a la palabra clave ease-out utilizando una función de curva Bezier cúbica personalizada.
 
@@ -532,7 +532,7 @@ En general, el cambio de los puntos de anclaje p1 y p2 impulsa la creación de d
 animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
 Recuerda que todas las funciones cubic-bezier comienzan con p0 en (0, 0) y terminan con p3 en (1, 1). En este ejemplo, la curva se mueve más rápido a través del eje Y (comienza en 0, va a p1 y valor de 0, luego va a p2 y valor de 1) que se mueve a través del eje X (0 para iniciar, luego 0 para p1, hasta 0.58 para p2. Como resultado, el cambio en el elemento animado progresa más rápido que el tiempo de la animación para ese segmento. Hacia el final de la curva, la relación entre el cambio en los valores X e Y se invierte: el valor y se mueve de 1 a 1 (sin cambios), y los valores X se mueven de 0.58 a 1, lo que hace que los cambios de animación progresen más lentamente en comparación con la duración de la animación.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Haz que el movimiento sea más natural usando una curva de Bezier
 Este desafío anima un elemento para replicar el movimiento de una pelota que se hace rebotes. Los desafíos anteriores cubrirán las curvas cúbicas de Bezier linear y ease-out, sin embargo, ninguna representa el movimiento de rebotes con precisión. Necesitas personalizar una curva de Bezier para esto.
 
