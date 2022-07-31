@@ -19,6 +19,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 El ancho máximo max-width de 100% se asegurará de que la imagen nunca es más ancha que el contenedor en el que se encuentra. y la altura height de auto hará que la imagen mantenga su relación de aspecto original.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
