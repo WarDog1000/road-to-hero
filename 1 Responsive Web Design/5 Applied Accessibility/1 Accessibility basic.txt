@@ -230,5 +230,27 @@ Algunos elementos, como los enlaces y los controles de los formularios, reciben 
 
 <div tabindex="0">I need keyboard focus!</div>
 Nota: Un valor negativo de tabindex (normalmente -1) indica que un elemento es enfocable, pero no es accesible por el teclado. Este método generalmente se usa para enfocar el contenido mediante programación (como cuando se activa un div utilizando para una ventana emergente), y esta más allá del alcance de estos desafíos.
-
+<head>
+  <style>
+  p:focus {
+    background-color: yellow;
+  }
+  </style>
+</head>
+<body>
+  <p tabindex="0">
+  Instructions: Fill in ALL your information then click <b>Submit</b>
+  </p>
+  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza tabindex para especificar el orden de enfoque del teclado para múltiples elementos
+El atributo tabindex también especifica el orden de tabulación exacto de los elementos. Esto se logra cuando el valor del atributo se establece en un número positivo de 1 o superior.
+
+Establecer un tabindex="1" hará que el teclado se enfoque primero en ese elemento. Luego, recorre la secuencia de valores tabindex especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y tabindex="0".
+
+Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que usa el código fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias pero en términos de accesibilidad, ten cuidado antes de aplicarla.
+
+Aquí hay un ejemplo:
+
+<div tabindex="1">I get keyboard focus, and I get it first!</div>
+<div tabindex="2">I get keyboard focus, and I get it second!</div>
