@@ -205,3 +205,30 @@ Por ejemplo, si dos colores verdes similares son el color usado en el primer pla
 Nota: Algunas herramientas de selección de colores disponibles en Internet incluyen simulaciones visuales de cómo serían vistos por usuarios con diversos tipos de daltonismo. Estos son excelentes recursos que puedes aprovechar, sumados a las calculadoras para verificar el contraste de color que puedes encontrar en Internet.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Da significado a los enlaces agregando un texto descriptivo
+Los lectores de pantalla tienen varias opciones para qué tipo de contenido lee su dispositivo. Estas opciones incluyen saltar a elementos de referencia (o sobre) o saltar al contenido principal, u obtener un resumen de la página en los títulos. Otra opción es escuchar la narración de los enlaces disponibles en una página.
+
+Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que haya entre las etiquetas anchor (a). Tener una lista de enlaces que solo digan "clic aquí" o "leer más" no ayuda. En su lugar, utilice texto breve pero descriptivo dentro de las etiquetas a para proporcionar más significado a estos usuarios.
+
+El texto de los enlaces que utiliza el Camper Cat no es muy descriptivo si se lo toma fuera de su contexto. Mueve las etiquetas anchor (a) para que envuelvan el texto information about batteries en lugar de Click here.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Haz que los enlaces sean navegables con claves de acceso HTML
+HTML ofrece el atributo accesskey para especificar una tecla de acceso directo para activar o enfocar un elemento. Añadiendo un atributo accesskey puede hacer que la navegación sea más eficiente para los usuarios que solo utilizan teclado.
+
+HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con elementos interactivos. Esto incluye enlaces, botones y controles de formulario.
+
+Aquí hay un ejemplo:
+
+<button accesskey="b">Important Button</button>
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa tabindex para agregar enfoque de teclado a un elemento
+El atributo HTML tabindex tiene tres funciones distintas relacionadas con el foco del teclado de un elemento. Cuando está en una etiqueta, indica que se puede hacer foco en el elemento. El valor (un número entero que es positivo, negativo o cero) determina el comportamiento.
+
+Algunos elementos, como los enlaces y los controles de los formularios, reciben automáticamente el foco del teclado cuando un usuario tabula por una página. Está en el mismo orden en que los elementos vienen en la fuente del lenguaje de marcado de HTML. Esta misma funcionalidad se puede dar a otros elementos, como div, span y p, colocando un atributo tabindex="0". Aquí hay un ejemplo:
+
+<div tabindex="0">I need keyboard focus!</div>
+Nota: Un valor negativo de tabindex (normalmente -1) indica que un elemento es enfocable, pero no es accesible por el teclado. Este método generalmente se usa para enfocar el contenido mediante programación (como cuando se activa un div utilizando para una ventana emergente), y esta más allá del alcance de estos desafíos.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
