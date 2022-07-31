@@ -10,6 +10,7 @@ body {
     font-family: Roboto;
     font-size: 20px;
 }
+
 h1,p{
     margin: 10px auto;
     text-align: center;
@@ -17,6 +18,7 @@ h1,p{
     color: black;
     text-shadow:2px 2px #ff0000;
 }
+
 div{
     width: 50%;
     min-width: 500px;
@@ -24,6 +26,7 @@ div{
     padding-bottom: 0px;
     background-color: rgba(0, 0, 0, 0.5);
 } 
+
 form {
     width: 50%;
     min-width: 250px;
@@ -31,15 +34,18 @@ form {
     padding-bottom: 1em;
     background-color: none;
 }
+
 .minText{
     font-size: small;
     display: inline;
     color: black;
 }
+
 label{
     display: block;
     margin: 0.5rem auto;
 }
+
 input, textarea, select {
     margin: 10px 0 0 0;
     width: 100%;
@@ -48,16 +54,19 @@ input, textarea, select {
     border: 1px solid #0a0a23;
     color: #ffffff;
 }
+
 input[type="radio"]{
     width: unset;
     margin: 0 0.5em 0 0;
     vertical-align: middle;
 }
+
 input[type="checkbox"]{
     width: unset;
     margin: 0 0.5em 0 0;
     vertical-align: middle;
 }
+
 input[type="submit"] {
     display: block;
     width: 100%;
@@ -68,6 +77,7 @@ input[type="submit"] {
     border-color: white;
     min-width: 300px;
 }
+
 a{
     text-align: center;
     color:black;
