@@ -3,7 +3,7 @@ La propiedad que es responsable del color del texto de un elemento es la propied
 <h2 style="color: blue;">CatPhotoApp</h2>
 Ten en cuenta que es una buena práctica terminar las declaraciones de inline style usando punto y coma (;)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza selectores CSS para dar estilo a elementos
 En CSS tienes a tu disposición cientos de propiedades CSS que puedes usar para cambiar el aspecto de un elemento de tu página.
 Cuando escribiste <h2 style="color: red;">CatPhotoApp</h2>, estabas aplicando un estilo a ese elemento h2 específico usando CSS en línea; CSS significa hojas de estilo en cascada (Cascading Style Sheets).
@@ -19,7 +19,7 @@ Dentro de ese bloque de estilo (style), puedes crear un selector CSS para todos 
 </style>
 Ten en cuenta que es importante tener tanto llaves de apertura como de cierre ({ y }) alrededor de la(s) regla(s) de estilo de cada elemento. También debes asegurarte de que tu definición de estilo para ese elemento esté dentro de las etiquetas de apertura y cierre de estilo. Por último, asegúrate de añadir un punto y coma (;) al final de cada una de las reglas de estilo de tu elemento.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa una clase CSS para aplicar estilos a un elemento
 Las clases son estilos reutilizables que se pueden agregar a los elementos HTML.
 A continuación te presentamos un ejemplo de cómo declarar una clase CSS:
@@ -32,14 +32,14 @@ Puedes ver que hemos creado una clase CSS llamada blue-text dentro de la etiquet
 Aplica un estilo a múltiples elementos usando una clase CSS
 Las clases te permiten usar los mismos estilos CSS en múltiples elementos HTML. Puedes ver esto aplicando tu clase de red-text al primer elemento p.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia el tamaño de fuente de un elemento
 El tamaño de la fuente es controlado por la propiedad CSS font-size, como se muestra a continuación:
 h1 {
   font-size: 30px;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece la familia de fuentes de un elemento
 Puedes utilizar la propiedad font-family (familia de fuente) para establecer qué fuente debe usar un elemento.
 Por ejemplo, si quieres establecer la fuente de tu elemento h2 a sans-serif, usarías el siguiente CSS:
@@ -47,7 +47,7 @@ h2 {
   font-family: sans-serif;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Importa una fuente de Google Fonts
 Además de especificar fuentes comunes disponibles en la mayoría de los sistemas operativos, también podemos especificar fuentes web no estándar y personalizadas para usarlas en nuestro sitio web. En Internet hay muchos lugares donde podemos conseguir web fonts. Para este ejemplo nos centraremos en la biblioteca de Google Fonts.
 Google Font es una biblioteca de fuentes web que puedes usar en tu CSS haciendo referencia a la dirección URL de la fuente.
@@ -59,7 +59,7 @@ font-family: FAMILY_NAME, GENERIC_NAME;
 GENERIC_NAME es opcional, y es el modo de especificar una fuente de reserva o "fallback font" en caso de que la otra fuente especificada no esté disponible. Veremos esto en el siguiente desafío.
 Los nombres de familia de fuentes son sensibles a mayúsculas y minúsculas, y si incluyen espacios deben estar envueltos entre comillas. Por ejemplo, necesitas comillas para usar la fuente "Open Sans", pero no las necesitas para usar la fuente Lobster.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Especifica cómo deben degradarse las fuentes
 Hay varias fuentes por defecto disponibles en todos los navegadores. Estas familias de fuentes genéricas incluyen monospace, serif y sans-serif.
 Cuando una fuente no está disponible en el sistema, puedes indicarle al navegador que "degrade" a otra fuente alternativa.
@@ -70,7 +70,7 @@ p {
 }
 Los nombres de las fuentes genéricas no distinguen entre mayúsculas y minúsculas. Además, no necesitan comillas porque son palabras clave CSS.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia el tamaño de tus imágenes
 CSS tiene una propiedad llamada width que controla el ancho de un elemento. Al igual que con las fuentes, usaremos la unidad de medida px (píxeles) para especificar el ancho de la imagen.
 Por ejemplo, si queremos crear una clase CSS llamada larger-image que le asigne a los elementos HTML un ancho de 500 píxeles, usamos el siguiente código:
@@ -80,7 +80,7 @@ Por ejemplo, si queremos crear una clase CSS llamada larger-image que le asigne 
   }
 </style>
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Añade bordes alrededor de tus elementos
 Los bordes CSS tienen propiedades como style (estilo), color y width (ancho).
 
@@ -103,7 +103,7 @@ Haz imágenes circulares usando border-radius (radio de borde)
 Además de los píxeles, también puedes especificar el border-radius usando un porcentaje.
 Dale a tu foto de gato un border-radius de 50%.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece el color de fondo de un elemento div
 Puedes establecer el color de fondo de un elemento con la propiedad background-color.
 
@@ -113,7 +113,7 @@ Por ejemplo, si quieres que el color de fondo de un elemento sea green, lo harí
   background-color: green;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Establece el id de un elemento
 Además de las clases, cada elemento HTML también puede tener un atributo id.
 Existen varios beneficios de usar atributos de id: Puedes usar un id para dar estilo a un elemento específico; más adelante aprenderás que puedes usar atributos "id" para seleccionar y modificar elementos específicos por medio de JavaScript.
@@ -132,7 +132,7 @@ A continuación te mostramos un ejemplo de cómo puedes tomar tu elemento con el
 }
 Ten en cuenta que dentro de tu elemento style siempre debes hacer referencia a las clases agregándoles un punto . adelante del nombre. Para hacer referencia a un id, debes agregar # delante de su nombre.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ajusta el padding (relleno) de un elemento
 Dejaremos de lado por un momento nuestra Cat Photo App y aprenderemos un poco más sobre como aplicar estilos al HTML.
 Quizás ya te hayas dado cuenta, pero todos los elementos HTML son, esencialmente, pequeños rectángulos.
@@ -179,7 +179,7 @@ Aquí podemos ver que la caja azul y la caja roja están anidadas dentro de la c
 
 Cuando aumentas el padding de la caja azul, esto aumenta la distancia (padding) entre el texto y el borde que lo rodea.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 El margin (margen) de un elemento controla la cantidad de espacio entre su border y los elementos que lo rodean.
 Aquí podemos ver que la caja azul y la caja roja están anidadas dentro de la caja amarilla. Ten en cuenta que la caja roja tiene un margin más grande que el de la caja azul, lo que hace que aparezca más pequeña.
 .red-box {
@@ -197,7 +197,7 @@ Aquí podemos ver que la caja azul y la caja roja están anidadas dentro de la c
   }
 Cuando aumentas el margin de la caja azul, esto aumenta la distancia entre su borde y los elementos que la rodean.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Añade un margen negativo a un elemento
 El margin (margen) de un elemento controla la cantidad de espacio entre su border y los elementos que lo rodean.
 
@@ -209,7 +209,7 @@ Si estableces el margin de un elemento a un valor negativo, el elemento crecerá
     margin: -15px;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Añade un "padding" o relleno diferente a cada lado de un elemento
 En ocasiones, querrás personalizar un elemento para que tenga un padding o relleno diferente en cada uno de sus lados.
 CSS te permite controlar por separado el padding de los cuatro lados individuales de un elemento por medio de las propiedades padding-top, padding-right, padding-bottom y padding-left.
@@ -222,7 +222,7 @@ CSS te permite controlar por separado el padding de los cuatro lados individuale
     padding-left: 40px;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Añade márgenes diferentes a cada lado de un elemento
 En ocasiones, querrás personalizar un elemento para que tenga un margin diferente en cada uno de sus lados.
 CSS te permite controlar por separado el margin de los cuatro lados individuales de un elemento por medio de las propiedades margin-top, margin-right, margin-bottom y margin-left.
@@ -235,7 +235,7 @@ CSS te permite controlar por separado el margin de los cuatro lados individuales
     margin-left: 40px;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza clockwise notation para especificar el relleno (padding) de un elemento
 En lugar de especificar las propiedades padding-top, padding-right, padding-bottom, y padding-left individualmente, puedes especificarlas todas en una sola línea, como se muestra a continuación:
 
@@ -247,7 +247,7 @@ Estos cuatro valores se leen en el sentido de las agujas del reloj: arriba, dere
     padding: 20px 40px 20px 40px;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza clockwise notation para especificar el margen de un elemento
 Intentemos de nuevo, pero esta vez con margin.
 
@@ -261,7 +261,7 @@ Estos cuatro valores se leen en el sentido de las agujas del reloj: arriba, dere
     margin: 20px 40px 20px 40px;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa selectores de atributos para dar estilo a elementos
 Hasta ahora, has añadido atributos id o class a elementos para aplicarles estilos específicos. Estos se conocen también como selectores de ID y de clase. Sin embargo, existen otros selectores CSS que puedes utilizar para seleccionar grupos personalizados de elementos a los que quieras aplicar el mismo estilo.
 
@@ -273,14 +273,14 @@ Para este desafío, usarás el selector de atributos [attr=value] para aplicar e
   margin: 20px 0px 20px 0px;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Unidades absolutas y relativas de medida
 Varios de los últimos desafíos establecen el "margin" o "padding" de un elemento usando píxeles (px). Los píxeles son un tipo de unidad de longitud que le indica al navegador qué tamaño o cuánto espaciado asignarle a un elemento. Además de px, CSS cuenta con variedad de opciones de unidades de longitud que puedes utilizar.
 Los dos tipos principales de unidades de longitud son las unidades absolutas y relativas. Las unidades absolutas están relacionadas con unidades físicas de longitud. Por ejemplo, in y mm se refieren a pulgadas y milímetros, respectivamente. Las unidades de longitud absoluta aproximan la medición real sobre una pantalla, pero existen cierta variación que depende de la resolución de la pantalla utilizada.
 Las unidades relativas, como em o rem son relativas a otro valor de longitud. Por ejemplo, em se basa en el tamaño de fuente de un elemento. Si la utilizas para establecer la propiedad font-size, es relativa al font-size del elemento padre.
 Nota: Hay varias opciones de unidades relativas que están vinculadas al tamaño del viewport. Veremos estas unidades relativas de medida en la sección de principios de diseño web responsivo.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Aplica un estilo al elemento HTML body
 Ahora vamos comenzar de cero y hablaremos sobre la herencia CSS (en inglés: "CSS inheritance").
 Toda página HTML tiene un elemento body.
@@ -296,7 +296,7 @@ Ahora hemos demostrado que cada página HTML tiene un elemento body, y que a est
 
 Recuerda, puedes dar estilo a tu elemento body como a cualquier otro elemento HTML, y todos los demás elementos heredarán los estilos del elemento body.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Sobreescribe declaraciones de clase con inline styles (estilos en línea)
 Hemos demostrado que las declaraciones de id tienen prioridad por sobre las declaraciones de clase, independientemente de dónde hayan sido declaradas en el código CSS del elemento style.
 Pero existen otras formas de sobreescribir código CSS. ¿Recuerdas los "inline styles" (estilos en línea)?
@@ -304,7 +304,7 @@ Usa un inline style para hacer que nuestro elemento h1 sea de color blanco.
 Recuerda, los estilos en línea se ven así:
 <h1 style="color: green;">
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Sobreescribe todos los demás estilos usando !important
 ¡Excelente! Acabamos de demostrar que los estilos en línea sobrescribirán todas las declaraciones CSS en tu elemento style.
 Pero, ¡aguarda! Existe una última forma de sobreescribir CSS. Este es el método más poderoso de todos. Pero antes de utilizarlo, consideremos por qué querrías sobreescribir una regla CSS.
@@ -315,7 +315,7 @@ Añade la palabra clave !important a la declaración de color de pink-text para 
 Aquí te mostramos un ejemplo de cómo hacerlo:
 color: red !important;
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza código hexadecimal (hex code) para indicar colores específicos
 ¿Sabías que hay otras maneras de representar colores en CSS? Una de estas formas se llama código hexadecimal, o código hex (hex code) para abreviar.
 Generalmente usamos decimales, o números de base 10, los cuales utilizan los símbolos del 0 al 9 para representar cada dígito. Los números hexadecimales (o hex) son números de base 16. Esto significa que utilizan dieciseis símbolos distintos. Al igual que en los números decimales, en hexadecimal los símbolos 0-9 representan los valores de cero a nueve. Luego A,B,C,D,E,F representan los valores de diez a quince. Todos estos símbolos juntos, de 0 a F, pueden representar un dígito en hexadecimal, lo que da un total de 16 valores posibles. Puedes encontrar más información sobre los números hexadecimales aquí.
@@ -325,7 +325,7 @@ body {
   color: #000000;
 }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza código hexadecimal (hex code) para mezclar colores
 Repasemos: En código hexadecimal se utilizan 6 dígitos hexadecimales para representar los colores, dos para el componente rojo (R), verde (G) y azul (B).
 ¡A partir de estos tres colores puros (rojo, verde y azul) podemos variar las cantidades de cada componente de color para crear más de 16 millones de colores distintos!
@@ -339,7 +339,7 @@ Green (verde)	#00FF00
 Orange (naranja)	#FFA500
 Red (rojo)	#FF0000
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa código hexadecimal (hex code) abreviado
 Muchas personas se sienten abrumadas por tener más de 16 millones de colores posibles. Además, los códigos hexadecimales resultan difíciles de recordar. Afortunadamente, puedes abreviar gran parte de ellos.
 Por ejemplo, el código hexadecimal #FF0000 del color rojo puede acortarse a #F00. Esta forma abreviada utiliza un dígito para el rojo, un dígito para el verde, y un dígito para el azul.
@@ -350,7 +350,7 @@ Green (verde)	#0F0
 Red (rojo)	#F00
 Fuchsia (fucsia)	#F0F
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza valores RGB para asignar color a los elementos
 Otra forma de representar colores en CSS es utilizar valores RGB.
 El valor RGB del color negro se ve así:
@@ -360,27 +360,27 @@ rgb(255, 255, 255)
 En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexadecimal, en RGB se especifica el brillo de cada color con un número que va de 0 a 255.
 Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, RGB, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código hexadecimal.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa variables CSS para modificar varios elementos a la vez
 Las Variables CSS son una manera poderosa de modificar varias propiedades de estilos CSS a la vez, cambiando su valor en un único sitio.
 
 Sigue las instrucciones a continuación para ver cómo puedes cambiar el estilo de varios elementos modificando únicamente tres valores.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Crea una variable de CSS personalizada
 Para crear una variable CSS, solo tienes que darle un nombre que comience con dos guiones (--) y asignarle un valor, como se muestra a continuación:
 
 --penguin-skin: gray;
 Esto creará una variable llamada --penguin-skin y le asignará el valor gray. Ahora puedes usar esa variable en cualquier lugar de tu CSS para cambiar el valor de otras propiedades a gris.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utiliza una variable de CSS personalizada
 Luego de crear tu variable, puedes asignar su valor a otras propiedades CSS haciendo referencia a su nombre.
 
 background: var(--penguin-skin);
 Esto cambiará el fondo de cualquier elemento que utilice esta variable a "gray" (gris) porque ese es el valor de la variable --penguin-skin. Ten en cuenta que los estilos no se aplicarán a menos que los nombres de las variables utilizados estén escritos exactamente igual.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Agrega un valor de respaldo (fallback) a una variable CSS
 Cuando utilices tu variable como valor de una propiedad CSS, puedes adjuntar un valor de respaldo o "fallback", que será utilizado por el navegador si la variable dada no es válida.
 Nota: Este valor de respaldo no se utiliza para aumentar la compatibilidad con otras versiones de navegadores y no funcionará en navegadores IE (Internet Explorer). Más bien, se utiliza para que el navegador tenga un color para mostrar si no encuentra tu variable.
@@ -389,7 +389,7 @@ A continuación te mostramos como se hace:
 background: var(--penguin-skin, black);
 Esto establecerá el "background" (color de fondo) a black (negro) si tu variable no está establecida. Fíjate que esto puede ser útil para la depuración de errores.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Hereda variables CSS
 Cuando creas una variable, queda disponible para que la utilices dentro del selector en el que la hayas creado. Esa variable también estará disponible en cualquiera de los descendientes de ese selector. Esto ocurre porque las variables CSS son heredadas, al igual que las propiedades comunes.
 Para hacer uso de la herencia, las variables CSS suelen ser definidas en el elemento :root.
@@ -400,14 +400,14 @@ Para hacer uso de la herencia, las variables CSS suelen ser definidas en el elem
     --penguin-beak: orange;
   }
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cambia una variable para un área específica
 Cuando creas tus variables en :root, el valor de esa variable quedará establecido para toda la página.
 
 Puedes entonces sobreescribir estas variables configurándolas nuevamente con un selector específico.
 Cambia el valor de --penguin-belly a white en la clase penguin.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usa un media query para cambiar una variable
 Las variables CSS pueden simplificar la forma en que utilizas "media queries" (consultas sobre el tipo de dispositivo donde se muestra el documento HTML).
 
