@@ -88,4 +88,7 @@ Usa la propiedad order para reorganizar los elementos
 La propiedad order se utiliza para indicarle a CSS el orden en que aparecen los elementos flexibles en el contenedor flex. Por defecto, los elementos aparecerán en el mismo orden que vienen en el HTML de origen. La propiedad toma números como valores, y se pueden usar números negativos.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad align-self
+La última propiedad para elementos flexibles es align-self. Esta propiedad te permite ajustar la alineación de cada elemento individualmente, en lugar de ajustarlos todos a la vez. Esto es útil ya que otras técnicas comunes de ajuste usan las propiedades CSS float, clear, y vertical-align, las cuales no funcionan en elementos flexibles.
 
+align-self acepta los mismos valores que align-items y reemplazará cualquier valor establecido por la propiedad align-items.
