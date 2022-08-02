@@ -4,7 +4,27 @@ Esta sección utiliza estilos de desafío alternos para mostrar cómo usar CSS p
 Colocar la propiedad CSS display: flex; en un elemento te permite usar otras propiedades flex para construir una página responsiva.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Agrega superpoderes flex al tweet incrustado
-A la derecha está el tweet incrustado que se utilizará como ejemplo práctico. Algunos de los elementos lucirían mejor con una disposición diferente. El último desafío demostró display: flex. Aquí la agregaras a varios componentes en el tweet incrustado para empezar a ajustar su posición.
+Utiliza la propiedad flex-direction para hacer una fila
+Agregando display: flex a un elemento lo convierte en un contenedor flexible. Esto permite alinear cualquier elemento secundario de ese elemento en filas o columnas. Para ello, agrega la propiedad flex-direction al elemento principal y configúralo en fila o columna. La creación de una fila alineara los elementos secundarios horizontalmente, y la creación de una columna alineara los elementos secundarios verticalmente.
+
+Otras opciones para flex-direction son row-reverse y column-reverse.
+
+Nota: El valor predeterminado para la propiedad flex-direction es row.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Alinea elementos mediante la propiedad justify-content
+Algunas veces los elementos flexibles dentro de un contenedor flexible no llenan todo el espacio del contenedor. Es común querer indicarle al CSS cómo alinear y espaciar los elementos flexibles de una determinada manera. Afortunadamente, la propiedad justify-content tiene varias opciones para hacer esto. Pero primero, hay que entender alguna terminología importante antes de revisar dichas opciones.
+
+Para más información acerca de las propiedades de flex-box, lee aquí
+
+Recuerda que al establecer un contenedor flexible como fila, coloca los elementos flexibles uno al lado del otro de izquierda a derecha. Un contenedor flexible establecido como columna ubica los elementos flexibles en una línea vertical de arriba a abajo. Para cada uno, la dirección en la que están alineados los elementos flexibles se llama main axis. Para una fila, esta es una línea horizontal que corta a través de cada elemento. Y para una columna, el main axis es una línea vertical que atraviesa los elementos.
+
+Hay varias opciones sobre como espaciar los elementos flexibles a lo largo de la línea que representa al main axis. Uno de los más utilizados es justify-content: center;, el cual alinea hacia el centro todos los elementos flexibles dentro del contenedor flexible. Otras opciones incluyen:
+
+flex-start: alinea los elementos con el inicio del contenedor flex. Para una fila, esto empuja los elementos a la izquierda del contenedor. Para una columna, esto empuja los elementos a la parte superior del contenedor. Esta es la alineación predeterminada si no se especifica ningún tipo de justify-content.
+flex-end: alinea los elementos con el final del contenedor flex. Para una fila, esto empuja los elementos a la derecha del contenedor. Para una columna, esto empuja los elementos a la parte inferior del contenedor.
+space-between: alinea los elementos en el centro del eje principal, con un espacio extra entre los elementos. Los primeros y últimos elementos son empujados hasta el borde del contenedor flexible. Por ejemplo, en una fila el primer elemento está en el lado izquierdo del contenedor, el último elemento está en el lado derecho del contenedor, luego el espacio restante se distribuye uniformemente entre los demás elementos.
+space-around: similar a space-between pero los primeros y últimos elementos no están fijados en los bordes del contenedor, el espacio se distribuye alrededor de todos los elementos con la mitad de un espacio en ambos extremos del contenedor flexible.
+space-evenly: Distribuye el espacio de manera uniforme entre los flex items con un espacio completo en cualquier extremo del flex container.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
