@@ -44,3 +44,15 @@ stretch: estira los elementos para llenar el contenedor flexible. Por ejemplo, l
 baseline: alinea los elementos con sus líneas base. Una línea base es un concepto de texto, piensa en ella como la línea en la que se sitúan las letras.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad flex-wrap para envolver una fila o columna
+CSS flexbox tiene una característica para dividir un flex container en varias filas (o columnas). De forma predeterminada, un contenedor flexible encajará todos los elementos flexibles juntos. Por ejemplo, una fila estará completa en una sola línea.
+
+Sin embargo, usar la propiedad flex-wrap le indica al CSS que envuelva los elementos. Esto significa que los elementos extra se mueven hacia una nueva fila o columna. El punto de ruptura donde ocurre la envoltura depende del tamaño de los elementos y del tamaño del contenedor.
+
+CSS también tiene opciones para la dirección de la envoltura:
+
+nowrap: esta es la configuración predeterminada, y no envuelve elementos.
+wrap: envuelve elementos en múltiples líneas de arriba a abajo si están en filas y de izquierda a derecha si están en columnas.
+wrap-reverse: envuelve elementos en múltiples líneas de abajo hacia arriba si están en filas y de derecha a izquierda si están en columnas.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
