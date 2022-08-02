@@ -56,3 +56,36 @@ wrap: envuelve elementos en múltiples líneas de arriba a abajo si están en fi
 wrap-reverse: envuelve elementos en múltiples líneas de abajo hacia arriba si están en filas y de derecha a izquierda si están en columnas.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Utiliza la propiedad flex-shrink para reducir elementos
+Hasta ahora, todas las propiedades en los desafíos se aplican al contenedor flexible (el padre de los elementos flex). Sin embargo, hay varias propiedades útiles para los elementos flex.
+
+La primera es la propiedad flex-shrink. Cuando se usa, permite que un elemento se contraiga si el contenedor flex es demasiado pequeño. Los elementos se reducen cuando el ancho del contenedor principal es menor que el ancho combinado de todos los elementos flex dentro del él.
+
+La propiedad flex-shrink toma números como valores. Cuando mayor sea el número, más se reducirá en comparación con los otros elementos en el contenedor. Por ejemplo, si un elemento tiene un flex-shrink con valor de 1 y el otro tiene un flex-shrink con valor de 3, el que tiene el valor de 3 se reducirá tres veces más que el otro.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad flex-grow para expandir elementos
+Lo contrario de flex-shrink es la propiedad flex-grow. Recuerda que flex-shrink controla el tamaño de los elementos cuando el contenedor se encoge. La propiedad flex-grow controla el tamaño de los elementos cuando el contenedor primario se expande.
+
+Utilizando un ejemplo similar al del último desafío, si un elemento tiene un flex-grow con valor de 1 y el otro tiene un flex-grow con valor de 3, el que tiene el valor de 3 crecerá tres veces más que el otro.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad flex-basis para establecer el tamaño inicial de un elemento
+La propiedad flex-basis especifica el tamaño inicial del elemento antes de que CSS haga ajustes con flex-shrink o flex-grow.
+
+Las unidades usadas por la propiedad flex-basis son las mismas que otras propiedades de tamaño (px, em, %, etc.). El valor auto dimensiona los elementos basándose en el contenido.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad abreviada flex
+Hay un atajo disponible para establecer varias propiedades flex a la vez. Las propiedades flex-grow, flex-shrink, y flex-basis pueden establecerse utilizando la propiedad flex.
+
+Por ejemplo, flex: 1 0 10px; establecerá las propiedades del elemento en flex-grow: 1;, flex-shrink: 0;, y flex-basis: 10px;.
+
+La configuración predeterminada de la propiedad es flex: 0 1 auto;.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usa la propiedad order para reorganizar los elementos
+La propiedad order se utiliza para indicarle a CSS el orden en que aparecen los elementos flexibles en el contenedor flex. Por defecto, los elementos aparecerán en el mismo orden que vienen en el HTML de origen. La propiedad toma números como valores, y se pueden usar números negativos.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
