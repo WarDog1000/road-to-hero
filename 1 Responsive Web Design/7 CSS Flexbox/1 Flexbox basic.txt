@@ -28,3 +28,19 @@ space-around: similar a space-between pero los primeros y últimos elementos no 
 space-evenly: Distribuye el espacio de manera uniforme entre los flex items con un espacio completo en cualquier extremo del flex container.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Alinea elementos mediante la propiedad align-items
+La propiedad align-items es similar a justify-content. Recuerda que la propiedad justify-content alineó los elementos flexibles a lo largo del eje principal. Para las filas, el eje principal es una línea horizontal y para las columnas es una vertical.
+
+Los contenedores flexibles también tienen un eje transversal que es el opuesto al eje principal. Para las filas, el eje transversal es vertical y para las columnas, el eje transversal es horizontal.
+
+CSS ofrece la propiedad align-items para alinear elementos flexibles a lo largo del eje transversal. Para una fila, le indica al CSS como empujar los elementos en toda la fila hacia arriba o hacia abajo dentro del contenedor. Y para una columna, como empujar todos los elementos hacia la izquierda o hacia la derecha dentro del contenedor.
+
+Los diferentes valores disponibles para align-items incluyen:
+
+flex-start: alinea los elementos con el inicio del contenedor flexible. Para las filas, esto alinea los elementos a la parte superior del contenedor. Para las columnas, esto alinea los elementos a la parte izquierda del contenedor.
+flex-end: alinea los elementos con el final del contenedor flexible. Para las filas, esto alinea los elementos a la parte inferior del contenedor. Para las columnas, esto alinea los elementos a la parte derecha del contenedor.
+center: alinea los elementos hacia el centro. Para las filas, esto alinea los elementos verticalmente (igual espacio por encima y por debajo de los elementos). Para columnas, esto las alinea horizontalmente (igual espacio a la izquierda y a la derecha de los elementos).
+stretch: estira los elementos para llenar el contenedor flexible. Por ejemplo, los elementos de filas son estirados para llenar el contenedor flexible de arriba hacia abajo. Este es el valor predeterminado si no se especifica ningún tipo de align-items.
+baseline: alinea los elementos con sus líneas base. Una línea base es un concepto de texto, piensa en ella como la línea en la que se sitúan las letras.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
