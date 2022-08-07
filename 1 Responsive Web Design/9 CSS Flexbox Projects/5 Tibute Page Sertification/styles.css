@@ -1,0 +1,13 @@
+/*8*/
+#image{
+    max-width: 100%;
+    max-height: auto;
+}
+/*9*/
+#img-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
