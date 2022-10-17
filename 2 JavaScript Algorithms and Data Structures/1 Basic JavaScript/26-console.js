@@ -56,5 +56,3 @@ console.assert(x<y,{x,y,pruebaXY})
 
 // limpiar pantalla
 console.clear();
-
-// Curso JavaScript: 27. Objeto Date
