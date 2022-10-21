@@ -29,3 +29,4 @@ console.log(Date.now());// cuantos segundos han pasado desde 01/01/1970 "time-st
 let cumple = new Date(1995,2,25);
 console.log(cumple);
 
+console.clear();
