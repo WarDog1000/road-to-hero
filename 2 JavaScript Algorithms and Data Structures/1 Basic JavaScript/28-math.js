@@ -2,6 +2,7 @@
 // es un objeto estatico, por lo cual lo debemos invocar desde el prototypo
 console.log(Math);
 
+// valor de PI
 console.log(Math.PI);
 // valor absoluto de un numero
 console.log(Math.abs(-7.8));

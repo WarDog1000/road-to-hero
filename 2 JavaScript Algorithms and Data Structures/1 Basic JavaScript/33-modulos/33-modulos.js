@@ -13,6 +13,10 @@ saludar();
 
 // exportacion por defecto
 import xDefecto, { } from "./constantes.js";
+console.log(xDefecto);
 
+// alias apara las importaciones
+import { aritmetica as ari} from "./aritmetica.js";
+console.log(ari.restar(2,1));
 
-
+console.clear();
