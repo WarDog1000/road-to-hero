@@ -25,3 +25,5 @@ let palin = 313;
     }
     console.log(fact.reduce((a,b) => a * b))
 })(num);
+
+console.clear();
