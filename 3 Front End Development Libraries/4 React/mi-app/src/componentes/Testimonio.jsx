@@ -1,13 +1,13 @@
 import React from 'react';
-
-function Testimonio() {
+import '../estilos/Testimonio.css';
+export function Testimonio(props) {
     return (
         <div className="contenedor-testimonio">
-            <img src={require("../imagenes/testimonio-emma.png")} alt="Soto de Emma" className="imagen-testimonio" />
+            <img src={require(`../imagenes/testimonio-${props.imagen}.png`)} alt="Soto de Emma" className="imagen-testimonio" />
             <div className="contenedor-texto-testimonio">
-                <p className='nombre-testimonio'>Emma Bostian en Suecia</p>
-                <p className="cargo-testimonio">Ingeniera de Sftware en Spotify</p>
-                <p className="texto-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quas accusantium in atque. Molestiae voluptate inventore ad tenetur vitae repudiandae odio, a nostrum doloribus magnam consequuntur ipsam harum fuga officiis.</p>
+                <p className='nombre-testimonio'>{props.nombre} en {props.pais}</p>
+                <p className="cargo-testimonio">{props.cargo} en {props.empresa}</p>
+                <p className="texto-testimonio">"{props.testimonio}"</p>
             </div>
         </div>
     )
