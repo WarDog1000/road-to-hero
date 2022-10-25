@@ -45,5 +45,5 @@ let regresiva = setInterval(() => {
 
 let stop = setTimeout(() => {
  clearTimeout(regresiva);
-}, 1);// <= 11000
+}, 11000);
 
