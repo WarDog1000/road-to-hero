@@ -17,6 +17,7 @@ function ListaDeTareas() {
 
 	const eliminarTarea = id => {
 		const tareasActualizadas = tareas.filter(tarea => tarea.id !==id);
+		setTareas(tareasActualizadas);
 	}
 
 	return (
