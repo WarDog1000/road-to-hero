@@ -1,0 +1,150 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #1b1b32;
+	color: #fff;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	/* padding-top: 15px; */
+}
+
+.freecodecamp-logo-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* margin: 20px; */
+}
+
+.freecodecamp-logo-container .freecodecamp-logo {
+	height: 50px;
+}
+
+#quote-box {
+	width: 605px;
+	color: #000;
+	background-color: #fff;
+	border-radius: 15px;
+	padding: 30px 30px 25px;
+}
+
+#quote-box header {
+	font-size: 35px;
+	font-weight: 600;
+	text-align: center;
+}
+
+#quote-box .content {
+	margin: 35px 0;
+}
+
+#quote-box .content #text {
+	display: flex;
+	justify-content: center;
+}
+
+#quote-box .content #text i {
+	font-size: 15px;
+}
+
+#quote-box .content #text i:first-child {
+	margin: 3px 10px 0 0;
+}
+
+#quote-box .content #text i:last-child {
+	display: flex;
+	align-items: flex-end;
+	margin: 0 0 3px 10px;
+}
+
+#quote-box .content .quote {
+	font-size: 22px;
+	text-align: center;
+	word-break: break-all;
+}
+
+#quote-box .content #author {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+	font-size: 18px;
+	font-style: italic;
+}
+
+#quote-box .content #author span:first-child {
+	margin: -7px 5px 0 0;
+	font-family: monospace;
+}
+
+#quote-box .content #author .name {
+
+}
+
+#quote-box .buttons {
+	border-top: 1px solid #ccc;
+}
+
+#quote-box .buttons .featres {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+#quote-box .buttons .featres ul {
+	display: flex;
+}
+
+#quote-box .buttons .featres ul li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+	margin: 0 5px;
+	height: 47px;
+	width: 47px;
+	border-radius: 50%;
+	border: 2px solid #1b1b32;
+	color: #1b1b32;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+#quote-box .buttons .featres ul li #tweet-quote {
+
+}
+
+#quote-box .buttons .featres ul li:hover {
+	color: #fff;
+  background-color: #1b1b32;
+}
+
+
+ 
+#quote-box .buttons .featres #new-quote {
+	padding: 13px 22px;
+	border: none;
+	outline: none;
+	background: #1b1b32;
+	color: #fff;
+	border-radius: 30px;
+	cursor: pointer;
+	font-size: 16px;
+}
