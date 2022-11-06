@@ -13,7 +13,7 @@ body {
 	align-items: stretch;
 	justify-content: center;
 	min-height: 100vh;
-	background-color: #1b1b32;
+	background-color: #0a0a22;
 	color: #fff;
 }
 
@@ -93,9 +93,7 @@ body {
 	font-family: monospace;
 }
 
-#quote-box .content #author .name {
-
-}
+#quote-box .content #author .name {}
 
 #quote-box .buttons {
 	border-top: 1px solid #ccc;
@@ -121,30 +119,40 @@ body {
 	height: 47px;
 	width: 47px;
 	border-radius: 50%;
-	border: 2px solid #1b1b32;
-	color: #1b1b32;
+	border: 2px solid #0a0a22;
+	color: #0a0a22;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
 #quote-box .buttons .featres ul li #tweet-quote {
-
+	color: #0a0a22;
+	user-select: none;
 }
 
 #quote-box .buttons .featres ul li:hover {
 	color: #fff;
-  background-color: #1b1b32;
+	background-color: #0a0a22;
+	
 }
 
+/* #quote-box .buttons .featres ul li #tweet-quote:hover {
+	color: #fff
+} */
 
- 
 #quote-box .buttons .featres #new-quote {
 	padding: 13px 22px;
 	border: none;
 	outline: none;
-	background: #1b1b32;
+	background: #0a0a22;
 	color: #fff;
 	border-radius: 30px;
 	cursor: pointer;
 	font-size: 16px;
+	user-select: none;
+}
+
+#quote-box .buttons .featres #new-quote.loading {
+	opacity: 0.7;
+	pointer-events: none;
 }
