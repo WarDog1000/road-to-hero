@@ -15,7 +15,7 @@ const messageReducer = (state = [], action) => {
     default:
       return state;
   }
-};
+}
 
 const store = Redux.createStore(messageReducer);
 
@@ -71,6 +71,4 @@ class AppWrapper extends React.Component {
     );
 
   };
-
-  // Cambia el código encima de esta línea
-};
+}
