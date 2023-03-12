@@ -1,0 +1,214 @@
+ECMAScript
+
+  - ECMAScript es el nombre del estandar internacional que define JavaScript.
+  - Definido por u comite tecnico (TC-39) de ecma international.
+  - Identificado como 'Ecma-262' y ISO/IEC 16262.
+  - No es parte de la W3C.
+
+  1 - 1997: Primera edicion.
+  2 - 1998: Cambios editorales para mantener la especificacion completa alineada con el estandar internacional ISO/IEC 16262.
+  3 - 1999: Se agregaron expresiones regulares, mejor manejo de strings, nuevo control de declaraciones, manejo de excepciones con try/catch, definicion más estricat de errores, formato para la salida numerica y ortras mejoras.
+  4 - Abandonado: La cuarta edicion fue abandonada debido a direfencias politicas respecto a la complejidad del lenguaje. Muchas caracteristicas propuestas para la cuarta edicion fueron completamente abandonadas; algunas fueron propuestas para ala edicion ECMAScript Harmony.
+  5 - 2009: Agrega el modo estricto 'strict mode', un subconjunto destinado a propporcionar una mejor comprobacion de errores. Aclara varias ambiguedades de la tercera edicion, y afina el comportamiento de las implementaciones del "mundo real" que difieren consistentemente desde esa especificacion. Agrega algunas nuevas caracteristicas, como getters y setters, libreria para el soporte JSON, y una más completa reflexion sobre propriedades de los objetos.
+  5.1 - 2011: Esta completamente alineada con la tercera edicion del estandar internacional ISO/IEC 16262:2011.
+    A partir del 2015 las actualizaciones son continuas teniendo una version anual.
+  6 - 2015: ES2015 aka ES6.
+  7 - 2016: ES2016 aka ES7.
+  8 - 2017: ES2017 aka ES8.
+  9 - 2018: ES2018 aka ES9.
+  10 - 2019: ES2019 aka ES10.
+  ESNext - 2020: A partir del 2020 las nuevas actualizaciones al estandae simplemente se bautizaran como ESNext.
+
+
+==================================== BABEL ====================================
+  Es un compilador de JavaScript, te permite usar el JavaScript del futuro, HOY.
+
+  - Instalacion de paquetes:
+    npm install -D babel-cli babel-core babel-preset-env
+
+  - Crear el archivo de configuracion .babelrc
+    {
+      "presets: ["env"],
+      "plugins": []
+    }
+
+  - Crear el script necesario para compilar ES con Babel en el archivo .package.json:
+    {
+      "name": "taller-es",
+      "version": "1.0.0",
+      "description": "Aprendiendo ECMAScript",
+      "main": "index.js",
+      "scripts": {
+        "es6": "babel src --watch --out-dir dist"
+        },
+      "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-core": "^6.25.0",
+        "babel-preset-env": "^1.6.0"
+        }
+    }
+
+  - Ejecutar el script en la terminal:
+    npm run es6
+
+
+==================================== Variables y Constantes ====================================
+
+  - Variables de bloque
+    En ES se agrega una nueva forma de dividir variables usando la palabra let,
+    se diferencia de var en el que el scope de una variable definida con let es,
+    el bloque en el cual se encuentras la variable y no la funcion.
+
+      let x = 'Hola kenai';
+      if(true) {
+        let x = 'Hola Jon';
+        console.log(x); // Imrime en consola 'Hola Jon'
+      }
+      console.log(x); // Imrime en consola 'Hola Kenai'
+      for (let i = 0; i < 5; i++) {
+        console.log(i); // Imprime del 0 al 4
+      }
+      console.log(i); // Imprime Uncaught ReferenceError: i is not defined
+
+  - Constantes
+    Una constante es yn tipo 'INMUTABLE', NO puede cambiar una vez definida,
+    se usa la palabra 'const' en lugar de var, al igual que let su scope es de bloque,
+    son tipos de solo lectura y se le debe asignar un valor en el momento de su declaracion.
+    Son referencian inmutables, pero sus valores no necesariamente.
+
+      const DIEZ = 10;
+      DIEZ = 5;
+      console.log(DIEZ); // Imprime Uncaught TypeError: Assignment to constant variable
+
+      const hola = 'hola mundo';
+      hola = 'hola mundo'; // Imprima Uncaught TypeError: Assignment to constant variable
+
+      const PI;
+      PI = 3.1415926533589793; // Imprime Missing initializer in const declaration
+
+      const obj = {};
+      obj.prop ? 'x';
+      console.log(obj); // Imprime { prop: 'x' }
+      obj.prop = 'y';
+      console.log(obj); // Imprime { prop: 'y' }
+
+      const D = document;
+      console.log(D); // Imprime el objeto documento
+      console.log(D.documentElement); // Imprime el elemento <html>
+
+
+==================================== Niveles de Bloques ====================================
+  En ES5 los ambitos de declaracion (scope) estaban diseñados a nivel de funciones,
+  con ES6 podemos declarar funciones a nivel de bloque.
+
+  En ES6, como en muchos otros lenguajes de programacion, el bloque se define entre llaves
+  y genera un nuevo scope(block scope).
+
+    // Sin Bloques
+    function f() { return 1 }
+    console.log(f()); // Imprime 2
+
+    functionf() { return 2 }
+    console.log(f()); // Imprime 2
+
+    // Con bloques
+    function f() { return 1 }
+    {
+      console.log(f()); // Imprime 2
+      FUNCTION F() { return 2 }
+      console.log(f()); // iMPRIME 2
+    }
+    console.log(f()); // Imprime 1
+
+
+==================================== Plantillas de Cadenas ====================================
+      
+      Los 'template string' son una forma más facil de crear:
+        - Cadenas con variables dentro (interpolacion).
+        - Generar cadenas multilinea.
+        - Ejecutar expresiones, funciones y etiquetados.
+
+      let saludo = `Hola soy un Template String`;
+      console.log(saludo); // Imprime Hola soy un Template string
+
+      // strings multilinea
+      let mensaje = `No es quien seas en el interior,
+      tus actos son los que te definen...
+      Batman`;
+      conosle.log(mensaje); 
+      /*
+      Imprime
+      No es quien seas en el interior,
+      tus actos son los que te definen...
+      Batman
+      */
+
+      // variables en strings (interpolacion)
+      let nombre = 'Jonathan';
+      console.log(`Hola ${nombre}`); // Imprime Hola Jonathan
+
+      // ejecutar expresiones
+      console.log(`Hola ${nombre}, tienes ${30 + 2} años`); // Print Hola Jonathan, tienes 32 años.
+
+      // ejecutar funciones
+      let estaciones = [Primavera`, `Verano`, Òtoño`, Ìnvierno`],
+      ol = `<ol>
+        ${
+          estaciones.map(function (estacion) {
+            return `<li>${estacion}</li>`;
+          }).join('');
+        }
+        </ol>`;
+
+      console.log(ol); // Imprime <ol><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ol>
+
+
+==================================== Funciones Flechas ====================================
+  Es una nueva forma de definir funciones, hay distintas variantes en la sintaxis:
+
+  -- Funcion de un solo parametro --
+  Al crear una arrow function de un solo para,etro no es necesario escribir las parentesis,
+  tampoco es necesario escribir las claves, esto se puede cuando la funcion es de una sola
+  linea y devuelve un valor.
+
+    let saludo = nombre => `Hola ${nombre}`;
+
+  -- Funcion de varios parametros --
+  Cuando la funcion tenga más de un parametro es necesario envolver el nombre de estos estre parentesis.
+
+    let sumar = (a, b) => a + b;
+
+  -- Funcion sin parametros --
+  Cuando la funcion no reciba parametros, tambien son necesarios los parentesis.
+
+    let saludo () => `Hola a todos`;
+
+  -- Funcion con cuerpo --
+  Cuando la funcion tiene mas de una linea (o no devuleve ningun valor) es necesario utilizar las llaves.
+
+    let fecha = new Datw(),
+        hora = fecha.getHours();
+    
+    let saludo = (hr) => {
+      if(hr <= 5) {
+        return 'No me jodas!!!';
+      } else if(hr >=6 && hr <= 11) {
+        return 'Buenos dias!!!';
+      } else if(hr >=12 && hr <= 18) {
+        return 'Buenas tardes!!!';
+      } else {
+        return 'Buenas Noches!!!';
+      }
+    };
+
+  -- Funcion sin cuerpo --
+  Cuando la funcion posee una sola linea, retorna esa linea de forma implicita.
+
+    let line = () => `Hola Mundo`;
+
+
+==================================== Contexto Lexico de this ====================================
+  Las arrow function tiene la capacidad de capturar el objeto this del contexto
+  donde la arrow se ejecuta y asi utilizarlo dentro de su bloque de sentencias.
+
+  
