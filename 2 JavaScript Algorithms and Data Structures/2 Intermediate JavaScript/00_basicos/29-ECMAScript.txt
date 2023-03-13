@@ -211,4 +211,107 @@ ECMAScript
   Las arrow function tiene la capacidad de capturar el objeto this del contexto
   donde la arrow se ejecuta y asi utilizarlo dentro de su bloque de sentencias.
 
-  
+  // El proble de 'this' actualizacione
+  function Persona(nombre) {
+    // El constructor de Presona() define 'this' como una instancia de el mismo
+    this.nombre = nombre;
+    this.edad= 0;
+
+    setInterval(function() {
+      // La funcion anonima define 'this' como una instancia de ella misma
+      this.edad++;
+    }, 1000);
+  }
+  var jon = new Persona('Jonathan');
+  console.log(jon); // Imprime la edad en 0 por cada segundo que pasa
+
+  // La solucion del problema 'this' antes
+  function Persona(nombre) {
+    // Se declara una variable self (algunos prefieren that) para guardar el 'this' del constructor Persona()
+    var self = this;
+
+    self.nombre = nombre;
+    self.edad = 0;
+
+    setInterval(function() {
+      // La funcion anonima define su propio 'this' pero el valor que aumenta es edad del 'this' de Persona()
+      self.edad++;
+    }, 1000);
+    }
+
+    var jon = new Persona('Jonatan');
+    console.log(jon); / Imprime el valor de edad mas uno por cada segundo que pasa
+
+  // La solucion para el problema de 'this' ahora
+  function Persona(nombre) {
+    // El constructor de Persona() define 'this' como una instancia de el mismo
+    thsi.nombre = nombre;
+    this.edad = 0;
+
+    setinterval(() => { this.edad++ }, 1000);
+  }
+
+  const jon = newPersona('Jonathan');
+  console.log(jon); // Imprime el valor de edad mas uno por cada segundo que pasa
+  console.log(jon.edad); // Imprime la edad
+
+
+==================================== Objetos Literales ====================================
+    
+    -- Atajos en la esritura de atributos y metodos:
+    // Antes
+    var nombre = 'kEnai', edad = 4;
+    var peroo = {
+      nombre: nombre,
+      edad: edad,
+      ladrar: function() {
+        alert('guau guau!!!');
+      }
+    }
+    console.log(pero); // Imprime Object {nomre: "kEnai", edad: 4}
+    perro.ladrar(); // Manda alerta
+
+    // Ahora
+    let nombre = 'kEnai', edad = 4;
+    const perro = {
+      nombre,
+      edad,
+      ladrar() { alet 'guau guau!!!'}
+    }
+    console.log(perro); // Imprime Object {nomre: "kEnai, edad: 4}
+    perro.ladrar(); // Manda alerta
+
+    -- Nombres de atributos y metodos calculados (o computados):
+    let nombreAtributo = 'nombre', nombreOtroAtributo = 'ad', nombreMetodo = 'ladrar';
+
+    const perro = {
+      [nombreAtributo]: 'kEnai',
+      [`ed${nombreOtroAtributo}`]: 4,
+      [nomnbreMetodo]() {
+        alert('guau guau!!!');
+      }
+    }
+    console.log(perro); // Imprime Object {nombre: "kEnai", edad: 4}
+    perro.ladrar(); // Manda alerta
+
+
+==================================== Destructuracion ====================================
+  Nuevas formas de asignar valores a Arreglos y Objetos.
+
+  -- Destructuracion de Arreglos --
+  let numeros = [1,2,3];
+
+  // sin Destructuracion
+  let uno = numeros[0], dos = numeros[1], tres = numeros[2];
+
+  console.log(numeros, uno, dos, tres); // Imprime [1, 2, 3] 1 2 3  
+
+  // con destructuracion
+  let [one, two, three] = numeros;
+
+  console.log(numeros, one, two, three): // imprime [1, 2, 3] 1 2 3
+
+  -- Destructuracion de Objetos --
+  let persona = {nombre: 'Jonathan', apellido: 'Salchichon'};
+  let {nombre, apellido} = persona;
+
