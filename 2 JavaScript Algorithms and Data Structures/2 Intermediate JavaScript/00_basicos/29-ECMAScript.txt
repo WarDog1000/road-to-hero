@@ -455,5 +455,134 @@ ECMAScript
       comunicar() {
         console.log('Me comunico hablando');
       }
-      
+
+      comer() {
+        console.log('Como de todo, soy omnivoro');
+      }
+
+      respirar() {
+        console.log('Respiro oxigeno con ayuda de mis pulmones');
+      }
+
+      reproducir() {
+        cosole.log('Me reprodusco sexualmente, soy mamifero y viviparo');
+      }
+
+      pensar() {
+        console.log('Pienso porque tengo intelecto');
+      }
     }
+
+    Humano.saludar(); // Hola soy un Humano
+    let jon = new Humano('Jonathan', 32, 'Macho');
+    console.log(jon);  // Imprime Humano {nombre: 'Jonathan', edad: 32, genero: 'Macho', razonar: true, _nacionalidad: 'Terrestre'}}
+    jon.comunicar(); //Imprime Me comunico hablando
+    jon.comer(); //Imprime Como de todo, soy omnívoro
+    jon.respirar(); //Imprime Respiro oxígeno con ayuda de mis pulmones
+    jon.reproducir(); //Imprime Me reproduzco sexualmente, soy mamífero y vivíparo
+    jon.pensar(); //Imprime Pienso por que tengo intelecto
+    // setter
+    jon.nacionalidad = 'Mexico';
+    console.log(jon.nacionalidad); // Imprime Mexico1
+    console.log(jon); //Imprime Humano {nombre: "Jonathan", edad: 32, genero: "Macho", razonar: true, _nacionalidad: "México"}
+
+
+==================================== Modulos ====================================
+  Antes de ES6, utilizamos bibliotecas como 'Browserify' para crear modulos en el lado del
+  cliente(navegadores), y require en el servidor (Node.js).
+  Con ES6, ahora podemos utilizar directamente modulos de todos los tipos (AMD, CmmonJS y ECMAScript).
+
+  ==================================== expots / import CommonJS ====================================
+
+  -- 'Exportando' en formato CommonJS --
+      module.exports = 1;
+      module.exports = [ foo: 'b'];
+      module.exports = function bar () {};
+
+  -- 'Importando' en formato CommonJS --
+    // considerando que existe una carpeta libs y dentro un archivo llamado:
+    'rutas' con extencion .js o .jon
+
+    const rutas = require('./libs/rutas');
+
+    ==================================== exports - import ECMAScript ================================
+
+  -- Exportando en formato ECMAScript --
+    Por nombres:
+      export let nombre = 'Jonathan';
+      export let edad = 33;
+
+    Por listas de objetos:
+      function sumar(a, b) {
+        return a - b;
+      }
+
+      function restar(a, b) {
+        return a - b;
+      }
+
+      export { sumar, restar };
+
+    Usando import individualmente:
+      export function sumar(a, b) {
+        return a + b;
+      }
+
+    Usando default:
+      function sumar (a, b) {
+        return a + b;
+      }
+
+      function restar (a, b) {
+        return a - b;
+      }
+
+      let operaciones = {
+        sumar,
+        restar
+      }
+
+      export default operacions;
+
+      // otra forma
+      export default {operaciones as default };
+
+      * Mejores Practicas: Utiliza siempre el metodo export default al final
+      de los modulos ECMAScript, esto dejara claro lo que se esta exportando
+      y lo que no. En los modulos CommonJS suele exportarse un solo valor u objeto.
+      Siguiendo con este paradigma, hacemos que nuestro codigo sea mas facil,
+      legible y que podamos combinar entre modulos CommonJS y ECMAScript.
+
+  
+  -- Importando en ECMAScript --
+    Archivo completo:
+      import 'react';
+      import './libs/operaciones';
+
+    Por nombre de la importaciones:
+      import React from 'react';
+      import { sumar, restar } from './libs/operaciones';
+
+    Tambien se pueden renombrar las importaciones:
+      import {
+        sumar  as mas,
+        restar as menos
+      } from './libs/operaciones';
+      
+    Importacion por espacios de nombres:
+      import * as aritmatica from './libs/operaciones';
+
+    Importar una lista de valores de un modulo:
+      import * as aritmetica from './libs/operaciones';
+      const  { sumar, restar } = aritmatica;
+
+    Al importar un moculo exportado usando la sintaxis CommonJS (como React) podemos hacer lo siguiente:
+      import React from 'react';
+      const { Component, PropTypes } = React;
+    Simplificado:
+      import React, { Component, PropTypes } from 'react';
+
+      * Nota: Los valores que se exportan son 'enlaces', no
+      referencias. Por lo tanto, cambiar el enlace de una variable
+      en un modulo, afectara su valor. Evita cambiar la interfaz
+      publica de modulos exportados.

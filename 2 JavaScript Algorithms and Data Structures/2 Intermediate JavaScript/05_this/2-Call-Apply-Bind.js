@@ -1,70 +1,46 @@
 /* **********     Curso JavaScript: 58. call, apply, bind - #jonmircha     ********** */
-// console.log(this === window); // true
 
-// en scope global
-this.nombre = 'Contexto global de window';
+// ==================================== call & aplly ====================================
 console.log(this);
+this.lugar = 'Contexto Global';
 
-function imprimir() {
-  console.log(this.nombre); // Imprime Contexto global de window
+function saludar(saludo = 'Hola', aquien = 'Mundo') {
+  console.log(`${saludo} ${aquien} estamos en el ${this.lugar || 'Contexto de Global'}`);
 }
-imprimir();
 
-// en scope de bloque
+saludar();
+
 const obj1 = {
-  nombre: 'Contexto Objeto 1',
-  imprimir: function() {
-    console.log(this.nombre);
-  }
+  lugar: 'Contexto Objeto 1'
 }
-obj1.imprimir();
 
 const obj2 = {
-  nombre: 'Contexto Objeto 2',
-  /* imprimir: imprimir */ imprimir // Imprime Contexto Objeto2
+  lugar: 'Contexto Objeto 2'
 }
-obj2.imprimir();
 
-// con arrow functions
-const obj3 = {
-  nombre: 'Contexto Objeto 3',
-  imprimir: () => console.log(this.nombre)
-}
-obj3.imprimir(); // Imprime Contexto global de window
+// Llama al nuevo contexto de this
+saludar.call(obj1, 'Hola', 'Jon'); // lama al obj y sus parametros
+saludar.apply(obj2, ['Hola', 'Jon']);// llama al objeto y sus parametros dentro de un array
 
-// Las arrow function, no generan scope interno, toman el hambito del 'Objeto' padre
-const obj4 = {
-  nombre: 'Contexto Objeto 4',
-  hijo: {
-    nombre: 'Objeto hijo',
-    imprimir: () => console.log(this.nombre)
+// null
+saludar.call(null, 'Hola', 'Jon'); // null apunta al contexto blobal
+saludar.call(this, 'Hola', 'Jon'); // this apunta al contexto blobal
+saludar.apply(null, ['Hola', 'Jon']); // null apunta al contexto blobal
+saludar.apply(this, ['Hola', 'Jon']); // this apunta al contexto blobal
+
+
+// ==================================== bind ====================================
+const persona1 = {
+  nombre: 'jon',
+  saludar: function() {
+    console.log(`Hola: ${this.nombre}`);
   }
 }
-obj4.hijo.imprimir(); // Imprime Contexto globl de window
 
-// ========================================================================
-function Persona1(nombre) {
-  this.nombre = nombre;
-  return console.log(this.nombre);
-}
-let jon = new Persona1('Jon');
-jon;
+persona1.saludar();
 
-// ========================================================================
-function Persona2(nombre) {
-  this.nombre = nombre;
-  // Closure
-  return function() { // La funcion anonima define un nuevo ambito sin la propriedad del Objeto padre
-    console.log(this.nombre);
-  }
+const persona2 = {
+  saludar: persona1.saludar.bind(persona1) // Enlasa el contexto de persona1
 }
-let denis = new Persona2('denis');
-denis();
 
-// ========================================================================
-function Persona3(nombre) {
-  this.nombre = nombre;
-  return () => console.log(this.nombre);
-}
-let lucas = new Persona3('lucas');
-lucas();
+persona2.saludar();
