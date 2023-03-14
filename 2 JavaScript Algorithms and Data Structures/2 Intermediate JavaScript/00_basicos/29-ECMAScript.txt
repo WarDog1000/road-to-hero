@@ -315,3 +315,145 @@ ECMAScript
   let persona = {nombre: 'Jonathan', apellido: 'Salchichon'};
   let {nombre, apellido} = persona;
 
+  console.log(persona); / Imprime Object {nombre: "Jonathan", apellido: "Salchichon}
+  console.log(nombre); // Imprime Jonathan
+  console.log(apellido); // Imprime Salchichon
+
+  let datos = {correo: 'jonisalchichon@hotmail.com', telefono: 00001000001};
+  let {correo: email, telefono: phone} = datos;
+
+  console.log(datos): // Imprime Object {correo: "jonisalchichichon@hotmail.com", telefono: 00001000001}
+  console.log(email): // Imprime jonisalchichon @hotmail.com
+  console.log(phone); // Imprime 00001000001
+
+
+==================================== Parametros por defecto ====================================
+  Ahora es completamente posible definir un valor por defecto a los parametros
+  de nuestras funciones al igual que en otros lenguajes de programacion.
+
+  // Antes
+  function pais(nombre) {
+    nombre = nombre || 'Terrestre';
+    console.log(nombre);
+  }
+
+  pais(); // Imprime Terrestre
+  pasi('Mexico'); // Imprime Mexico
+
+  // Ahora
+  function pis(nombre = 'Terrestre') {
+    console.log(nombre);
+  }
+
+  pais(); // Imprime Terrestre
+  pais('Mexico); // Imprime Mexico
+
+
+==================================== Parametro Rest ====================================
+  Los parametros 'Rest' son una forma de utilizar parametros virtualmente infinitos,
+  se definen agregando ... adelante del nombre del parametro rest, este tiene que ser
+  siempre el ultimo parametro de la funcion.
+
+  function sumar(a, b, ...c) {
+    let resultado = a + b;
+    c.foreach( n => resultado +=n );
+    return console.log(resultado);
+  }
+
+  sumar(1, 2); // Imprime 3
+  sumar(1, 2, 3); // Imprime 6
+  sumar(1, 2, 3, 4); // Imprime 10
+  suamr(1, 2, 3, 4, 5); // Imprime 15
+
+
+==================================== Operador de Propagacion Spread ====================================
+  Permite que una expresion sea expandida en situaciones donde se esperan multiples
+  argumentos o elementos
+
+    let arr1 = [1, 2, 3, 4], arr2 = [5, 6, 7];
+    console.log(arr1); // Imprime [1, 2, 3, 4]
+    console.log(...arr1); // Imprime 1 2 3 4
+
+    arr1.push(...ar2);
+    console.log(arr1); // Imprime [1, 2, 3, 4, 5, 6, 7]
+
+    let superiores = ['hombros', 'brazos', 'tronco'],
+        inferiores = ['pelvis', 'piernas', 'rodilla'],
+        cuerpo = ['cabeza', ...superioes, ...inferiores, 'pies'];
+
+    console.log(cuerpo); // Imprime ['cabeza', 'hombros', 'brazos', 'tronco', 'pelvis', 'pierna', 'rodilla', 'pies']
+    console.log(...cuerpo) // imprime cabeza hombros brazos tronco pelvis piernas rodillas pies
+
+
+==================================== Clases ====================================
+  En Es se incorpora al lenguaje 'clases' para poder hacer Programacion Orientada a Objetos
+  mas facilmente (sin prototipos), soportan herencia, polimorfismo, superclases, instancias,
+  metodos estaticos, constructores, setters y getters.
+
+  -- Definicion de clase, constructor e instancia de objetos:
+
+    class Animal {
+      // el constructor es un metodo especial que se ejecuta en el momento de instanciar la clase
+      constructor(nombre, edad,genero) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+      }
+
+      // metodos publicos de la clase
+      comunicar() {
+        console.log('Me comunico con sonidos');
+      }
+
+      comer() {
+        console.log('Ingiero alimentos');
+      }
+
+      respirar() {
+        console.log('Respiro oxigeno);
+      }
+
+      reproducir() {
+        console.log('Mereprodusco sexualmente');
+      }
+    }
+
+    let lucy = new Animal('Lucy', 20, 'Hembra');
+    console.log(lucy); // Imprime Animal {nombre: 'Lucy', edad: 20, genero: 'Hembra'}
+    lucy.comunicar(); // Imprime Me comunico con sonidos
+    lucy.comer(); // ImprimeIngiero alimentos
+    lucy.respirar(); // Imprime Respiro oxigeno
+    lucy.reproducir(); // Imprime Me reprodusco sexualmente
+
+  -- Herencia, polimorfismo, metodos estaticos, setters y getters:
+
+    // con la palabra extends la clase Humano hereda de Animal
+    class humano extends Animal {
+      // el constructor es un metodo especial que se ejecuta en el momento de instanciar la clase
+      constructor(nombre, edad, genero) {
+        // con el emtodo super() se manda a llamar el constructor de ola clase padre
+        super(nombre, edad, genero);
+        this.razonar = true;
+        this._nacionalidad = 'Terrestre';
+      }
+
+      // un metodo estatico se puede ejecutar sin necesidad de instanciar la clase
+      static saludar() {
+        console.log('Hola soy un Humano');
+      }
+
+      // los setter y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+      set nacionalidad(pais) {
+        this.nacionalidad = pais;
+      }
+
+      get nacionalidad() {
+        return this._nacionalidad;
+      }
+
+      // metodos publicos de la clase redefinidos gracias al polimorfismo
+      comunicar() {
+        console.log('Me comunico hablando');
+      }
+      
+    }
