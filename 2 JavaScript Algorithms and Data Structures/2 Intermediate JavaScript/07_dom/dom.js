@@ -8,7 +8,7 @@ console.log(document);
 
 let texto = 'Hola perro!';
 const hablar = (texto) => {  speechSynthesis.speak(new SpeechSynthesisUtterance(texto)) }
-hablar(texto);
+// hablar(texto);
 
 /* **********     Curso JavaScript: 61. DOM: Introducción - #jonmircha     ********** */
 
@@ -28,11 +28,30 @@ console.log(document.scripts);
 setTimeout(() => {
   console.log(document.getSelection().toString());
 }, 3000);
-document.write('<h2>Hola Mundo desde el DOM</h2>');
+document.write(`<br><hr></br>`)
+document.write('<h3>Hola Mundo desde el DOM</h3>');
 
 
 /* **********     Curso JavaScript: 62. DOM: Nodos, Elementos y Selectores - #jonmircha     ********** */
 //https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+
+// Anteriores selectores
+console.log(document.getElementsByTagName('li'));
+console.log(document.getElementsByClassName('card'));
+console.log(document.getElementsByName('nombre'));
+// Anterior selector que se sigue usando
+console.log(document.getElementById('menu'));
+
+// Nuevos metodos de selecion de elementos
+console.log(document.querySelector('#menu'));
+console.log(document.querySelector('.card'));
+console.log(document.querySelectorAll('.card'));
+console.log(document.querySelectorAll('.card')[2]);
+console.log(document.querySelectorAll('#menu li'));
+console.log(document.querySelector('a'));
+console.log(document.querySelectorAll('a'));
+console.log(document.querySelectorAll('a').length);
+document.querySelectorAll('a').forEach(el => console.log(el));
 
 /* **********     Curso JavaScript: 63. DOM: Atributos y Data-Attributes - #jonmircha     ********** */
 /* **********     Curso JavaScript: 64. DOM: Estilos y Variables CSS - #jonmircha     ********** */
