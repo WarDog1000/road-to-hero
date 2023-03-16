@@ -85,8 +85,45 @@ $linkDOM.dataset.description = 'Hola Prrooo!'
 console.log($linkDOM.dataset.description);
 
 
-
 /* **********     Curso JavaScript: 64. DOM: Estilos y Variables CSS - #jonmircha     ********** */
+
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute('style'));
+console.log($linkDOM.style.color);
+// console.log(window.getComputedStyle($linkDOM));
+console.log(window.getComputedStyle($linkDOM).getPropertyValue('color'));
+
+// gregar estilos con slelectores del DOM
+$linkDOM.style.setProperty('text-decoration', 'none');
+$linkDOM.style.setProperty('display', 'block');
+// gregar estilos con slelectores del DOM
+$linkDOM.style.width = '50%';
+$linkDOM.style.textAlign = 'center';
+$linkDOM.style.marginLeft = 'auto';
+$linkDOM.style.marginRight = 'auto';
+$linkDOM.style.padding = '1rem';
+$linkDOM.style.borderRadius = '.5rem';
+
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute('style'));
+console.log(window.getComputedStyle($linkDOM).getPropertyValue('color'));
+
+// VAriables CSS - Custom Properties
+const $html = document.documentElement,
+  $body = document.body;
+
+let varDarkColor = getComputedStyle($html).getPropertyValue('--dark-color'),
+  varYellowColor = getComputedStyle($html).getPropertyValue('--yellow-color');
+
+console.log(varDarkColor, varYellowColor);
+
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+
+$html.style.setProperty('--dark-color', '#000');
+varDarkColor = getComputedStyle($html).getPropertyValue('--dark-color');
+$body.style.setProperty('background-color', varDarkColor)
+
 /* **********     Curso JavaScript: 65. DOM: Clases CSS - #jonmircha     ********** */
 /* **********     Curso JavaScript: 66. DOM: Texto y HTML - #jonmircha     ********** */
 /* **********     Curso JavaScript: 67. DOM Traversing: Recorriendo el DOM - #jonmircha     ********** */
