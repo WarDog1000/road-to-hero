@@ -54,6 +54,38 @@ console.log(document.querySelectorAll('a').length);
 document.querySelectorAll('a').forEach(el => console.log(el));
 
 /* **********     Curso JavaScript: 63. DOM: Atributos y Data-Attributes - #jonmircha     ********** */
+
+console.log(document.documentElement.lang);
+console.log(document.documentElement.getAttribute('lang'));
+console.log(document.querySelector('.link-dom').href);
+console.log(document.querySelector('.link-dom').getAttribute('href'));
+
+document.documentElement.lang = 'en';
+console.log(document.documentElement.lang);
+document.documentElement.setAttribute('lang' , 'es-MX');
+console.log(document.documentElement.lang);
+
+// Guardando los selectores del DOM en variables (se antepone el signo $ para hecer referencia a los elementos del dom)
+const $linkDOM = document.querySelector('.link-dom');
+$linkDOM.setAttribute('target', '_blank');
+console.log($linkDOM.hasAttribute('rel'));
+$linkDOM.setAttribute('rel', 'noopener');
+$linkDOM.setAttribute('href', 'https://gmail.com');
+
+// Data Attributes
+console.log($linkDOM.getAttribute('data-description'));
+console.log($linkDOM.dataset);
+console.log($linkDOM.dataset.description);
+console.log($linkDOM.dataset.id);
+
+$linkDOM.setAttribute('data-description', 'Modelo de Objeto del Documento')
+console.log($linkDOM.dataset.description);
+
+$linkDOM.dataset.description = 'Hola Prrooo!'
+console.log($linkDOM.dataset.description);
+
+
+
 /* **********     Curso JavaScript: 64. DOM: Estilos y Variables CSS - #jonmircha     ********** */
 /* **********     Curso JavaScript: 65. DOM: Clases CSS - #jonmircha     ********** */
 /* **********     Curso JavaScript: 66. DOM: Texto y HTML - #jonmircha     ********** */
