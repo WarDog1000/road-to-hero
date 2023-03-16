@@ -586,3 +586,261 @@ ECMAScript
       referencias. Por lo tanto, cambiar el enlace de una variable
       en un modulo, afectara su valor. Evita cambiar la interfaz
       publica de modulos exportados.
+
+==================================== Promesas ====================================
+  Es una amnera alternativa a las callbacks paramodelar asincronia.
+
+  - Construcion explicita del flujo de ejecucion.
+  - Separacion en bloques consecutivos
+  - Manejo de errores mas controlado.
+  - Combinacionde diferentes flojos asincronos.
+
+  -- Promesas en el navegador --
+
+    function adivinarNumero() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let n = Math.floor(Math.random() * 10);
+
+          return (n >= 1 && n <= 5)
+                  ? resove(`Adivinaste el numero: ${n}`)
+                  : reject(new Error(`No adivinaste el numero: ${n}`));
+        }, 1000);
+      })
+    }
+
+    adivinarNumero()
+      .then( num => console.log(num))
+      .catch( error => console.log(error ));
+
+  -- Promesas en el servidor --
+
+    const fs = require('fs'),
+      file = './nombres.txt',
+      newFile = './nombres_promises_es6.txt';
+
+    let promise = new Promise((resolve, reject) => {
+      fs.acess(file, fs.F_OK, (err) => {
+        return (err)
+          ? reject(new Error('El archivo no existe'))
+          :resolve(true);
+      });
+    });
+
+    promise
+      .then((dataPromise) => {
+        console.log('El archivo existe');
+
+        return new Promise((resolve, reject) => {
+          fs.readFile(file, (err, data) => {
+            returnn (err)
+              ? reject( new Error('El archvo no su pudo leer'))
+              : resolve(data);
+          });
+        });
+      })
+      .then((dataPromise) => {
+        console.log('El archivo se ha leido exitosamente');
+
+        return new Promise((resolve, reject) => {
+          fs.writeFile(newFile, dataPromise, (err) => {
+            return (err)
+              ? reject( new Error('El archvo no su pudo copiar'))
+              : resolve('El archvo se ha copiado con exito);
+          });
+        });
+      })
+      .then((dataPromise) => { console.log(dataPromise);})
+      .catch((err) => { console.log(err.message); });
+
+
+==================================== Iteradores ====================================
+  Un iterador es un mecanismo que tiene los lenguajes de programacion para
+  recorrer secuencialmente distintas estructuras de datos.
+
+  Para que un objeto sea iterable en JavaScript es necesario que:
+
+    - Implemente el tipo symbol.iterator.
+    - Implemente la funcion next que devuelve un objeto con dos valores:
+      1. 'done' que indica si ha terminado de iterar y
+      2. 'value' que devuelve el valor actual.
+
+  console.log(typeof String.prototype.[Symbol.iterator]); // Imprime function
+  console.log(typeof Array.prototype.[Symbol.iterator]); // imprime function
+  console.log(typpeof Map.prototype[Symbol.iterator]); // imprime function
+  console.log(typeof Set.prototype[Symbol.iterator]); // imprime function
+  console.log(typeof Object.prototype[Symbol.iterator]); // imprime undefined
+
+  Recorriendo iteradores con el bucle for...of, que permite recorrer objetos literales:
+
+  // Antes
+  var anArray = ['Hola', 1, true, {}],
+    aString = 'Hola soy iterable';
+
+  for (var i = 0; i < anArray.length; i++) {
+    console.log(anArray[i]);
+  }
+  for(var i = 0; i < aString.length; i++) {
+    console.log(aString[i]);
+  }
+
+  // Ahora
+  let anArray = ['Hola', 1, true, {}],
+    aString = 'Hola soy iterable';
+
+  for(let item of anArray) {
+    console.log(item); // Imprime cada elemento del arreglo
+  }
+
+  for(let item of anArray) {
+    console.log(itemm); // Imprime cada caracter de la casdena de texto
+  }
+
+
+==================================== Simbolos ====================================
+  Un Simbolo es un tipo de datos unico e inmutable, puede ser utilizado como un
+  identificador para las propriedades de los objetos.
+
+  Son utiles cuando queremos agregar metodos o atributos propios a objetos nativos 
+  del lenguaje o a los de alguna libreria de terceros para evitar que, si existiese 
+  algun metodo o atributo con el nombre del que queremos crear evitar que el original
+  se sobre escriba con esto se evita 'antipatron'.
+
+  Cuando se recorran las propriedades de un objeto, las que sean definidas como simbolo
+  no apareceran.
+
+  Recorriendo los elemenmtos de un Objeto:
+
+    let anObject = {
+      name: 'Jonatan',
+      age: 36,
+      email: 'jonsalcicon@gmail.com'
+    },
+      // un Simbolo se instancia sin new, porque no es un objeto y por tal no tiene constructor
+      email = Symbol('email');
+
+    // Asignacion de un simbolo en un objecto
+    anObject[email] = 'hola@jonsalchichon.com';
+
+    for(let item of anObject) {
+      console.log(item); // Ungaught TypeError: anObject[Symbol.iterator] is not a function
+    }
+
+    for(let item in anObject) {
+      console.log(item); // Imprime name, age, email
+    }
+
+    console.log(Object.keys(anObject)); // Imprime ["name", "age", "email"]
+    cojnsole.log(Object.getOwnPropertyNames(anObject)); // Imprime ["name", "age", "email]
+    console.log(Object.getOwnPropertySymbols(anObject)); // Imprime [Symbol(email)]
+
+    console.log(
+      anObject, // Imprime Object { name: "Jonathan", age: 36, email: "jonsalchichon@gmail.com", Symbol(email): "hola@jonsalchichon.com" }
+      anObject.name, // Imprime "Jonathan"
+      anObject.age // Imprime 36
+      anObject.email, // Imprime "jonsalchichon@gmail.com"
+      anObject[email], // Imprime "hola@jonsalchichon.com"
+    );
+
+  Conviertiendo un Objeto en iterable:
+
+    let iterable = {
+      0: 'Jonathan",
+      1: 36,
+      2: 'jonsalchichon@gmail.com',
+      length: 3,
+      [Symbol.iterator]: Array.prototype[Symbol.iterator]
+    }
+    
+    for (let item of iterable) {
+      console.log(item) // Imprime Jonathan, 36, jonsalchichon@gmail.com
+    }
+
+
+==================================== Generadores ====================================
+  Los generadores son un tipo especial de funcion que devuelven un valor y permite luego
+  volver a entar en la funcion en el mismo lugar en que se quedo, al tiempo que conserva
+  el contexto de ejecucion.
+
+  Son funciones que pueden ser pausadas y resumidas cuando llamamos a la funcion generador,
+  no ejecuta el cuerpo de la funcion, sino que devuelve un objeto generador. El generador
+  implementa una funcion que le proporciona un metodo next(), que ejecutara el cuerpo de la
+  funcion hasta encontrar un 'yield'. En este punto, se detendra.
+
+  El secreto del generador radica justamente en la palabra clave 'yield', que es un tipo especial
+  de return que, en lugar de devolvernos un solo valor y salirse de la funcion, entrara nuevamente
+  en esta y continuara ejecutandola hasta que se acabe o encuentre otra clausula 'yield'.
+
+  Para que una funcion se considere generador debe declararse anteponiendo un asterisco function*.
+
+  Para obtener los resultados del generador lo hacemos con el metodo next() que devuelve un objeto de tipo:
+
+    {
+      value: el valor retonado por yield
+      done: indica si ah finalizado o no la ejecucion del cuerpo de la funcion
+    }
+
+  Los generadores, al implementar .next(), son iterables y suelen ser una forma mas sencilla de escribir un iterador.
+
+    function* generador(nombre) {
+      yield `Hola ${nombre}`;
+      yield 'Esta linea saldra en la segunda ejecucion';
+      yield 'Esta otra, en la tercera';
+      if( nombre === 'Jonathan' ) {
+        yiel 'Esta otra, saldra en la cuarta linea si te llamas, Jonathan';
+      }
+    }
+
+    let gen = generador('Jonatahn');
+    console.log( gen.next() ); // Imprime Object {value: "Hola Jonathan", done: false}
+    console.log( gen.next().value ); // Imprime Esla linea saldra en la segunda ejecucion
+    console.log ( gen.next().value ); // Imprime Esla otra, en la tercera
+    console.log( gen.neext().value ); // ImprimeEsta otra, saldra en la cuarta solo si te llamas Jonathan
+    console.log( gen.next() ); // Imprime Object {value: uhndefined, done: true}
+
+  Mas ejemplos con Generadores:
+
+    class LoremImpsum {
+      constructor(text) {
+        thsi.text = text;
+      }
+
+      *words() {
+        const rgx = /\S+/g;
+        let match;
+
+        while(match = rgx.exec(this.text)) {
+          yield match[0];
+        }
+      }
+    }
+
+    const lorem = new LoremImpsum('Lorem ipsum dolor sit amet, consectetur adipis');
+
+    for(let word of lorem.words()) {
+      console.log( word );
+    }
+
+    ====================================
+    class Usuarios {
+      constructor(user) {
+        this.user = user;
+      }
+
+      *alias() {
+        for(let persona of this.user) {
+          yield ( persona.sexo === "H') ? `Sr. ${persona.nombre`} : `Sra. ${persona.nombre`};
+        }
+      }
+    }
+
+    const gente = new Usuarios(
+      [{sexo: 'H', nombre: 'Jon'}, {sexo: 'M', nombre: 'Mercedes'}]
+    )
+
+    for(let persona of gente.alias()) {
+      console.log(perona);
+    }
+
+
+==================================== Proxies ====================================
