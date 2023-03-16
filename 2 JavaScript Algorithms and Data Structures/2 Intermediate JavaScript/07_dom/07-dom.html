@@ -10,6 +10,32 @@
       --yellow-color: #F7DF1E;
       --dark-color: #222; 
     }
+
+    .card {
+      display: inline-block;
+      background-color: var(--dark-color);
+      color: var(--yellow-color);
+    }
+
+    .card figcaption {
+      padding: 1rem;
+    }
+
+    .rotate-45 {
+      transform: rotate(45deg);
+    }
+
+    .rotate-135 {
+      transform: rotate(135deg);
+    }
+
+    .pacitty-80 {
+      opacity: .8;
+    }
+
+    .sepia {
+      filter: sepia(1)
+    }
   </style>
 </head>
 
@@ -52,26 +78,26 @@
   <section class="cards">
     <figure class="card">
       <img src="https://placeimg.com/200/200/tech" alt="Tech">
-      <figCaption>Tech</figCaption>
+      <figcaption>Tech</figcaption>
     </figure>
 
     <figure class="card">
       <img src="https://placeimg.com/200/200/arch" alt="Arch">
-      <figCaption>Arch</figCaption>
+      <figcaption>Arch</figcaption>
     </figure>
     <figure class="card">
       <img src="https://placeimg.com/200/200/people" alt="People">
-      <figCaption>People</figCaption>
+      <figcaption>People</figcaption>
     </figure>
 
     <figure class="card">
       <img src="https://placeimg.com/200/200/animals" alt="Animals">
-      <figCaption>Animals</figCaption>
+      <figcaption>Animals</figcaption>
     </figure>
 
     <figure class="card">
       <img src="https://placeimg.com/200/200/nature" alt="Nature">
-      <figCaption>Nature</figCaption>
+      <figcaption>Nature</figcaption>
     </figure>
   </section>
   <script src="dom.js"></script>

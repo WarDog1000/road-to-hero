@@ -125,6 +125,46 @@ varDarkColor = getComputedStyle($html).getPropertyValue('--dark-color');
 $body.style.setProperty('background-color', varDarkColor)
 
 /* **********     Curso JavaScript: 65. DOM: Clases CSS - #jonmircha     ********** */
+
+// className
+// classList .constains, .add, .remove, .toggle. replace
+const $card = document.querySelector('.card');
+console.log($card);
+console.log($card.className);
+console.log($card.classList);
+console.log('$card tiene la clase "rotate-45"?')
+console.log($card.classList.contains('rotate-45'));
+
+
+// Añadir una clase desde el  DOM
+$card.classList.add('rotate-45');
+console.log('$card tiene la clase "rotate-45"?')
+console.log($card.classList.contains('rotate-45'));
+console.log($card.className);
+
+// Eliminar una clase delde el DOM
+$card.classList.remove('rotate-45');
+console.log('$card tiene la clase "rotate-45"?')
+console.log($card.classList.contains('rotate-45'));
+console.log($card.className);
+
+// Alterna entre los estados. Si el elemento ya tiene la clase especificada, se la quita, y si no la tiene, se la agrega.
+$card.classList.toggle('rotate-45');
+console.log('$card tiene la clase "rotate-45"?')
+console.log($card.classList.contains('rotate-45'));
+console.log($card.className);
+
+
+// Se utiliza para reemplazar una clase existente en un elemento HTML con una nueva clase.
+$card.classList.replace('rotate-45', 'rotate-135');
+
+// Añadir varias clases a la vez
+$card.classList.add('opacity-80', 'sepia');
+// Eliminar varias clases a la vez
+$card.classList.remove('opacity-80', 'sepia');
+// Alternar  varias clases a la vez
+$card.classList.toggle('opacity-80', 'sepia');
+
 /* **********     Curso JavaScript: 66. DOM: Texto y HTML - #jonmircha     ********** */
 /* **********     Curso JavaScript: 67. DOM Traversing: Recorriendo el DOM - #jonmircha     ********** */
 /* **********     Curso JavaScript: 68. DOM: Creando Elementos y Fragmentos - #jonmircha     ********** */
