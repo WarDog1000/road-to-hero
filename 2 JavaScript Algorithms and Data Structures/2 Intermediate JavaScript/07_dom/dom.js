@@ -288,9 +288,37 @@ continentes.forEach( el => {
 })
 
 // -----------
+const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      $ul3 = document.createElement('ul'),
+      $fragment = document.createDocumentFragment();
 
+meses.forEach(el => {
+  const $li = document.createElement('li');
+  $li.textContent = el;
+  $fragment.appendChild($li);
+})
+document.write('<h3>Meses del Año</h3>');
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3);
 
 /* **********     Curso JavaScript: 69. DOM: Templates HTML - #jonmircha     ********** */
+
+const $template = document.getElementById('template-card').content,
+      $fragment2 = document.createDocumentFragment(),
+      cardContent = [{title:'Tecnologia', img:'https://placeimg.com/200/200/tech'}, {title:'Animal', img:'https://placeimg.com/200/200/animals'}, {title:'Persona', img:'https://placeimg.com/200//200/people'}, {title:'Arquitectura', img:'https://placeimg.com/200/200/arch'}, {title:'Naturaleza', img:'https://placeimg.com/200/200/nature'}];
+
+      cardContent.forEach( el => {
+        $template.queryselector('img').setAttribute('src', el.img);
+        $template.querySelector('img').setAttribute('alt', el.title);
+        $template.querySelector('figcaption').textContent = el.title;
+
+        // Copia toda la estructura del elemento/nodo
+        let $clone = document.importNode($template, true);
+        $fragment2.appendChild($clone);
+      })
+
+      $cards.appendChild($fragment2);
+
 /* **********     Curso JavaScript: 70. DOM: Modificando Elementos (Old Style) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha y Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
