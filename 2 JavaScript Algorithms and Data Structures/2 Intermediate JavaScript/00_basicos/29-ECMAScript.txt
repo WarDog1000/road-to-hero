@@ -490,9 +490,9 @@ ECMAScript
 ==================================== Modulos ====================================
   Antes de ES6, utilizamos bibliotecas como 'Browserify' para crear modulos en el lado del
   cliente(navegadores), y require en el servidor (Node.js).
-  Con ES6, ahora podemos utilizar directamente modulos de todos los tipos (AMD, CmmonJS y ECMAScript).
+  Con ES6, ahora podemos utilizar directamente modulos de todos los tipos (AMD, CommonJS y ECMAScript).
 
-  ==================================== expots / import CommonJS ====================================
+  ==================================== exports / import CommonJS ====================================
 
   -- 'Exportando' en formato CommonJS --
       module.exports = 1;
@@ -844,3 +844,43 @@ ECMAScript
 
 
 ==================================== Proxies ====================================
+  Los 'poxies' proporcionan una API para capturar o interceptar cualquier
+  operacion realizada sobre un objeto y para modificar como se comporta
+  ese objeto. Son utiles para:
+
+    - Intercepcion.
+    - Virtualizacion de objetos.
+    - Gestion de recursos.
+    - Hcer profiling y generar logs durante la depuracion de una aplicacion.
+    - Seguridad y control de acceso.
+    - Definicion de 'contratos' al esar objetos.
+
+  La API Proxy define un constructor al que se le pasa como primer argumento el
+  objeto que se a capturar llamado target y como segundo argumento el handler que realizara la captura. Ejemplo:
+
+    let target = { /* propriedades y metodos */ },
+        handler { /* funciones capturadores */ },
+        proxy = new Proxy(target, handler);
+
+  El handler es el encargado de modificar el comportamiento original del objeto target.
+  Este handler contiene metodos "capturadores" (por ejemplo .get(), .set(), .apply()) que se
+  ejecutan al realizar la llamada correspondiente del proxy.
+
+    const persona = new Proxy(
+      {},
+      { set(obj, prop, val) { 
+          if(prop === 'edad' && (!Number.isInteger(val) || val < 0)) {
+            throw new Error(`Valor invalido para la propriedad ${prop}`)
+          }
+        }
+        return obj[prop] = val;
+      }
+    );
+
+    persona.edad = 33;
+    console.log(persona.edad); // Imprime 33
+
+    persona.edad = -10; // Imprime Error: VAlor invalido para propriedad edad
+
+
+==================================== Reflexion ====================================
