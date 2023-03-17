@@ -166,8 +166,130 @@ $card.classList.remove('opacity-80', 'sepia');
 $card.classList.toggle('opacity-80', 'sepia');
 
 /* **********     Curso JavaScript: 66. DOM: Texto y HTML - #jonmircha     ********** */
+
+const $whatIsDOM = document.getElementById('que-es');
+
+let text = `
+  <p>
+    EL Modelo de Objetos del Documento(<b><i>DOM - Document Object Model</i></b>) es una API para
+    documentos HTML y XML.
+  </p>
+  <p>
+    Este provee una representacion estructural del documento, permitiendo modificar su contenido y
+    persentacion visual mediante codigo JS.
+  </p>
+  <p>
+    <mark> El DOM no es parte de la especificacion de javaScript, es una API para los anvegadores</mark>
+  </p>
+  `;
+
+  // $whatIsDOM.innerText = text;
+  $whatIsDOM.textContent = text;
+
+  // Insertar codigo en html
+  $whatIsDOM.innerHTML = text;
+  
+  // remplaza el elemento del DOM por el contenido
+  $whatIsDOM.outerHTML = text;
+
+
 /* **********     Curso JavaScript: 67. DOM Traversing: Recorriendo el DOM - #jonmircha     ********** */
+console.log('====== DOM Traversing: Recorriendo el DOM ======');
+const $cards = document.querySelector('.cards');
+console.log($cards);
+
+// Retorna una coleccion de los elementos hijos
+console.log($cards.children);
+
+// Retorna un elemento hijo en especifico
+console.log($cards.children[2]);
+
+// Retrona el primer nodo
+console.log($cards.firstChild);
+
+// Retrona el ultimo nodo
+console.log($cards.lastChild);
+
+// Retorna el primer elemento hijo
+console.log($cards.firstElementChild);
+
+// Retorna el ultimo elemento hijo
+console.log($cards.lastElementChild);
+
+// Retorna el elemento padre
+console.log($cards.parentElement);
+
+// Retorna el nodo padre
+console.log($cards.parentNode);
+
+// Retorna el primer elemento hermano
+console.log($cards.previousElementSibling);
+
+// Retorna el ultimo elemento hermano
+console.log($cards.nextElementSibling);
+
+// Busca el ancestro mas cercano
+console.log($cards.closest('div'));
+console.log($cards.children[3].closest('section'));
+
 /* **********     Curso JavaScript: 68. DOM: Creando Elementos y Fragmentos - #jonmircha     ********** */
+
+const $figure = document.createElement('figure'),
+    $img = document.createElement('img'),
+    $figcaptions = document.createElement('figcaption'),
+    $textFig = document.createTextNode('Animals');
+
+// Agregar nodos hijo
+$cards.appendChild($figure);
+$figure.appendChild($img);
+$figure.appendChild($figcaptions);
+$figcaptions.appendChild($textFig);
+
+//Agregar propriedades a los elementos
+$img.setAttribute('src','https://placeimg.com/200/200/animals');
+$img.setAttribute('alt','Animals');
+
+// Agregar clase a los elementos
+$figure.classList.add('card');
+
+
+// ====== Agregando otra tarjeta ======
+const $figure2 = document.createElement('figure');
+$figure2.innerHTML = `
+<img src="https://placeimg.com/200/200/people" alt="People" />
+<figcaption>People</figcaption>
+`;
+$figure2.classList.add('card');
+// Añade el nodo de figure2 al elemento .card
+$cards.appendChild($figure2);
+
+// -----------
+const estaciones = ['Primavera', 'Veramo', 'Otoño', 'Invierno'],
+      $ul = document.createElement('ul');
+
+document.write(`<h3>Estaciones del Año</h3>`);
+document.body.appendChild($ul);
+
+estaciones.forEach(el => {
+  const $li = document.createElement('li');
+  $li.textContent = el;
+  $ul.appendChild($li);
+})
+
+// -----------
+const continentes = ['Africa', 'America', 'Asia', 'Europa', 'Oceania'],
+$ul2 = document.createElement('ul');
+
+document.write(`<h3>Continentes del Mundo</h3>`);
+document.body.appendChild($ul2);
+$ul2.innerHTML = ``;
+continentes.forEach( el => {
+  $ul2.innerHTML += `<li>${el}</li>`
+})
+
+// -----------
+
+
 /* **********     Curso JavaScript: 69. DOM: Templates HTML - #jonmircha     ********** */
 /* **********     Curso JavaScript: 70. DOM: Modificando Elementos (Old Style) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
