@@ -194,6 +194,7 @@ let text = `
 
 
 /* **********     Curso JavaScript: 67. DOM Traversing: Recorriendo el DOM - #jonmircha     ********** */
+
 console.log('====== DOM Traversing: Recorriendo el DOM ======');
 const $cards = document.querySelector('.cards');
 console.log($cards);
@@ -302,13 +303,13 @@ $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
 
 /* **********     Curso JavaScript: 69. DOM: Templates HTML - #jonmircha     ********** */
-
+/*
 const $template = document.getElementById('template-card').content,
       $fragment2 = document.createDocumentFragment(),
-      cardContent = [{title:'Tecnologia', img:'https://placeimg.com/200/200/tech'}, {title:'Animal', img:'https://placeimg.com/200/200/animals'}, {title:'Persona', img:'https://placeimg.com/200//200/people'}, {title:'Arquitectura', img:'https://placeimg.com/200/200/arch'}, {title:'Naturaleza', img:'https://placeimg.com/200/200/nature'}];
+      cardContent = [{title:'Tecnologia', img:'https://placeimg.com/200/200/tech'}, {title:'Animal', img:'https://placeimg.com/200/200/animals'}, {title:'Persona', img:'https://placeimg.com/200/200/people'}, {title:'Arquitectura', img:'https://placeimg.com/200/200/arch'}, {title:'Naturaleza', img:'https://placeimg.com/200/200/nature'}];
 
       cardContent.forEach( el => {
-        $template.queryselector('img').setAttribute('src', el.img);
+        $template.querySelector('img').setAttribute('src', el.img);
         $template.querySelector('img').setAttribute('alt', el.title);
         $template.querySelector('figcaption').textContent = el.title;
 
@@ -318,9 +319,57 @@ const $template = document.getElementById('template-card').content,
       })
 
       $cards.appendChild($fragment2);
+      */
 
 /* **********     Curso JavaScript: 70. DOM: Modificando Elementos (Old Style) - #jonmircha     ********** */
+
+const $newCard = document.createElement('figure')
+$newCard.innerHTML = `<img src="http://placeimg.com/200/200/any" alt="Any">
+<figcaption>Any</figcaption>`
+$newCard.classList.add('card')
+
+// $cards.replaceChild($newCard, $cards.children[2]) // Inserta en una parte del nodo
+// $cards.insertBefore($newCard, $cards.firstElementChild) // Inserta antes del nodo
+// $cards.appendChild($newCard) // Inserta al final del nodo
+// $cards.removeChild($cards.lastElementChild) // Elimina al final del nodo
+
+// Clonar toda la secion .cards
+$cloneCards = $cards.cloneNode(true)
+// document.body.appendChild($cloneCards)
+
+
 /* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
+
+/*
+.insertAdjacent...
+  .insertAdjacentElement(position, el)
+  .insertAdjacentHTML(position,html)
+  .insertAdjacentText(position, text)
+
+Posiciones:
+  beforebegin(hermano anterior)
+  afterend(hermano siguiente)
+  afterbegin(primer hijo)
+  beforeend(ultimo hijo)
+*/
+
+const $newCard2 = document.createElement('figure')
+$newCard2.classList.add('card')
+let $contentCard = `<img src="http://placeimg.com/200/200/any" alt="Any">
+<figcaption></figcaption>`
+$newCard2.insertAdjacentHTML("afterbegin", $contentCard)
+$newCard2.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
+
+// $cards.insertAdjacentElement("beforebegin", $newCard)
+// $cards.insertAdjacentElement("afterbegin", $newCard)
+// $cards.insertAdjacentElement("beforeend", $newCard)
+// $cards.insertAdjacentElement("afterend", $newCard2)
+
+// $cards.append($newCard2) // ultimo hijo
+// $cards.prepend($newCard2) // primer hijo
+// $cards.before($newCard2) // hermano anterior
+$cards.after($newCard2) // hermano siguiente
+
 /* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha y Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
