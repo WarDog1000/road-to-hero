@@ -370,7 +370,41 @@ $newCard2.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
 // $cards.before($newCard2) // hermano anterior
 $cards.after($newCard2) // hermano siguiente
 
-/* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha y Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
+/* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha ********** */
+
+function mensaje() {
+  alert('Hola Mundo')
+  console.log(event)
+}
+
+// Solo se puede asociar una funcion de evento|
+const $eventoSemantico = document.getElementById('evento-semantico')
+$eventoSemantico.onclick = mensaje
+$eventoSemantico.onclick = function(el) {
+  alert('Hola manejador de eventos semanticos')
+  console.log(el)
+  console.log(event)
+}
+
+// Puedes asociar multiples eventos simultaneos
+const $eventoMultiple = document.getElementById('evento-multiple')
+$eventoMultiple.addEventListener("click", mensaje)
+$eventoMultiple.addEventListener("click", (e) => {
+  alert('Hola manejador de eventos Multiples')
+  console.log(e)
+  console.log(e.type)
+  console.log(e.target)
+})
+
+
+/* ********** Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
+
+function saludar(nombre = 'desconocido') {
+  alert(`Hola ${nombre}`)
+}
+const $multyEvent = document.getElementById('multy-event')
+$multyEvent.addEventListener('click', saludar)
+
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
 /* **********     Curso JavaScript: 76. DOM: Delegación de Eventos - #jonmircha     ********** */
