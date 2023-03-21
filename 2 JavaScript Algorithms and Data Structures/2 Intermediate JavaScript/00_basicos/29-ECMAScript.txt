@@ -884,3 +884,291 @@ ECMAScript
 
 
 ==================================== Reflexion ====================================
+  Objeto global que proporciona funciones estaticas capaces de interceptar
+  operaciones de JavaScript, es muy util cuando se trabaja con proxies y de
+  hecho, comparten muchos metodos.
+
+  La mayoria de sus metodos estaticos tienen equivalencia en el objeto Object o Function.
+
+  Las ventajas que ofrece el uso de Reflect son:
+
+    - Aplicacion de funciones mas fiable.
+    - Valor de retorno mas utiles.
+    - Sintaxis menos verbosa.
+    - Mejoran la forma en la que se capturan los getters y los setters.
+
+  ES5 yo incluye varias funcionalidades intimamente relacionadas con la reflexion,
+  como por ejemplo Array.isArray() o Object.getOwnPropertyDescriptor().
+
+  ES introduce la API Reflection para agrupar todos estos metodos y los nuevos que se vayan
+  definiendo.
+
+    const obj = { x: 1, y: 2 }
+    console.log(obj) // Imprime Object {x:1, y:2}
+
+    console.log(Reflect.has(obj, 'z')) // Imprime false
+    console.log(Reflect.has(obj, 'x')) // Imprime true
+
+    Reflect.deleteProperty(obj, 'x')
+
+    console.log(Reflect.has(obj, 'x' )) // Imprime false
+    console.log(obj); // Imprime Object {y:2}
+
+  
+==================================== Decoradores ====================================
+  Permiten anotar y modificar las clases y propriedades en tiempo de disenho.
+  Mientras que es ES5 los objetos literales admiten extenciones arbitrarias
+  en la posicion del valor, las clases de ES6 solo admiten funciones como valores
+  literales, un decorador restaura la capacidad de ejecutar codigo en tiempo
+  de disenho, mientras se mantiene una sintaxis declarativa.
+
+  Un decorador:
+
+    - Es una expresion.
+    - Evalua una funcion.
+    - Toma el target, name y el descriptor del decorador para instalar en el objeto target.
+
+  Parametro de un decorador:
+
+    - target: El objeton al que queremos modificar su definicion de propiedades.
+    - name: El nombre de la propiedad a modificar.
+    - descriptor: La descripcion de la propriedad del objeto, que a su vez es:
+      # configurable: indica si puede ser modificada.
+      # enumerable: se puede usar con un for...of.
+      # value: valor asociado a la propiedad.
+      # writable: indica si la propiedad puede ser cambiada con una asignacion.
+      # get: indica si la propriedad es un getter.
+      # set: indica si la propiedad es un setter.
+
+    const soloLectura = (target, name, descriptor) => {
+      descriptor.writable = false;
+      return descriptor;
+    }
+
+    class Persona {
+      constructor( {nombre, apelido} ) {
+        this.nombre = nombre
+        this.apellido = apellido
+      }
+
+      @soloLectura
+      nombrar() {
+        return `${this.nombre} ${this.apellido}`
+      }
+    }
+    const alguien = new Persona( {
+      nombre: 'Jonathan',
+      apellido: 'Salchichon'
+    })
+
+    console.log(alguien.nombrar())  // Imprime Jonathan Salchichon
+
+    alguien.nombrar = () => return `${this.nombre}` // Ejecutara Cannot assign to read only propertty 'nombrar' of object '#<Persona>'
+
+
+
+==================================== Funciones Asincronas ====================================
+  Son una nueva caracteristica soportada en ES5, que nos permitira realizar las mismas cosas que
+  se pueden lograr con Generadores y Promesas pero con menos esfuerzo.
+
+    function createuser(name) {
+      alert(`usuario ${name} creado`)
+    }
+
+    function getFriends(name) {
+      alert(`Obteniendo amigos de ${name}`)
+      return 150
+    }
+
+    async function setNewUser(name) {
+      let newUser = await createUser(name),
+          friends = await getFriends(name)
+
+      if(friends !== 0) {
+        alert(`${name} tienes ${friends} amigos`)
+      } else {
+        alert(`${name} eres un antisocial sin amigos`)
+      }
+    }
+
+    setNewUser('Jonatahn')
+
+  En Node.js:
+
+    const fs = require('fs'),
+    file = './nombres.text',
+    newFile = './nombres_async_es6.txt
+
+    function accesFile(file) {
+      fs.access(file, fs.F_OK, (err) => {
+        return (err)
+          ? new Error('El archivo no existe')
+          : console.log('El archivo existe')
+      })
+    }
+
+    function readFile(file) {
+      fs.readFile(file, (err, data) => {
+        return (err)
+          ? new Error('El archivo no se pudo copiar')
+          : data
+      })
+    }
+
+    function writeFile(newFile, data) {
+      fs.writeFile(newFile,data, (err) => {
+        return (err)
+          ? nre Error('El archvo no se pudo copiar')
+          : console.log('El archvo se ah copiado con exito')
+      })
+    }
+
+    async function copyFile() {
+      let af1 = await accessFile(file),
+        af2 = await readFile(file),
+        af3 = await writeFile(newFile, af2)
+    }
+
+    copyFile()
+
+
+==================================== Metodos clase String ====================================
+  Nuevos metodos para cadenas de texto.
+  .startWith()
+  .endsWith()
+  .includes()
+  .repeat()
+  .normalize()
+  .raw()
+  .fromCodePoint()
+  .codePointAt()
+
+  let nombre = 'Jonatahn'
+  console.log(nombre.startWith('jo')) // Imprime false
+  console.log(nombre.endsWith('an')) // Imprime true
+  console.log(nombre.includes('th')) // Imprime true
+  console.log(nombre.repeat(3)) // Imprime JonathanJonathanJonathan
+
+
+==================================== Numeros octales y binarios ====================================
+
+  Octales:
+    console.log(0o17) // Imprime 15
+
+  Binarios:
+    console.log(0b100) // Imprime 4
+
+
+==================================== Metodos clase Math ====================================
+   Nuevos metodos de la clase matematicas:
+    .acosh()
+    .asinh()
+    .atanh()
+    .cbrt()
+    .clz32()
+    .cosh()
+    .expm1()
+    .fround()
+    .hypot()
+    .imul()
+    .log10()
+    .log1p()
+    .log2()
+    .sign()
+    .sinh()
+    .tanh()
+    .trunc()
+
+    console.log( Math.acosh(3) ); //Imprime 1.7627471740390859
+    console.log( Math.asinh(2) ); //Imprime 1.4436354751788103
+    console.log( Math.atanh(1) ); //Imprime Infinity
+    console.log( Math.cbrt(4) ); //Imprime 1.5874010519681996
+    console.log( Math.clz32(5) ); //Imprime 29
+    console.log( Math.cosh(7) ); //Imprime 548.317035155212
+    console.log( Math.expm1(8) ); //Imprime 2979.9579870417283
+    console.log( Math.fround(9.56789) ); //Imprime 9.567890167236328
+    console.log( Math.hypot(11,23) ); //Imprime 25.495097567963924
+    console.log( Math.imul(13, 3) ); //Imprime 39
+    console.log( Math.log10(54) ); //Imprime 1.7323937598229686
+    console.log( Math.log1p(34) ); //Imprime 3.5553480614894135
+    console.log( Math.log2(100) ); //Imprime 6.643856189774724
+    console.log( Math.sign(46) ); //Imprime 1
+    console.log( Math.sinh(22) ); //Imprime 1792456423.065796
+    console.log( Math.tanh(19) ); //Imprime 0.9999999999999999
+    console.log( Math.trunc(40.56) ); //Imprime 40
+
+
+==================================== Metodos clase Array ====================================
+  Nuevos metodos para Arreglos.
+    .from() 
+    
+    console.log(Array.from('foo'));
+    // Expected output: Array ["f", "o", "o"]
+
+    console.lg(Array.from([1, 2, 3], x => x + x));
+    // Expected output: Array [2, 4, 6]
+    
+    .of()
+    console.log(Array.of('foo', 2, 'bar', true));
+    // Expected output: Array ["foo", 2, "bar", true]
+
+    console.log(Array.of());
+    // Expected output: Array []
+
+    .copyWithin()
+    const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+    // Copy to index 0 the element at index 3
+    console.log(array1.copyWithin(0, 3, 4));
+    // Expected output: Array ["d", "b", "c", "d", "e"]
+
+    // Copy to index 1 all elements from index 3 to the end
+    console.log(array1.copyWithin(1, 3));
+    // Expected output: Array ["d", "d", "e", "d", "e"]
+
+    .find()
+    const array1 = [5, 12, 8, 130, 44];
+
+    const found = array1.find(element => element > 10);
+
+    console.log(found);
+    // Expected output: 12
+
+    .findIndex()
+    const array1 = [5, 12, 8, 130, 44];
+
+    const isLargeNumber = (element) => element > 13;
+
+    console.log(array1.findIndex(isLargeNumber));
+    // Expected output: 3
+
+    .fill()
+    const array1 = [1, 2, 3, 4];
+
+    // Fill with 0 from position 2 until position 4
+    console.log(array1.fill(0, 2, 4));
+    // Expected output: Array [1, 2, 0, 0]
+
+    // Fill with 5 from position 1
+    console.log(array1.fill(5, 1));
+    // Expected output: Array [1, 5, 5, 5]
+
+    console.log(array1.fill(6));
+    // Expected output: Array [6, 6, 6, 6]
+
+    .includes()
+    const array1 = [1, 2, 3];
+
+  console.log(array1.includes(2));
+  // Expected output: true
+
+  const pets = ['cat', 'dog', 'bat'];
+
+  console.log(pets.includes('cat'));
+  // Expected output: true
+
+  console.log(pets.includes('at'));
+  // Expected output: false
+
+
+  
