@@ -403,7 +403,18 @@ function saludar(nombre = 'desconocido') {
   alert(`Hola ${nombre}`)
 }
 const $multyEvent = document.getElementById('multy-event')
-$multyEvent.addEventListener('click', saludar)
+$multyEvent.addEventListener('click', () => saludar('Jon'))
+
+
+// Remover Eventos con manejadores multiples
+const $removeEvent = document.getElementById('remove-event'),
+      removeDobleClick = (e) => {
+        console.log(e)
+        $removeEvent.removeEventListener('dblclick', removeDobleClick)
+        $removeEvent.disabled = true
+      }
+      
+      $removeEvent.addEventListener('dblclick', removeDobleClick)
 
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
