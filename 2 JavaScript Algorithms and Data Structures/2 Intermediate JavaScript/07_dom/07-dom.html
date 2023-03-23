@@ -41,6 +41,22 @@
     .sepia {
       filter: sepia(1)
     }
+
+    /* Flujo de Eventos */
+    .flujo_eventos div{
+      padding: 2rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .uno {
+      background-color: yellow;
+    }
+    .dos {
+      background-color: gold;
+    }
+    .tres {
+      background-color: lightgoldenrodyellow;
+    }
   </style>
 </head>
 
@@ -128,6 +144,19 @@
 
   <br><br>
   <button id="remove-event">Remover Eventos con manejadores multiples</button>
+
+  <br>
+  <br>
+  <h4>Flujo de Eventos</h4>
+  <section class="flujo_eventos">
+    <div class="uno">1
+      <div class="dos">2
+        <div class="tres">3
+          <a href="https://gmail.com" target="_blank" rel="noopener">gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="dom.js"></script>
 </body>

@@ -417,7 +417,40 @@ const $removeEvent = document.getElementById('remove-event'),
       $removeEvent.addEventListener('dblclick', removeDobleClick)
 
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
+
+const $divEventos = document.querySelectorAll('.flujo_eventos div')
+function flujoEventos(el) { console.log(`Hola te saluda ${this.className}, el click lo origino en ${el.target.className}`) }
+$divEventos.forEach( el => {
+  // Fase de burbuja
+  // el.addEventListener('click', flujoEventos)
+  // el.addEventListener('click', flujoEventos, false)
+  // Face de captura
+  // el.addEventListener('click', flujoEventos, true)
+ /* el.addEventListener('click', flujoEventos, {
+    capture: false,
+    once: true}) */
+})
+
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
+
+const $linkEventos = document.querySelector('.flujo_eventos a')
+function paraPropagacion(el) { 
+  console.log(`Hola te saluda ${this.className}, el click lo origino en ${el.target.className}`) 
+  el.stopPropagation()
+}
+$divEventos.forEach( el => {
+  // Fase de burbuja
+  el.addEventListener('click', paraPropagacion)
+  // Fase de captura
+  // el.addEventListener('click', paraPropagacion, true)
+
+})
+
+$linkEventos.addEventListener('click', (e) => {
+  alert('Hola soy un evento click')
+  el.preventDefault()
+})
+
 /* **********     Curso JavaScript: 76. DOM: Delegación de Eventos - #jonmircha     ********** */
 /* **********     Curso JavaScript: 77. BOM: Propiedades y Eventos - #jonmircha     ********** */
 /* **********     Curso JavaScript: 78. BOM: Métodos - #jonmircha     ********** */
