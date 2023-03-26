@@ -418,7 +418,7 @@ const $removeEvent = document.getElementById('remove-event'),
 
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
 
-const $divEventos = document.querySelectorAll('.flujo_eventos div')
+/* const $divEventos = document.querySelectorAll('.flujo_eventos div')
 function flujoEventos(el) { console.log(`Hola te saluda ${this.className}, el click lo origino en ${el.target.className}`) }
 $divEventos.forEach( el => {
   // Fase de burbuja
@@ -426,18 +426,19 @@ $divEventos.forEach( el => {
   // el.addEventListener('click', flujoEventos, false)
   // Face de captura
   // el.addEventListener('click', flujoEventos, true)
- /* el.addEventListener('click', flujoEventos, {
+  el.addEventListener('click', flujoEventos, {
     capture: false,
-    once: true}) */
+    once: true})
 })
-
+*/
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
-
+/*
 const $linkEventos = document.querySelector('.flujo_eventos a')
 function paraPropagacion(el) { 
   console.log(`Hola te saluda ${this.className}, el click lo origino en ${el.target.className}`) 
   el.stopPropagation()
 }
+
 $divEventos.forEach( el => {
   // Fase de burbuja
   el.addEventListener('click', paraPropagacion)
@@ -450,8 +451,25 @@ $linkEventos.addEventListener('click', (e) => {
   alert('Hola soy un evento click')
   el.preventDefault()
 })
-
+*/
 /* **********     Curso JavaScript: 76. DOM: Delegación de Eventos - #jonmircha     ********** */
+
+function delegacionEventos(e) {
+  console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`)
+  e.stopPropagation()
+}
+document.addEventListener('click', e => {
+  console.log(`Click en ${e.target}`)
+  if(e.target.matches('.flujo_eventos div')) {
+    
+  }
+  if(e.target.matches('.flujo_eventos a')) {
+    alert(`Hola soy un enlace`)
+    e.preventDefault()
+  }
+})
+ 
+
 /* **********     Curso JavaScript: 77. BOM: Propiedades y Eventos - #jonmircha     ********** */
 /* **********     Curso JavaScript: 78. BOM: Métodos - #jonmircha     ********** */
 /* **********     Curso JavaScript: 79. BOM: Objetos: URL, Historial y Navegador - #jonmircha     ********** */
