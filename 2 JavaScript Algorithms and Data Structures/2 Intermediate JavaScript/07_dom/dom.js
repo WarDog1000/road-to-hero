@@ -455,13 +455,13 @@ $linkEventos.addEventListener('click', (e) => {
 /* **********     Curso JavaScript: 76. DOM: Delegación de Eventos - #jonmircha     ********** */
 
 function delegacionEventos(e) {
-  console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`)
+  console.log(`Hola te saluda ${this}, el click lo origino ${e.target.className}`)
   e.stopPropagation()
 }
 document.addEventListener('click', e => {
   console.log(`Click en ${e.target}`)
   if(e.target.matches('.flujo_eventos div')) {
-    
+    delegacionEventos(e)
   }
   if(e.target.matches('.flujo_eventos a')) {
     alert(`Hola soy un enlace`)
@@ -469,7 +469,45 @@ document.addEventListener('click', e => {
   }
 })
  
-
 /* **********     Curso JavaScript: 77. BOM: Propiedades y Eventos - #jonmircha     ********** */
+window.addEventListener('resize', e => {
+  console.clear()
+  console.log('****** Evento Resize ******')
+  console.log(window.innerWidth)
+  console.log(window.innerHeight)
+  console.log(window.outerWidth)
+  console.log(window.outerHeight)
+ 
+  console.log(e)
+})
+
+window.addEventListener('scroll', e => {
+  console.clear()
+  console.log('****** Evento Scroll ******') 
+  console.log(window.scrollX)
+  console.log(window.scrollY)
+  
+  console.log(e)
+})
+
+window.addEventListener('load', e => { // espera a que se cargue todo el documento para ejecutarse
+  // console.clear()
+  console.log('****** Evento Load ******') 
+  console.log(window.screenX)
+  console.log(window.screenY)
+
+  console.log(e)
+})
+
+document.addEventListener('DOMContentLoaded', e => { // se ejecuta inmediatamente
+  // console.clear()
+  console.log('****** Evento DOMContentLoaded ******') 
+  console.log(window.screenX)
+  console.log(window.screenY)
+  
+  console.log(e)
+  })
+
 /* **********     Curso JavaScript: 78. BOM: Métodos - #jonmircha     ********** */
+
 /* **********     Curso JavaScript: 79. BOM: Objetos: URL, Historial y Navegador - #jonmircha     ********** */
