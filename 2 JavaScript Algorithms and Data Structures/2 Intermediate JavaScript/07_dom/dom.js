@@ -509,5 +509,24 @@ document.addEventListener('DOMContentLoaded', e => { // se ejecuta inmediatament
   })
 
 /* **********     Curso JavaScript: 78. BOM: Métodos - #jonmircha     ********** */
+// window.alert('Alerta')
+// window.confirm('Confirmacion')
+// window.prompt('Input')
+
+// alert('Alerta')
+// confirm('Confirmacion')
+// prompt('Input')
+
+const $abrirVentana = document.getElementById('abrir-ventana'),
+      $cerrarVentana = document.getElementById('cerrar-ventana'),
+      $imprimirVentana = document.getElementById('imprimir-ventana')
+      
+let ventana
+
+$abrirVentana.addEventListener('click', e => { ventana = window.open('http://google.com/')})
+
+$cerrarVentana.addEventListener('click', e => { ventana.close() })
+
+$imprimirVentana.addEventListener('click', e => { window.print() })
 
 /* **********     Curso JavaScript: 79. BOM: Objetos: URL, Historial y Navegador - #jonmircha     ********** */
