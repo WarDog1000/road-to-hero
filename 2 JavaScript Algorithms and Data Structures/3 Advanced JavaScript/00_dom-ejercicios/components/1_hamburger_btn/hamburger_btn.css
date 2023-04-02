@@ -1,0 +1,67 @@
+/* **********     Curso JavaScript: 81. DOM: Ejercicios Prácticos | Menú de Hamburguesa - #jonmircha     ********** */
+.hamburger {
+  position: fixed;
+  bottom: 1vh;
+  right: 1vw;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.panel {
+  position: fixed;
+  z-index: 998;
+  background-color: var(--second-modal-color);
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: transform .3s ease, opacity .3s ease;
+
+  /* Propriedades de transition */
+  /* opacidad 0 a 1 */
+  opacity: 0;
+  /* de arriba, lo envia -100% arriba en el eje Y */
+  transform: translate(0, -100%);
+  /* de abajo, lo envia 100% abajo en el eje Y */
+  transform: translate(0, 100%);
+  /* de derecha, lo envia 100% a la derecha en el eje X */
+  transform: translate(100%, 0);
+  /* de izquierda, lo envia -100% a la izquierda en el eje X */
+  transform: translate(-100%, 0);
+}
+/* aplicando la clase is-active modificamos las propriedades de transition */
+.panel.is-active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.panel .menu {
+  width: inherit; /* hereda del padre */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.panel .menu a {
+  padding: 2rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all .3s ease;
+}
+.panel .menu a:hover {
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
+}
