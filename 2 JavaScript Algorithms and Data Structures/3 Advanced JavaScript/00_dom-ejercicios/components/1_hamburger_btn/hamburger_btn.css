@@ -29,6 +29,7 @@
   /* Propriedades de transition */
   /* opacidad 0 a 1 */
   opacity: 0;
+  visibility: hidden;
   /* de arriba, lo envia -100% arriba en el eje Y */
   transform: translate(0, -100%);
   /* de abajo, lo envia 100% abajo en el eje Y */
@@ -42,6 +43,7 @@
 .panel.is-active {
   transform: translate(0, 0);
   opacity: 1;
+  visibility: visible;
 }
 .panel .menu {
   width: inherit; /* hereda del padre */
