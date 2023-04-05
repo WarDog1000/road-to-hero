@@ -13,11 +13,10 @@ export default function countdown(id, limitDate, finalMessage) {
     seconds = ('0' + Math.floor((limitTime % (1000 * 60)) / (1000))).slice(-2)
 
     $countdown.innerHTML = `<h3>Faltan: ${days} Dias, ${hours} Horas, ${minutes} Minutos, ${seconds} Sengundos para tu cumpleaños</h3>`
-    console.log(countdownDate, now, limitTime)
   }, 1000)
   
   // Caundo llegamos a la fecha
-  if(limitTime < 0) {
+  if(limitDate < 0) {
     clearInterval(countdownTemp)
     $countdown.innerHTML = `<h3>${finalMessage}</h3>`
   }
