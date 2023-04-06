@@ -13,6 +13,6 @@ export default function hamburgerBtn(btn, panel, link) {
     ? d.querySelector(panel).classList.remove('is-active')
     && d.querySelector(btn).classList.remove('is-active')
     
-    : undefined
+    : null
   })
 }

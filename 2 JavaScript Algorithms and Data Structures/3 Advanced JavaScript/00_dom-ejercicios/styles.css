@@ -4,9 +4,13 @@
   --font-size: 16px;
   --main-color: #f7df1e;
   --second-color: #222;
+  --light-color: #fff;
+  --text-color: #111;
+  --gray-color: #888;
   --main-modal-color: rgba(247, 222, 30, 0.85);
   --second-modal-color: rgba(34, 34, 34, 0.85);
-  --container-width: 1200px;
+  /* --container-width: 1200px; */
+  max-width: 100%;
 }
 
 html {
@@ -49,6 +53,18 @@ header {
   margin-right: auto;
   width: 100%;
   max-width: var(--container-width);
+  background-color: var(--light-color);
+  color: var(--second-color);
   min-height: 100vh;
   text-align: center;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --main-color: #222;
+  --second-color: #f7df1e;
+  --light-color: #222;
+  --text-color: #fff;
+  --second-modal-color: var(--gray-color);
+  --main-modal-color: rgba(34, 34, 34, 0.85);
 }

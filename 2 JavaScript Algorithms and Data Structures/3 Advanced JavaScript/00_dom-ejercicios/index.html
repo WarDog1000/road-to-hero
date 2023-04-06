@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios del DOM</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" />
     <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Hamburger Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" />
+    <!-- Remixicon.com -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- 0 - Menu Hambuerguesa -->
     <link rel="stylesheet" href="components/1_hamburger_btn/hamburger_btn.css" />
@@ -18,8 +22,12 @@
     <link rel="stylesheet" href="components/4_countdown/countdown.css" />
     <!-- 1 - Scroll Top -->
     <link rel="stylesheet" href="components/5_scroll-top/scroll-top.css" />
+    
+    <!-- 1 - Scroll Top -->
+    <link rel="stylesheet" href="components/6_dark-theme/dark-theme.css" />
+
   </head>
-  <body>
+  <body class="body" data-dark>
     <!-- Header -->
     <header>
         <h3>Ejercicios del DOM</h3>
@@ -78,8 +86,15 @@
       </section>
     </main>
     
-    <!-- ============ CUENTA REGRESIVA ============ -->
+    <!-- ============ SCROLL TOP ============ -->
     <button class="scroll-top hidden">&#11014;</button>
+    
+    <!-- ============ DARK THEME ============ -->
+    <button class="dark-theme">
+      C
+      <!-- <i class="ri-sun-line sun hidden"></i>
+      <i class="ri-moon-line moon"></i> -->
+    </button>
 
     <!-- Footer -->
     <footer></footer>

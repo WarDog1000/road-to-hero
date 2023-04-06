@@ -1,4 +1,4 @@
 #seccion3 {
-  background-color: #888;
-  max-width: 100%;
+  background-color: var(--gray-color);
+  color: var(--text-color);
 }

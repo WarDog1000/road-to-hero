@@ -1,6 +1,6 @@
 #seccion1 {
-  background-color: #888;
-  max-width: 100%;
+  background-color: var(--gray-color);
+  color: var(--text-color);
 }
 
 #seccion1 div {
@@ -15,13 +15,13 @@
   padding: .45rem;
   font-weight: 700;
   text-align: center;
-  color: var(--second-color); 
   background-color: var(--main-color);
+  color: var(--second-color);
 }
 
 #seccion1 button:hover {
   background-color: var(--second-color);
-  color: #fff;
+  color: var(--light-color);
 }
 
 #seccion1 button:disabled {
