@@ -12,9 +12,9 @@ d.addEventListener("DOMContentLoaded", e => {
   alarm('assets/alarma.mp3', '#activar-alarma', '#detener-alarma')
   countdown('countdown', 'Feb 25, 2024', 'Feliz Cumpleaños')
   scrollTop('.scroll-top')
-  darkTheme('.dark-theme', 'dark-mode')
 } )
 
+darkTheme('.dark-theme', 'dark-mode')
 
 
 d.addEventListener('keydown', e => {
