@@ -1,14 +1,14 @@
 /* **********     Curso JavaScript: 85. DOM: Ejercicios | Eventos del Teclado (movimientos y colisiones) - #jonmircha     ********** */
 const d = document
 export function shortcuts(e) {
-  console.log(`type = ${e.type}`)
-  console.log(`key = ${e.key}`)
-  console.log(`keyCode = ${e.keyCode}`)
-  console.log(`crtlKey = ${e.ctrlKey}`)
-  console.log(`altKey = ${e.altKey}`)
-  console.log(`shiftKey = ${e.shiftKey}`)
-  console.log(e)
-  console.clear()
+  // console.log(`type = ${e.type}`)
+  // console.log(`key = ${e.key}`)
+  // console.log(`keyCode = ${e.keyCode}`)
+  // console.log(`crtlKey = ${e.ctrlKey}`)
+  // console.log(`altKey = ${e.altKey}`)
+  // console.log(`shiftKey = ${e.shiftKey}`)
+  // console.log(e)
+  // console.clear()
   
   // Atajo de teclado a + alt
   if(e.key === 'a' && e.altKey) {
