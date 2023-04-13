@@ -6,6 +6,8 @@ import scrollTop from "./components/5_scroll-top/scroll-top.js"
 import darkTheme from "./components/6_dark-theme/dark-theme.js"
 import responsiveMedia from "./components/7_responsive-design/responsive-design.js"
 import responsiveTester from "./components/8_responsive-tester/responsive-tester.js"
+import userDeviceInfo from "./components/9_deteccion-dispositivos/deteccion-dispositivos.js"
+import networkStatus from "./components/10_deteccion-red/deteccion-red.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -26,10 +28,12 @@ d.addEventListener("DOMContentLoaded", e => {
   )
 
   responsiveTester('responsive-tester')
+  userDeviceInfo('user-device')
 
 } )
 
 darkTheme('.dark-theme', 'dark-mode')
+networkStatus()
 
 
 d.addEventListener('keydown', e => {

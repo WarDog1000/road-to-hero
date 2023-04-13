@@ -1,0 +1,28 @@
+/* ******************* Network Status ******************* */
+.online,
+.offline {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align-last: center;
+  background-color: #1b5e20;
+  color: #fff;
+  animation: opacidad 2s ease;
+}
+
+@keyframes opacidad {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.offline {
+  background-color: #b71c1c;
+}
