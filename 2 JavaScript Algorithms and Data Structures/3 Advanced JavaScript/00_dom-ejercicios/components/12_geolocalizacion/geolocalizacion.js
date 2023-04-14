@@ -9,6 +9,15 @@ export default function getLocation(id) {
           miximumAge: 0
         },
         success = position => {
+          let coords = position.coords
+          $div.innerHTML = `<p>Tu posicion actual es:</p>
+                            <ul>
+                              <li>Latitud: <b>${coords.latitude}</b></li>
+                              <li>Longuitud: <b>${coords.longitude}</b></li>
+                              <li>Precision: <b>${coords.accuracy}</b></li>
+                            </ul>
+                            <a href='https://www.google.com/maps/@${coords.latitude},${coords.longitude},20z' target='_blank' rel='noopener'>Ubicacion actual</a>
+                            `
           console.log(position)
         },
         error = err => {
