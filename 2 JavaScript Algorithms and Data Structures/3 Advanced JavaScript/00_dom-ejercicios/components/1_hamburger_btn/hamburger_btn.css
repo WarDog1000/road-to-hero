@@ -18,6 +18,7 @@
 
 .panel {
   position: fixed;
+  overflow-y: auto;
   z-index: 998;
   background-color: var(--second-modal-color);
   width: 100%;

@@ -8,6 +8,8 @@ import responsiveMedia from "./components/7_responsive-design/responsive-design.
 import responsiveTester from "./components/8_responsive-tester/responsive-tester.js"
 import userDeviceInfo from "./components/9_deteccion-dispositivos/deteccion-dispositivos.js"
 import networkStatus from "./components/10_deteccion-red/deteccion-red.js"
+import userWebcam from "./components/11_deteccion-webcam/deteccion-webcam.js"
+import getLocation from "./components/12_geolocalizacion/geolocalizacion.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -29,6 +31,8 @@ d.addEventListener("DOMContentLoaded", e => {
 
   responsiveTester('responsive-tester')
   userDeviceInfo('user-device')
+  userWebcam('web-cam')
+  getLocation('location')
 
 } )
 
