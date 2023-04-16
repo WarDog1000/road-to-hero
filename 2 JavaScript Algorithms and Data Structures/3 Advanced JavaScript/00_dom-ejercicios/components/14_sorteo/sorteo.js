@@ -20,11 +20,11 @@ export default function draw(btn, selector) {
   })
 }
 
-const getWinnerYoutube = selector => {
-  const $players = document.querySelectorAll(selector),
-        random = Math.floor(Math.random() * $players.length),
-        winner = $players[random]
-  return `El ganador es: ${winner.textContent.trim()}`
-}
+// const getWinnerYoutube = selector => {
+//   const $players = document.querySelectorAll(selector),
+//         random = Math.floor(Math.random() * $players.length),
+//         winner = $players[random]
+//   return `El ganador es: ${winner.textContent.trim()}`
+// }
 
-getWinnerYoutube('ytd-comment-thread-renderer #author-text span')
+// getWinnerYoutube('ytd-comment-thread-renderer #author-text span')
