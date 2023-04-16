@@ -11,6 +11,7 @@ import networkStatus from "./components/10_deteccion-red/deteccion-red.js"
 import userWebcam from "./components/11_deteccion-webcam/deteccion-webcam.js"
 import getLocation from "./components/12_geolocalizacion/geolocalizacion.js"
 import serachFilters from "./components/13_filtros-busqueda/filtros-busqueda.js"
+import draw from "./components/14_sorteo/sorteo.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -35,6 +36,7 @@ d.addEventListener("DOMContentLoaded", e => {
   userWebcam('web-cam')
   getLocation('location')
   serachFilters('.card-filter', '.card')
+  draw('#sort-btn', '.player')
 
 } )
 
