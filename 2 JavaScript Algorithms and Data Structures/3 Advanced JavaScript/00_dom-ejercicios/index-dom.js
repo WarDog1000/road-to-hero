@@ -10,6 +10,7 @@ import userDeviceInfo from "./components/9_deteccion-dispositivos/deteccion-disp
 import networkStatus from "./components/10_deteccion-red/deteccion-red.js"
 import userWebcam from "./components/11_deteccion-webcam/deteccion-webcam.js"
 import getLocation from "./components/12_geolocalizacion/geolocalizacion.js"
+import serachFilters from "./components/13_filtros-busqueda/filtros-busqueda.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -33,6 +34,7 @@ d.addEventListener("DOMContentLoaded", e => {
   userDeviceInfo('user-device')
   userWebcam('web-cam')
   getLocation('location')
+  serachFilters('.card-filter', '.card')
 
 } )
 
