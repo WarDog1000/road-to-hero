@@ -12,6 +12,7 @@ import userWebcam from "./components/11_deteccion-webcam/deteccion-webcam.js"
 import getLocation from "./components/12_geolocalizacion/geolocalizacion.js"
 import serachFilters from "./components/13_filtros-busqueda/filtros-busqueda.js"
 import draw from "./components/14_sorteo/sorteo.js"
+import slider from "./components/15_carrusel/carrusel.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -37,6 +38,7 @@ d.addEventListener("DOMContentLoaded", e => {
   getLocation('location')
   serachFilters('.card-filter', '.card')
   draw('#sort-btn', '.player')
+  slider()
 
 } )
 
