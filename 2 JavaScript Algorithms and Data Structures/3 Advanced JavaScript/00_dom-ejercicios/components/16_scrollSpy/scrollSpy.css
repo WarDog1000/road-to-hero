@@ -1,0 +1,56 @@
+@media screen and (min-width: 1024px) {
+  .body {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas: "header header" "main panel";
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .header {
+    grid-area: header;
+  }
+    
+  .panel {
+    grid-area: panel;
+    position: sticky;
+    top: 4rem;
+    background-color: var(--second-color);
+    justify-content: flex-start;
+    align-self: start;
+
+    /* proveniente de la clase .panel.visible */
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .panel .menu {
+    justify-content: start;
+    text-align: right;
+  }
+
+  .panel .menu a {
+    font-size: 1rem;
+    padding: .75rem;
+  }
+  
+  .panel .menu a:hover,
+  .panel .menu a.active {
+    color: var(--second-color);
+    background-color: var(--main-color);
+  }
+  
+  /* buttons sroll-top y hamburger */
+  .hamburger {
+    display: none;
+  }
+  
+  .scroll-top {
+    right: initial;
+    left: calc(4.25rem + 1vw)
+  }
+}

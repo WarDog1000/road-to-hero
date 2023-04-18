@@ -5,31 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios del DOM</title>
+    <!-- ESTILOS -->
     <link rel="stylesheet" href="styles.css" />
-    
-    <!-- Hamburger Button -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" />
+
     <!-- Remixicon.com -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Hamburgerbutton.com -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" />
 
-    <!-- Menu Hambuerguesa -->
+    <!-- Boton Hambuerguesa -->
     <link rel="stylesheet" href="components/1_hamburger_btn/hamburger_btn.css" />
+    <!-- Scroll Top -->
+    <link rel="stylesheet" href="components/5_scroll-top/scroll-top.css" />
+    <!-- Dark Theme Button -->
+    <link rel="stylesheet" href="components/6_dark-theme/dark-theme.css" />
+
     <!-- Reloj Digital-->
     <link rel="stylesheet" href="components/2_reloj/reloj.css" />
     <!-- Eventos del teclado -->
     <link rel="stylesheet" href="components/3_teclado/teclado.css" />
     <!-- Cuenta regresiva -->
     <link rel="stylesheet" href="components/4_countdown/countdown.css" />
-    <!-- Scroll Top -->
-    <link rel="stylesheet" href="components/5_scroll-top/scroll-top.css" />
-    <!-- Dark Theme Button -->
-    <link rel="stylesheet" href="components/6_dark-theme/dark-theme.css" />
     <!-- Deteccion de Red -->
     <link rel="stylesheet" href="components/10_deteccion-red/deteccion-red.css" />
     <!-- Filtros de Busqueda -->
     <link rel="stylesheet" href="components/13_filtros-busqueda/filtros-busqueda.css" />
     <!-- Responsive Slider -->
     <link rel="stylesheet" href="components/15_carrusel/carrusel.css" />
+    <!-- SCROLL SPY -->
+    <link rel="stylesheet" href="components/16_scrollSpy/scrollSpy.css" />
 
   </head>
   <body class="body" data-dark>
@@ -47,28 +51,28 @@
     <!-- Panel -->
     <aside class="panel">
       <nav class="menu">
-        <a href="#seccion1">Reloj Digital y Alarma Sonora</a>
-        <a href="#seccion2">Eventos del Teclado</a>
-        <a href="#seccion3">Cuenta Regresiva</a>
-        <a href="#seccion4">Responsive con JavaScript</a>
-        <a href="#seccion5">Responsive Tester</a>
-        <a href="#seccion6">User Agent</a>
-        <a href="#seccion7">Deteccion de Red</a>
-        <a href="#seccion8">Deteccion de Webcam</a>
-        <a href="#seccion9">Geolocalizacion</a>
-        <a href="#seccion10">Filtros de Busqueda</a>
-        <a href="#seccion11">Sorteo Digital</a>
-        <a href="#seccion12">Responsive Slider</a>
-        <a href="#seccion13"></a>
-        <a href="#seccion14"></a>
-        <a href="#seccion15"></a>
+        <a href="#seccion1" data-scroll-spy>Reloj Digital y Alarma Sonora</a>
+        <a href="#seccion2" data-scroll-spy>Eventos del Teclado</a>
+        <a href="#seccion3" data-scroll-spy>Cuenta Regresiva</a>
+        <a href="#seccion4" data-scroll-spy>Responsive con JavaScript</a>
+        <a href="#seccion5" data-scroll-spy>Responsive Tester</a>
+        <a href="#seccion6" data-scroll-spy>User Agent</a>
+        <a href="#seccion7" data-scroll-spy>Deteccion de Red</a>
+        <a href="#seccion8" data-scroll-spy>Deteccion de Webcam</a>
+        <a href="#seccion9" data-scroll-spy>Geolocalizacion</a>
+        <a href="#seccion10" data-scroll-spy>Filtros de Busqueda</a>
+        <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
+        <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
+        <a href="#seccion13" data-scroll-spy></a>
+        <a href="#seccion14" data-scroll-spy></a>
+        <a href="#seccion15" data-scroll-spy></a>
       </nav>
     </aside>
 
     <!-- Main -->
     <main>
       <!-- ============ RELOJ DIGITAL Y ALARMA SONORA ============ -->
-      <section id="seccion1" class="section">
+      <section id="seccion1" class="section" data-scroll-spy>
         <h2>Reloj Digital y Alarma Sonora</h2>
         <div id="reloj"></div>
           <div>
@@ -80,7 +84,7 @@
       </section>
 
       <!-- ============ EVENTOS DEL TECLADO ============ -->
-      <section id="seccion2" class="section">
+      <section id="seccion2" class="section" data-scroll-spy>
         <h2>Eventos del Teclado</h2>
         <article class="stage">
           <div class="ball"></div>
@@ -88,20 +92,20 @@
       </section>
 
       <!-- ============ CUENTA REGRESIVA ============ -->
-      <section id="seccion3" class="section">
+      <section id="seccion3" class="section" data-scroll-spy>
         <h2>Cuenta Regresiva</h2>
         <div id="countdown">Aqui va un contador</div>
       </section>
       
       <!-- ============ RESPONSIVE DESIGN ============ -->
-      <section id="seccion4" class="section">
+      <section id="seccion4" class="section" data-scroll-spy>
         <h2>Responsive Design con JavaScript</h2>
         <div id="youtube"></div>
         <div id="gmaps"></div>
       </section>
       
       <!-- ============ RESPONSIVE TESTER ============ -->
-      <section id="seccion5" class="section" style="background-color: var(--gray-color);">
+      <section id="seccion5" class="section" data-scroll-spy style="background-color: var(--gray-color);">
         <h2>Responsive Tester</h2>
         <form id="responsive-tester">
           <input name="direccion" type="url" placeholder="URL" required>
@@ -116,31 +120,31 @@
       </section>
       
       <!-- ============ USER AGENT ============ -->
-      <section id="seccion6" class="section">
+      <section id="seccion6" class="section" data-scroll-spy>
         <h2>Deteccion de Dispositivos<br>(User Agent)</h2>
         <div id="user-device"> </div>
       </section>
       
       <!-- ============ DETECCION DE RED ============ -->
-      <section id="seccion7" class="section" style="background-color: var(--gray-color);">
+      <section id="seccion7" class="section" data-scroll-spy style="background-color: var(--gray-color);">
         <h2>Deteccion de Red</h2>
         <div id="conection-detect"> </div>
       </section>
       
       <!-- ============ DETECCION DE WEBCAM ============ -->
-      <section id="seccion8" class="section">
+      <section id="seccion8" class="section" data-scroll-spy>
         <h2>Deteccion de Webcam</h2>
         <video id="web-cam"></video>
       </section>
       
       <!-- ============ GEOLOCALIZACION ============ -->
-      <section id="seccion9" class="section">
+      <section id="seccion9" class="section" data-scroll-spy>
         <h2>Geolocalizacion</h2>
         <div id="location"></div>
       </section>
             
       <!-- ============ FILTROS DE BUSQUEDA ============ -->
-      <section id="seccion10" class="section" style="background-color: var(--gray-color);">
+      <section id="seccion10" class="section" data-scroll-spy style="background-color: var(--gray-color);">
         <h2>Filtros de Busqueda</h2>
         <input type="search" placeholder="buscar..." class="card-filter">
         <article class="cards">
@@ -172,7 +176,7 @@
       </section>
       
       <!-- ============ SORTEO DIGITAL ============ -->
-      <section id="seccion11" class="section">
+      <section id="seccion11" class="section" data-scroll-spy>
         <h2>Sorteo Digital</h2>
         <ul class="players">
           <li class="player">JavaScript</li>
@@ -190,7 +194,7 @@
       </section>
 
       <!-- ============ RESPONSIVE SLIDER ============ -->
-      <section id="seccion12" class="section" style="background-color: var(--gray-color);">
+      <section id="seccion12" class="section" data-scroll-spy style="background-color: var(--gray-color);">
         <h2>Responsive Slider</h2>
         <div class="slider">
           <div class="slider-container">

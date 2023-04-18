@@ -13,6 +13,7 @@ import getLocation from "./components/12_geolocalizacion/geolocalizacion.js"
 import serachFilters from "./components/13_filtros-busqueda/filtros-busqueda.js"
 import draw from "./components/14_sorteo/sorteo.js"
 import slider from "./components/15_carrusel/carrusel.js"
+import scrollSpy from "./components/16_scrollSpy/scroll-spy.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -39,6 +40,7 @@ d.addEventListener("DOMContentLoaded", e => {
   serachFilters('.card-filter', '.card')
   draw('#sort-btn', '.player')
   slider()
+  scrollSpy()
 
 } )
 
