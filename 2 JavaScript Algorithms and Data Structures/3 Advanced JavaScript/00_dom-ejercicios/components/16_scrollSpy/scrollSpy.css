@@ -21,6 +21,7 @@
     background-color: var(--second-color);
     justify-content: flex-start;
     align-self: start;
+    border: 1px solid var(--second-color);
 
     /* proveniente de la clase .panel.visible */
     transform: translate(0, 0);
