@@ -1,6 +1,7 @@
 /* **********     Curso JavaScript: 100. DOM: Video Inteligente (IntersectionObserver & VisibilityChange) - #jonmircha     ********** */
 // Pagina para descargar videos de forma gartuita https://coverr.co/
-const d = document
+const d = document,
+w =window
 
 export default function smartVideo() {
   // selecciona todo elemento video con el data atribute data-smart-video
@@ -18,6 +19,14 @@ export default function smartVideo() {
         // sino targetea el entry y ejecuta su medoto pause
         entry.target.pause()
       }
+
+
+      // evento de window para cunado se cambia de ventana
+      w.addEventListener('visibilitychange', e => 
+         d.visibilityState === 'visible'
+          ? entry.target.play()
+          : entry.target.pause()
+      )
     })
   }
 
