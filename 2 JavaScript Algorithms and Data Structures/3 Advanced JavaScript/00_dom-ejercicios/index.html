@@ -66,7 +66,7 @@
         <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
         <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
         <a href="#seccion13" data-scroll-spy>Video Inteligente</a>
-        <a href="#seccion14" data-scroll-spy></a>
+        <a href="#seccion14" data-scroll-spy>Validaciones de Formularios</a>
         <a href="#seccion15" data-scroll-spy></a>
       </nav>
     </aside>
@@ -219,6 +219,26 @@
           <video src="assets/video-tech.mp4" class="video" muted controls loop data-smart-video></video>
           <video src="assets/video.mp4" class="video-2" muted controls loop data-smart-video></video>
         </div>
+      </section>
+
+      <!-- ============ VALIDACIONES DE FORMULARIOS ============ -->
+      <section id="seccion14" class="section" data-scroll-spy style="background-color: var(--gray-color);">
+        <h2>Validaciones de Formularios</h2>
+        <form class="contact-form">
+          <legend>Enviame tus comentarios</legend>
+          <input type="text" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="El nombre solo hacepta letras y espacios en blanco" placeholder="Escribe tu nombre" required>
+          <input type="text" name="asunto" title="El asunto es requerido" placeholder="Asunto a tratar" required>
+          <input type="email" name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="Email incorrecto" placeholder="Escribe tu email" required>
+          <textarea name="comments" cols="50" rows="5" placeholder="Escribe tu comentario" title="Tu comenentario no debe superar los 255 caracteres" required data-patern="^.{1,255}$"></textarea>
+          <input type="submit" value="Enviar">
+          <div class="contact-form-loader">
+            <img src="assets/loader.svg" alt="Cargando">
+          </div>
+      </section>
+
+      <!-- ============ SECCION 15 ============ -->
+      <section id="seccion15" class="section" data-scroll-spy>
+        <h2>Seccion 15</h2>
       </section>
 
     </main>
