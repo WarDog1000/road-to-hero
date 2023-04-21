@@ -1,0 +1,84 @@
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+/* selector para todos los elementos hijos directos */
+.contact-form > * {
+  padding: .5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+  background-color: var(--light-color);
+}
+
+/* selecciona todos los elemetos input con la propriedad 'type="submit"' */
+.contact-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* selecciona todo los elementos con la propriedad 'placeholder' */
+.contact-form *::placeholder,
+.contact-form input[type="submit"] {
+  color: rgba(205, 205, 205, 0.85);
+}
+
+/* sellecciona todos los elementos con la propriedad 'required' cuando esta sea valida */
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color)
+}
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color)
+}
+
+
+/* ============ MENSAGES DE ERROR ============ */
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: var(--light-color);
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s normal 0s ease-out both;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.none {
+  display: none;
+}

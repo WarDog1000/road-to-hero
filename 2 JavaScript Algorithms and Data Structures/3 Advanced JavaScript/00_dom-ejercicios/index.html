@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="components/16_scrollSpy/scrollSpy.css" />
     <!-- Video Inteligente -->
     <link rel="stylesheet" href="components/17_video-inteligente/video-inteligente.css" />
+    <!-- Validaciones de Formulario -->
+    <link rel="stylesheet" href="components/18_validaciones-formulario/validaciones-formulario.css" />
 
   </head>
   <body class="body" data-dark>
@@ -229,10 +231,13 @@
           <input type="text" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="El nombre solo hacepta letras y espacios en blanco" placeholder="Escribe tu nombre" required>
           <input type="text" name="asunto" title="El asunto es requerido" placeholder="Asunto a tratar" required>
           <input type="email" name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="Email incorrecto" placeholder="Escribe tu email" required>
-          <textarea name="comments" cols="50" rows="5" placeholder="Escribe tu comentario" title="Tu comenentario no debe superar los 255 caracteres" required data-patern="^.{1,255}$"></textarea>
+          <textarea name="comments" cols="50" rows="5" placeholder="Escribe tu comentario" title="Tu comenentario no debe superar los 255 caracteres" required data-pattern="^.{1,255}$"></textarea>
           <input type="submit" value="Enviar">
-          <div class="contact-form-loader">
+          <div class="contact-form-loader none">
             <img src="assets/loader.svg" alt="Cargando">
+          </div>
+          <div class="contact-form-response none">
+            <p>Los datos han sido enviados exitosamente</p>
           </div>
       </section>
 
