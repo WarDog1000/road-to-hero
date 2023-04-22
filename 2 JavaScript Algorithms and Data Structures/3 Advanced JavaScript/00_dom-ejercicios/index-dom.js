@@ -16,6 +16,7 @@ import slider from "./components/15_carrusel/carrusel.js"
 import scrollSpy from "./components/16_scrollSpy/scroll-spy.js"
 import smartVideo from "./components/17_video-inteligente/video-inteligente.js"
 import contactFormValidations from "./components/18_validaciones-formulario/validaciones-formulario.js"
+import speechReader from "./components/19_narrador/narrador.js"
 
 const d = document
 d.addEventListener("DOMContentLoaded", e => {
@@ -50,6 +51,7 @@ d.addEventListener("DOMContentLoaded", e => {
 
 darkTheme('.dark-theme', 'dark-mode')
 networkStatus()
+speechReader()
 
 
 d.addEventListener('keydown', e => {
