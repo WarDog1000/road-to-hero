@@ -27,7 +27,7 @@ export default function scrollSpy() {
     // rootMargin: '-250px',
     threshold: [0.5, 0.75], // min max 50% / 75% de visibilidad
   })
-  console.log('Observador', observador)
+  // console.log('Observador', observador)
 
   // recorre el conjunto de $sections y asigna el observador a cada elemento dentro del conjunto
   $sections.forEach( el => observador.observe(el) )
