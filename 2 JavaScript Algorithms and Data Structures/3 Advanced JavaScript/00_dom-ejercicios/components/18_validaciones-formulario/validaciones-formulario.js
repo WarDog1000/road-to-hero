@@ -7,7 +7,7 @@ export default function contactFormValidations() {
         $inputs = d.querySelectorAll('.contact-form [required]')
   // console.log($input)
 
-  // recorre el conjunto de inputs
+  // recorre el conjunto de inputs para insertar elementos '<span>'
   $inputs.forEach( el => {
     // crea un elemento span por cada vuelta
     const $span = d.createElement('span')
@@ -53,5 +53,29 @@ export default function contactFormValidations() {
             .classList.remove('is-active') // remueve 
       }
     }
+  })
+
+  // envio del formulario con el evento 'submit'
+  d.addEventListener('submit', e => {
+    // se corta el comportamiento por defecto del submit
+    // e.preventDefault()
+    // se crea una referencia del elemento loader y otra para el elemeto de respuesta
+    const $loader = d.querySelector('.contact-form-loader'),
+          $response = d.querySelector('.contact-form-response')
+
+    // se muestra en pantalla ele elemento 'loader'
+    $loader.classList.toggle('none')
+    // despues de 2 segundos desaparece el loader, se imprime la respuesta en pantalla y se limpia los campos del formulario
+    setTimeout(() =>{ 
+      $loader.classList.toggle('none')
+      $response.classList.toggle('none')
+      // resetea el formulario
+      $form.reset()
+
+      // 3 segundos despues de mostrar el elemento 'response', lo oculta de pantalla
+      setTimeout( () => $response.classList.toggle('none'), 3000)
+    }, 2000 )
+    
+
   })
 }
