@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="components/17_video-inteligente/video-inteligente.css" />
     <!-- Validaciones de Formulario -->
     <link rel="stylesheet" href="components/18_validaciones-formulario/validaciones-formulario.css" />
+    <!-- Narrador -->
+    <link rel="stylesheet" href="components/19_narrador/narrador.css" />
 
   </head>
   <body class="body" data-dark>
@@ -247,13 +249,15 @@
       <!-- ============ NARRADOR ============ -->
       <section id="seccion15" class="section" data-scroll-spy>
         <h2>Narrador</h2>
-        <select name="" id="speech-select">
-          <option value="">...Elije una Voz...</option>
-          <br><br>
-          <textarea name="speech-text" id="" cols="50" rows="50" placeholder="Ingresa texto para leer..."></textarea>
-          <br><br>
-          <buuton id="speech-button">Leer Texto</buuton>
-        </select>
+        <div class="speech-container">
+          <select name="" id="speech-select">
+            <option value="">...Elije una Voz...</option>
+            <br><br>
+            <textarea name="" id="speech-text" cols="10" rows="10" placeholder="Ingresa texto para leer..."></textarea>
+            <br><br>
+            <button id="speech-btn">Leer Texto</button>
+          </select>
+        </div>
       </section>
 
     </main>

@@ -1,0 +1,21 @@
+.speech-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+/* selector para todos los elementos hijos directos */
+.speech-container > * {
+  padding: .5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+
+  font-size: 1rem;
+  font-family: sans-serif;
+  background-color: var(--light-color);
+}
+
+.speech-container textarea {
+  resize: none;
+}
