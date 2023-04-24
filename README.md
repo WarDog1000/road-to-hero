@@ -1,3 +1,15 @@
+# What is "Road to Hero" in programming?
+
+"Road to Hero" is a term used in the programming community to describe the process of learning and constant improvement in programming.
+
+This path includes learning the basics of programming, such as syntax and structure of programming languages, as well as problem-solving, algorithm design, and implementation of efficient solutions.
+
+To become a "hero" in programming, it is necessary to devote constant time and effort to learning and improving skills. This includes practicing problem-solving and implementing programming projects, as well as learning new technologies and programming languages.
+
+In summary, the "Road to Hero" in programming is a continuous learning process and constant improvement, which allows programmers to acquire skills and knowledge to create increasingly advanced and efficient solutions in the world of programming.
+
+---
+
 # FreeCodeCamp
 
 [FreeCodeCamp](https://www.freecodecamp.org/learn) is a free online learning platform that offers a wide variety of programming courses and projects, from web development to data science and beyond. 
