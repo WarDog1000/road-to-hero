@@ -1,6 +1,6 @@
 # FreeCodeCamp
 
-FreeCodeCamp is a free online learning platform that offers a wide variety of programming courses and projects, from web development to data science and beyond. 
+[FreeCodeCamp](https://www.freecodecamp.org/learn) is a free online learning platform that offers a wide variety of programming courses and projects, from web development to data science and beyond. 
 
 ## Description
 
@@ -31,7 +31,3 @@ FreeCodeCamp has a dedicated support team that can help you with any issues you 
 ## Contributing
 
 FreeCodeCamp welcomes contributions from the community in the form of bug reports, feature requests, and code contributions.
-
-## License
-
-FreeCodeCamp is released under the BSD 3-Clause License.

@@ -1,6 +1,6 @@
 # Algorithms and Data Structures
 
-This repository contains the exercises and projects completed as part of the FreeCodeCamp Algorithms and Data Structures course.
+This repository contains the exercises and projects completed as part of the [FreeCodeCamp Algorithms and Data Structures course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/).
 
 ## Description
 

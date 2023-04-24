@@ -1,6 +1,6 @@
 # Responsive Web Design
 
-This repository contains exercises and projects completed as part of the FreeCodeCamp Responsive Web Design course.
+This repository contains exercises and projects completed as part of the [FreeCodeCamp Responsive Web Design course](https://www.freecodecamp.org/learn/2022/responsive-web-design/).
 
 ## Description
 

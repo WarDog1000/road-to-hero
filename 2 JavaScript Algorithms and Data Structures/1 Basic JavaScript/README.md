@@ -1,6 +1,6 @@
 # Curso de JavaScript Básico
 
-En este curso de JavaScript Básico aprenderás los fundamentos del lenguaje de programación más utilizado en el desarrollo web. Conocerás los conceptos básicos de la programación y cómo se aplican en JavaScript.
+En este [curso de JavaScript Básico](https://www.youtube.com/watch?v=ivdTnPl1ND0&t=29556s) aprenderás los fundamentos del lenguaje de programación más utilizado en el desarrollo web. Conocerás los conceptos básicos de la programación y cómo se aplican en JavaScript.
 
 ## Temas a tratar
 

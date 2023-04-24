@@ -1,6 +1,7 @@
 # Front End Development Libraries
 
-This repository contains the exercises and projects completed as part of the FreeCodeCamp Front End Development Libraries course.
+This repository contains the exercises and projects completed as part of the [FreeCodeCamp Front End Development Libraries course](https://www.freecodecamp.org/learn/front-end-development-libraries/)
+.
 
 ## Description
 
