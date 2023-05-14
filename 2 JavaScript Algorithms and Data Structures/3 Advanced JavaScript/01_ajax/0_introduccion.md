@@ -9,6 +9,9 @@ El atractivo de AJAX es su naturaleza 'asincrona', lo que significa que
 puede comunicarse con el servidor, intercambiar datos y actualizar la pagina
 sin tener que recargar el navegador.
 
+![AJAX](assets/ajax.png)
+
+
 * Metodos Nativos
   - ActiveXObject (IE8 e inferiors, esta depreciado)
   - XMLHttpRequest
