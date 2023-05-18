@@ -2,7 +2,7 @@
 (() => {
   // 1er paso: Instanciar un objeto XMLHttpRequest
   const xml = new XMLHttpRequest(),
-  element = document.getElementById('xhr'),
+  element = document.getElementById('xml'),
   fragment = document.createDocumentFragment()
   // 2do paso: Asignar el o los eventos
   // se lanza cuando detecta cualquier cambio de estado
@@ -74,7 +74,7 @@
 			element.appendChild(fragment)
     } catch (err) {
       console.log(`${err}`)
-			let message = err.statusText || "Ocurrió un error";
+			let message = err.statusText || "Ocurrió un error"
 			element.innerHTML = `Error ${err.status}: ${message}`
     } finally {
       console.log('esta linea se ejecutara independiente del try/catch')
@@ -88,7 +88,7 @@
 	const
 	element = document.getElementById('axios'),
   fragment = document.createDocumentFragment()
-	axios.get('https://jsonplaceholder.typicode.com/user')
+	axios.get('https://jsonplaceholder.typicode.com/users')
 	.then(res => {
     let json = res.data
     json.forEach(el => {
@@ -107,3 +107,29 @@
 })();
 
 /* **********     Curso JavaScript: 110. AJAX: Librería Axios + Async-Await - #jonmircha     ********** */
+(() => {
+  const
+  element = document.getElementById('async-axios'),
+  fragment = document.createDocumentFragment()
+  async function getData() {
+    try {
+      let res = await axios.get('https://jsonplaceholder.typicode.com/users')
+      json = await res.data
+      console.log(json)
+      json.forEach(el => {
+        const li = document.createElement('li')
+        li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`
+        fragment.appendChild(li)
+      })
+      element.appendChild(fragment)
+    } catch(err) {
+      console.log(`${err.response}`)
+			let message = err.response.statusText || "Ocurrió un error"
+			element.innerHTML = `Error ${err.response.status}: ${message}`
+    } finally {
+      console.log('esta linea se ejecutara independiente del try/catch')
+    }
+  }
+  getData()
+}
+)();
