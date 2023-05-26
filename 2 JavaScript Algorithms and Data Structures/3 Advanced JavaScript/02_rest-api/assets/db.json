@@ -81,6 +81,11 @@
       "id": 4,
       "nombre": "Zeus",
       "de": "Cielo"
+    },
+    {
+      "id": 5,
+      "nombre": "Ares",
+      "de": "Guerra"
     }
   ]
 }

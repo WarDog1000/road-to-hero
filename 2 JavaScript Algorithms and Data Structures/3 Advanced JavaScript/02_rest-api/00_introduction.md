@@ -2,7 +2,7 @@
 
 Que es una API?
 
-Una ***API(Application Programming Interface)***, o interfaz de Programacion de Aplicaciones, es un conmjunto de rutinas que provee acceso a funciones de un determinado ***software***, para efectos de esta nota, acceso a alas funciones de nuestros sitios y aplicaciones web.
+Una ***API(Application Programming Interface)***, o interfaz de Programacion de Aplicaciones, es un conmjunto de rutinas que provee acceso a funciones de un determinado ***software***, para efectos de esta nota, acceso a las funciones de nuestros sitios y aplicaciones web.
 
 Dentro de los navegadores web tenemos 2 tipos de Apis:
 
