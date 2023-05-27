@@ -50,3 +50,23 @@ REST      DELETE
 ```
 
 Otra ventaja de este modelo de desarrollo es que puedes usar un mismo origen de datos para distintos clientes, por ejemplo un cliente nativo (ios, Android), un cliente de escritorio (Windows) o un cliente web (Navegadores).
+
+### npm install
+```
+npm i json-server -g
+```
+
+### Create a server instance
+```
+json-server -w db.json
+```
+
+PORT:
+```
+json-server -p 3000
+```
+
+***localhost:***
+PORT
+
+***ej:*** localhost:3000
