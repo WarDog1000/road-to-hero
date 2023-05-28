@@ -10,44 +10,42 @@
 <body>
   <h1>CRUD API REST AJAX</h1>
 
-  <section id="crud">
+  <section class="crud">
+
     <article>
-      <h2 class="crud-title">Agregar Santos</h2>
+      <h2 class="crud-title">Agregar Santo</h2>
 
       <form class="crud-form">
-        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="text" name="nombre" placeholder="nombre" required>
         <br>
-        <input type="text" name="constelacion" placeholder="Constelacion">
+        <input type="text" name="constelacion" placeholder="constelación" required>
         <br>
         <input type="submit" value="Enviar">
         <input type="hidden" name="id">
       </form>
 
     </article>
-
     <article>
-      
       <h2>Ver Santos</h2>
+
       <table class="crud-table">
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Constelacion</th>
+            <th>Constelación</th>
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
-          
-        </tbody>
+        <tbody></tbody>
       </table>
 
     </article>
   </section>
-
+  
   <template id="crud-template">
     <tr>
       <td class="name"></td>
-      <td class="constelation"></td>
+      <td class="constellation"></td>
       <td>
         <button class="edit">Editar</button>
         <button class="delete">Eliminar</button>

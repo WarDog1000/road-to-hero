@@ -1,7 +1,8 @@
 // VARIABLES DEL DOPM
-const d =document,
+const
+d =document,
 table = d.querySelector('.crud-table'),
-form = d.querySelector('.crud-form'),
+form = d.querySelector('form.crud-form'),
 title = d.querySelector('.crud-title'),
 template = d.getElementById('crud-template').content,
 fragment = d.createDocumentFragment()
@@ -43,20 +44,22 @@ const ajax = (options) => {
 }
 
 const responseError = (err) => {
+  // console.log(err)
   table.insertAdjacentHTML('afterend', `<p><b>${err}</b></p>`)
 }
 
-const responseSuccess = ( res) => {
- res.forEach( el => {
-  template.querySelector('.name').textContent = el.nombre
-  template.querySelector('.edit').dataset.name = el.nombre
-  template.querySelector('.constelation').textContent = el.constelacion
-  template.querySelector('.edit').dataset.constelacion = el.constelacion
-  template.querySelector('.edit').dataset.id = el.id
-  template.querySelector('.delete').dataset.id = el.id
-  let clonedNode = d.importNode(template, true)
-  fragment.appendChild(clonedNode)
- })
+const responseSuccess = (res) => {
+  // console.log(res)
+  res.forEach( el => {
+    template.querySelector('.name').textContent = el.nombre
+    template.querySelector('.edit').dataset.name = el.nombre
+    template.querySelector('.constellation').textContent = el.constelacion
+    template.querySelector('.edit').dataset.constellation = el.constelacion
+    template.querySelector('.edit').dataset.id = el.id
+    template.querySelector('.delete').dataset.id = el.id
+    let clonedNode = d.importNode(template, true)
+    fragment.appendChild(clonedNode)
+  })
 
  table.querySelector('tbody').appendChild(fragment)
 }
@@ -66,44 +69,79 @@ const GET = () => {
     {
       method: 'GET',
       url: 'http://localhost:3000/santos',
-      success: (res) => {
-        responseSuccess(res)
-        console.log(res)
-      },
-      error: (err) => { 
-        responseError(err)
-        console.log(err)
-      },
+      success: (res) => { responseSuccess(res) },
+      error: (err) => { responseError(err) },
       data: null
-    }
-  )
-}
-const POST = () => {
-  ajax(
-    {
-      method: 'POST',
-      url: 'http://localhost:3000/santos',
-      success: (res) => {
-        responseSuccess(res)
-        console.log(res)
-      },
-      error: (err) => { 
-        responseError(err)
-        console.log(err)
-      },
-      data: {
-        
-      }
     }
   )
 }
 
 d.addEventListener('DOMContentLoaded', GET)
+
+/* **********     Curso JavaScript: 116. APIs REST: CRUD con AJAX (2/2) - #jonmircha     ********** */
+const POST = (e) => {
+  ajax({
+    url: "http://localhost:3000/santos",
+    method: "POST",
+    success: (res) => location.reload(),
+    error: (err) => responseError(err),
+    data: {
+      nombre: e.target.nombre.value,
+      constelacion: e.target.constelacion.value
+    }
+  })
+}
+
+const PUT = (e) => {
+  ajax({
+    method: "PUT",
+    url: `http://localhost:3000/santos/${e.target.id.value}`,
+    success: (res) => location.reload(),
+    error: (err) => responseError(err),
+    data: {
+      nombre: e.target.nombre.value,
+      constelacion: e.target.constelacion.value
+    }
+  })
+}
+
+const DELETE = (e) => {
+  ajax({
+    url: `http://localhost:3000/santos/${e.target.dataset.id}`,
+    method: "DELETE",
+    success: (res) => location.reload(),
+    error: (err) => alert(err)
+  })
+}
+
 d.addEventListener('submit', e => {
-  if(e.terget === form) {
-    e.preventDefault()
-    POST
+  if (e.target === form) {
+    e.preventDefault();
+    if (!e.target.id.value) {
+      //Create - POST
+      POST(e)
+    } else {
+      // PUT - UPDATE
+      PUT(e)
+    }
   }
 })
 
-/* **********     Curso JavaScript: 116. APIs REST: CRUD con AJAX (2/2) - #jonmircha     ********** */
+
+d.addEventListener("click", e => {
+  if (e.target.matches(".edit")) {
+    title.textContent = "Editar Santo"
+    form.nombre.value = e.target.dataset.name
+    form.constelacion.value = e.target.dataset.constellation
+    form.id.value = e.target.dataset.id
+  }
+
+  if (e.target.matches(".delete")) {
+    let isDelete = confirm(`¿Estás seguro de eliminar el id ${e.target.dataset.id}?`)
+
+    if (isDelete) {
+      // DELETE - DELETE
+      DELETE(e)
+    }
+  }
+})

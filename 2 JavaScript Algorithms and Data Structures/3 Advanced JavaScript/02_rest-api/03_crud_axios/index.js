@@ -1,9 +1,10 @@
 // VARIABLES DEL DOPM
-const d =document,
+const
+d =document,
 table = d.querySelector('.crud-table'),
-form = d.querySelector('.crud-form'),
+form = d.querySelector('form.crud-form'),
 title = d.querySelector('.crud-title'),
-template = d.getElementById('.crud-template').content,
+template = d.getElementById('crud-template').content,
 fragment = d.createDocumentFragment()
 
 /* **********     Curso JavaScript: 119. APIs REST: CRUD con Axios (1/2) - #jonmircha     ********** */
