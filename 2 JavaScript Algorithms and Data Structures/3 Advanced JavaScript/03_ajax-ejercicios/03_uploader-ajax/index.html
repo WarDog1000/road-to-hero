@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploader con AJAX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 992px;
+    }
+
+    .nav-link:not(:last-child) {
+    margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="flex columns-1 justify-center items-center min-h-screen">
+    <!-- No form needed with PHP -->
+    <input type="file" id="files" name="files" multiple />
+    <!-- Use event "cahnge" -->
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
