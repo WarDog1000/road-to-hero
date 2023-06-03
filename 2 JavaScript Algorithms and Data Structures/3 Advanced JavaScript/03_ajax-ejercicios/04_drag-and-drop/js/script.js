@@ -1,5 +1,5 @@
 const main = document.querySelector('main'),
-files = document.getElementById('files')
+dropzone = document.getElementById('drop-zone')
 
 const uploader = (file) => {
   // console.log(file)
@@ -79,7 +79,7 @@ const progressUploader = file => {
     // Remove progress bar and span from the DOM
     main.removeChild(progressBar) // remove progress bar
     // main.removeChild(span) // remove span
-    files.value = "" // clean input file
+
   }
   
   // call function handleFileUpload
@@ -88,15 +88,26 @@ const progressUploader = file => {
 
 }
 
-document.addEventListener('change', e => {
-  if(e.target === files) {
-    // console.log(e.target.files)
-    
-    // Convert on iterable object
-    const files = Array.from(e.target.files)
-
-    // For each elements in file, execute the callback function
-    files.forEach( el => progressUploader(el))
+dropzone.addEventListener('dragover', e => {
+  e.preventDefault()
+  e.stopPropagation()
+  e.target.classList.add('is-active')
   
-  }
+})
+dropzone.addEventListener('dragleave', e => {
+  e.preventDefault()
+  e.stopPropagation()
+  e.target.classList.remove('is-active')
+})
+dropzone.addEventListener('drop', e => {
+  e.preventDefault()
+  e.stopPropagation()
+  e.target.classList.remove('is-active')
+  // obtain files from event and convert to array
+  const files = Array.from(e.dataTransfer.files)
+  files.forEach(file => {
+    // call function progressUploader
+    progressUploader(file)
+  })
+
 })

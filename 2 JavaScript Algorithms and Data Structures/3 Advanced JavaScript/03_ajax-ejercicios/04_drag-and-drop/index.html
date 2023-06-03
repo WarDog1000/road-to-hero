@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uploader con AJAX</title>
+  <title>Drag and Drop con AJAX</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
@@ -24,17 +24,32 @@
     }
 
     .nav-link:not(:last-child) {
-    margin-right: 1rem;
+      margin-right: 1rem;
     }
+
+    .drop-zone.is-active {
+      border: thick dashed #000;
+      background-color: rgba(0, 128, 0, .5);
+      animation: pulse 1.5s infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      } 50% {
+        transform: scale(1.1);
+      }
+    }
+
   </style>
 </head>
 <body class="m-0">
 
   <main class="flex flex-col justify-center items-center min-h-screen">
-    <!-- No form needed with PHP -->
-    <input type="file" id="files" name="files" multiple>
-    <!-- Use event "change" -->
-    <!-- <progress value="70" max="100" class="mt-4"></progres> -->
+    <article id="drop-zone" class="drop-zone ml-auto mr-auto border border-black border-dotted w-80 h-40 flex justify-center items-center text-center">
+      <p>Drag and Drop</p>
+    </article>
   </main>  
 
   <script src="js/script.js"></script>
