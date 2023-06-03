@@ -18,5 +18,5 @@ npx tailwindcss init
 
 ### Build
 ```
-npx tailwindcss build src/tailwind.css
+npx tailwindcss build src/tailwind.css -o css/estyles.css
 ```
