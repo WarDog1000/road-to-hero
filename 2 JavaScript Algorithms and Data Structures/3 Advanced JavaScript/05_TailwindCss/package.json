@@ -1,20 +1,22 @@
 {
   "name": "05_tailwindcss",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r npm init -y\r npm i tailwindcss\r ```",
   "main": "index.js",
   "scripts": {
-    "install": "npm i tailwindcss",
-    "call": "npx tailwindcss init",
-    "build": "npx tailwindcss build src/tailwind.css -o css/styles.css",
-    "env": "npm i win-node-env",
-    "production": "NODE_ENV=production postcss .src/tailwind.css -o css/styles.css"
+    "i": "npm i -D tailwindcss postcss autoprefixer",
+    "init": "npx tailwindcss init -p",
+    "build": "npx tailwindcss -i ./src/main.css -o ./dist/styles.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  },
   "dependencies": {
-    "tailwindcss": "^3.3.2",
     "win-node-env": "^0.6.1"
   }
 }
