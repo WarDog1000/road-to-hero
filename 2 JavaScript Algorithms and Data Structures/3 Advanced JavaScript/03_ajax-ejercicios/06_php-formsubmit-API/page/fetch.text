@@ -1,0 +1,5 @@
+fetc("direccion url donde este alojado el archivo php", {
+  method: "POST",
+  etc: etc,
+  mode: "cors"
+})
