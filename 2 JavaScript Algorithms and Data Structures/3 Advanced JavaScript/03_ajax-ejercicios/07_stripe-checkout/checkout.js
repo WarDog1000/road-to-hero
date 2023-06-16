@@ -12,6 +12,8 @@ options = {
   }
 }
 
+const moneyFormat = num => `$${num.slice(0, -2)}, ${num.slice(-2)}`
+
 let prices, products
 
 Promise.all([
@@ -30,7 +32,7 @@ Promise.all([
     template.querySelector("img").src = productData[0].images[0]
     template.querySelector("img").alt = productData[0].name
     template.querySelector("figcaption").innerHTML = `${productData[0].name}<br>
-    ${el.unit_amount_decimal} ${el.currency}`
+    ${moneyFormat(el.unit_amount_decimal)} ${el.currency}`
 
     let clone = document.importNode(template, true)
     fragment.appendChild(clone)
@@ -43,8 +45,22 @@ Promise.all([
   section.innerHTML = `<p>Error ${err.status}: ${message}</p>`
 })
 
-// fetch("https://api.stripe.com/v1/products", {
-//   headers: { Authorization: `Bearer ${STRIPE_KEYS.secret}` }
-// })
-// .then( res => res.json() )
-// .then( json => log(json) )
+document.addEventListener('click', e => {
+  if(e.target.matches(".figure *")) {
+    let price = e.target.parentElement.getAttribute("data-price")
+
+    Stripe(STRIPE_KEYS.public)
+    .redirectToCheckout({
+      lineitems: [{price: price, quantity: 1}],
+      mode: "subscription",
+      successUrl: "",
+      cancelUrl: ""
+    })
+    .then(res => {
+      if(res.error) {
+        figure.insertAdjacentHTML("afterend", res.error.message)
+      }
+    })
+  }
+
+})
