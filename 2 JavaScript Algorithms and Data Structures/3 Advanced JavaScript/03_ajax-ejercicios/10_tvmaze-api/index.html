@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TVMaze API</title>
+  <style>
+    html {
+      text-align: center;
+    }
+    .grid-fluid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  </style>
+</head>
+<body>
+  <h1>Buscador de TV Shows</h1>
+  <input type="search" id="search" placeholder="Buscar show">
+  <section id="section" class="grid-fluid"></section>
+  <template id="template">
+    <article class="show">
+      <h3></h3>
+      <div></div>
+      <img>
+      <a></a>
+    </article>
+  </template>
+  <script src="script.js"></script>
+</body>
+</html>
