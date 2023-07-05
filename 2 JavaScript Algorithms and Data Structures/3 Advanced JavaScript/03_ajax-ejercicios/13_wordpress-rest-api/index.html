@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress REST API y Fetch</title>
+</head>
+<body>
+  <h1>WordPress REST API y Fetch</h1>
+  <article id="site" class="site"></article>
+  <section id="posts" class="posts">
+    <img class="loader" src="loader.svg" alt="loader">
+    <template id="post-template">
+      <article class="post">
+        <img alt="" class="post-image">
+        <aside>
+          <h2 class="post-title"></h2>
+          <figure class="post-author"></figure>
+          <small class="post-date"></small>
+          <a class="post-link" target="_blank">Ver publicacion original</a>
+          <p class="post-excerpt"></p>
+          <div class="post-categories"></div>
+          <div class="post-tags"></div>
+          <details class="post-content">
+            <summary>Ver contenido de la publicacion</summary>
+            <article></article>
+          </details>
+        </aside>
+      </article>
+      <hr>
+    </template>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
