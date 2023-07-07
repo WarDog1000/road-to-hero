@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WordPress REST API y Fetch</title>
+  <style>
+    .loader {
+      display: none;
+      margin: 2rem auto;
+    }
+  </style>
 </head>
 <body>
   <h1>WordPress REST API y Fetch</h1>
@@ -12,7 +18,7 @@
     <img class="loader" src="loader.svg" alt="loader">
     <template id="post-template">
       <article class="post">
-        <img alt="" class="post-image">
+        <img alt="post-image" class="post-image">
         <aside>
           <h2 class="post-title"></h2>
           <figure class="post-author"></figure>
