@@ -1,6 +1,7 @@
 export function Post(props) {
   let {content, date, title} = props
   let dateFormat = new Date(date).toLocaleString()
+
   return `
   <section class="post-page">
     <aside>

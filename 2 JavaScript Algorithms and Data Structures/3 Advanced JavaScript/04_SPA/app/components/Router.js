@@ -2,6 +2,7 @@ import { ajax } from '../helpers/ajax.js'
 import api from '../helpers/wp_api.js'
 import { Post } from './Post.js'
 import { PostCard } from './PostCard.js'
+import { SearchCard } from './SearchCard.js'
 
 export async function Router() {
   const main = document.getElementById('main')
@@ -17,15 +18,39 @@ export async function Router() {
         // console.log(posts)
         let html = ""
         posts.forEach((post) => { html += PostCard(post)})
-        document.getElementById("main").innerHTML = html
+        main.innerHTML = html
       }
     })
+    // console.log(api.POST)
+
   } else if(hash.includes("#/search")) {
     // main.innerHTML =`<h2>Seccion del Buscador</h2>`
     let query = localStorage.getItem('wpSearch')
-    if(!query) 
-    await ajax({
-      url: ``
+    if(!query) {
+      // si no hay nada en localstorage 'wpSearch' se sale de la ejecucion
+      document.querySelector('.loader').style.display = 'none'
+      main.innerHTML =`<h2>Seccion del Buscador</h2>`
+      return false
+    }
+    await ajax ({
+      url: `${api.SEARCH}${query}`,
+      cbSuccess: (search) => {
+        console.log(search)
+        let html = ""
+
+        // Si la busqueda no obtiene resultados vendra vacia
+        if(search.length === 0) {
+          // entonces
+          html = `<p class="error">No existen resultados de busqueda para <mark>${query}</mark></p>`
+
+        } else { // caso contrario
+          search.forEach( el => {
+            html += SearchCard(el)
+          })
+        }
+
+        main.innerHTML = html
+      }
     })
   } else if(hash=== "#/contacto") {
     main.innerHTML =`<h2>Seccion de Contacto</h2>`

@@ -107,3 +107,12 @@ img {
   display: block;
   max-width: 100%;
 }
+
+
+.error mark {
+  padding: .5rem;
+  border-radius: .5rem;
+  display: inline-block;
+  color: #fff;
+  background-color: #01579b;
+}
