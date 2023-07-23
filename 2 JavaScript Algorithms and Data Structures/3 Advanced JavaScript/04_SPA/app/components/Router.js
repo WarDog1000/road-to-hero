@@ -1,5 +1,6 @@
 import { ajax } from '../helpers/ajax.js'
 import api from '../helpers/wp_api.js'
+import { ContactForm } from './ContactForm.js'
 import { Post } from './Post.js'
 import { PostCard } from './PostCard.js'
 import { SearchCard } from './SearchCard.js'
@@ -35,7 +36,7 @@ export async function Router() {
     await ajax ({
       url: `${api.SEARCH}${query}`,
       cbSuccess: (search) => {
-        console.log(search)
+        // console.log(search)
         let html = ""
 
         // Si la busqueda no obtiene resultados vendra vacia
@@ -54,6 +55,7 @@ export async function Router() {
     })
   } else if(hash=== "#/contacto") {
     main.innerHTML =`<h2>Seccion de Contacto</h2>`
+    main.appendChild(ContactForm())
   } else {
     // main.innerHTML =`<h2>Aqui cargara el contenido del Post previamente seleccionado</h2>`
     await ajax({

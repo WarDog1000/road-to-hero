@@ -2,6 +2,7 @@ import { Header } from './components/Header.js';
 import { Loader } from './components/Loader.js';
 import { Main } from './components/Main.js';
 import { Router } from './components/Router.js';
+import { infiniteScroll } from './helpers/infinite_scroll.js';
 
 export function App() {
   // document.getElementById("root").innerHTML = `<h1>Bienvenido a mi primer componente con vanilla Js</h1>`
@@ -23,6 +24,8 @@ export function App() {
   $root.appendChild(Loader())
 
   Router()
+
+  infiniteScroll()
 
   // ERRROR DE URL 404 NOT FOUND TEST
   // ajax({
