@@ -8,6 +8,9 @@ import FunctionComponent from './components/FunctionComponent'
 import ExpresedComponent from './components/ExpresedComponent'
 import Properties from './components/Properties'
 import Estado from './components/Estado'
+import RenderizadoCondicional from './components/RenderizadoCondicional'
+import RenderizadoElementos from './components/RenderizadoElementos'
+import Eventos from './components/Eventos'
 
 
 function App() {
@@ -74,6 +77,18 @@ function App() {
       <h2>Estado</h2>
       <section>
         <Estado />
+      </section>
+      <hr />
+      <section>
+        <RenderizadoCondicional />
+      </section>
+      <hr />
+      <section>
+        <RenderizadoElementos />
+      </section>
+      <hr />
+      <section>
+        <Eventos />
       </section>
 
     </>
