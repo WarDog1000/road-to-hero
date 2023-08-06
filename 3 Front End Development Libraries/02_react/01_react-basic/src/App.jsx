@@ -10,7 +10,9 @@ import Properties from './components/Properties'
 import Estado from './components/Estado'
 import RenderizadoCondicional from './components/RenderizadoCondicional'
 import RenderizadoElementos from './components/RenderizadoElementos'
-import Eventos from './components/Eventos'
+import {EventosES6, EventosES7, MasSobreEventos} from './components/Eventos'
+import Padre from './components/ComunicacionComponents'
+
 
 
 function App() {
@@ -88,7 +90,19 @@ function App() {
       </section>
       <hr />
       <section>
-        <Eventos />
+        <EventosES6 />
+      </section>
+      <hr />
+      <section>
+        <EventosES7 />
+      </section>
+      <hr />
+      <section>
+        <MasSobreEventos />
+      </section>
+      <hr />
+      <section>
+        <Padre />
       </section>
 
     </>
