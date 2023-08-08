@@ -3,17 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react'
-import ClassComponent from './components/ClassComponent'
-import FunctionComponent from './components/FunctionComponent'
-import ExpresedComponent from './components/ExpresedComponent'
-import Properties from './components/Properties'
-import Estado from './components/Estado'
-import RenderizadoCondicional from './components/RenderizadoCondicional'
-import RenderizadoElementos from './components/RenderizadoElementos'
-import {EventosES6, EventosES7, MasSobreEventos} from './components/Eventos'
-import Padre from './components/ComunicacionComponents'
-import CicloVida from './components/CicloVida'
-import AjaxApis from './components/AjaxApis'
+import ClassComponent from './components/01_ClassComponent'
+import FunctionComponent from './components/02_FunctionComponent'
+import ExpresedComponent from './components/03_ExpresedComponent'
+import Properties from './components/04_Properties'
+import Estado from './components/05_Estado'
+import RenderizadoCondicional from './components/06_RenderizadoCondicional'
+import RenderizadoElementos from './components/07_RenderizadoElementos'
+import {EventosES6, EventosES7, MasSobreEventos} from './components/08_Eventos'
+import ComunicacionComponents from './class-components/ComunicacionComponents'
+import CicloVida from './class-components/CicloVida'
+import AjaxApis from './class-components/AjaxApis'
+import ContadorHooks from './function-components/ContadorHooks'
 
 
 
@@ -103,18 +104,27 @@ function App() {
         <MasSobreEventos />
       </section>
       <hr />
+      {/* ====== setSate & Class Components ====== */}
       <section>
-        <Padre />
+        {/* un contador */}
+        <ComunicacionComponents />
       </section>
       <hr />
       <section>
+        {/* un reloj */}
         <CicloVida />
       </section>
       <hr />
       <section>
+        {/* poke API */}
         <AjaxApis />
       </section>
-
+      <hr />
+      {/* ====== Hooks (/Gancho) & Funtion Components ====== */}
+      <section>
+        {/* un contador */}
+        <ContadorHooks /> {/*setState*/}
+      </section>
     </>
   )
 }

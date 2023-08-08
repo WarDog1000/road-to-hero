@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-export default class Padre extends Component {
+export default class ComunicacionComponents extends Component {
   state = {
     contador : 0
   }
