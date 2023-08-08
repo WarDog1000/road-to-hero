@@ -12,6 +12,8 @@ import RenderizadoCondicional from './components/RenderizadoCondicional'
 import RenderizadoElementos from './components/RenderizadoElementos'
 import {EventosES6, EventosES7, MasSobreEventos} from './components/Eventos'
 import Padre from './components/ComunicacionComponents'
+import CicloVida from './components/CicloVida'
+import AjaxApis from './components/AjaxApis'
 
 
 
@@ -103,6 +105,14 @@ function App() {
       <hr />
       <section>
         <Padre />
+      </section>
+      <hr />
+      <section>
+        <CicloVida />
+      </section>
+      <hr />
+      <section>
+        <AjaxApis />
       </section>
 
     </>
