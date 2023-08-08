@@ -179,9 +179,3 @@ en la carpeta del proyecto puedes ejecutar los siguientes comandos:
 ### Hot reloading
 
 una de las funcionalidades mas importante de los proyectos creados con create-react-app es la capacidad de hacer cambios en vivo sin necesidad de reiniciar el servidor. Si hacesun cambio en algun archivo *src* o *public* el navegador se refresca automaticamente.
-
-https://articulo.mercadolibre.com.ar/MLA-1445126194-mother-msi-785gm-p45-am3-95w-tdp-ddr3-anda-todo-_JM?searchVariation=178155765818#searchVariation=178155765818&position=1&search_layout=grid&type=item&tracking_id=539bb08f-5333-45dc-91b4-27e7e08fe123
-
-https://articulo.mercadolibre.com.ar/MLA-1377447805-asrock-960gm-vgs3-fx-am3-ddr3-_JM?searchVariation=178227194602#searchVariation=178227194602&position=30&search_layout=grid&type=item&tracking_id=b9890619-22df-49d8-b0bb-3e3668c4a5ae
-
-https://articulo.mercadolibre.com.ar/MLA-1379603569-mother-gigabyte-ga-78lmt-s2-am3-fx-ddr3-funciona-100-_JM?searchVariation=178300679474#searchVariation=178300679474&position=36&search_layout=grid&type=item&tracking_id=e117b5b1-f941-4ccd-a3cc-0a71240e4eb6
