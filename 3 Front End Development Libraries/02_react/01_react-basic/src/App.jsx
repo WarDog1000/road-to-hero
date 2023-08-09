@@ -15,6 +15,7 @@ import ComunicacionComponents from './class-components/ComunicacionComponents'
 import CicloVida from './class-components/CicloVida'
 import AjaxApis from './class-components/AjaxApis'
 import ContadorHooks from './function-components/ContadorHooks'
+import ScrollHooks from './function-components/ScrollHooks'
 
 
 
@@ -123,7 +124,11 @@ function App() {
       {/* ====== Hooks (/Gancho) & Funtion Components ====== */}
       <section>
         {/* un contador */}
-        <ContadorHooks /> {/*setState*/}
+        <ContadorHooks /> {/*useState*/}
+      </section>
+      <hr />
+      <section>
+        <ScrollHooks /> {/*useEffect*/}
       </section>
     </>
   )
