@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.fix {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  width: 200px;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.black {
+  background-color: black;
+  color: #fff;
+}

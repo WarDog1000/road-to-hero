@@ -16,6 +16,7 @@ import CicloVida from './class-components/CicloVida'
 import AjaxApis from './class-components/AjaxApis'
 import ContadorHooks from './function-components/ContadorHooks'
 import ScrollHooks from './function-components/ScrollHooks'
+import RelojHooks from './function-components/RelojHooks'
 
 
 
@@ -121,14 +122,18 @@ function App() {
         <AjaxApis />
       </section>
       <hr />
-      {/* ====== Hooks (/Gancho) & Funtion Components ====== */}
+      {/* ====== Hooks (/Ganchos) & Funtion Components ====== */}
       <section>
         {/* un contador */}
-        <ContadorHooks /> {/*useState*/}
+        <ContadorHooks /> {/*useState(estado)*/}
+      </section>
+      <hr />
+      <section className='fix yellow'>
+        <ScrollHooks /> {/*useEffect(Ciclo de Vida)*/}
       </section>
       <hr />
       <section>
-        <ScrollHooks /> {/*useEffect*/}
+        <RelojHooks /> {/* UseEffect(ComponentWillUnmount)*/}
       </section>
     </>
   )
