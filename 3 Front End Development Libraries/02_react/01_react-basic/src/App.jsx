@@ -17,6 +17,7 @@ import AjaxApis from './class-components/AjaxApis'
 import ContadorHooks from './function-components/ContadorHooks'
 import ScrollHooks from './function-components/ScrollHooks'
 import RelojHooks from './function-components/RelojHooks'
+import AjaxHooks from './function-components/AjaxHooks'
 
 
 
@@ -134,6 +135,9 @@ function App() {
       <hr />
       <section>
         <RelojHooks /> {/* UseEffect(ComponentWillUnmount)*/}
+      </section>
+      <section>
+        <AjaxHooks /> {/* async fetch & hooks */}
       </section>
     </>
   )
