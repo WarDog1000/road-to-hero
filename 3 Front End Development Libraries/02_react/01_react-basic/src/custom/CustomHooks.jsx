@@ -10,8 +10,12 @@ export default function CustomHooks() {
     <>
       <h2>Hooks Personalizados</h2>
       <h3>Pending: <mark>{JSON.stringify(isPending)}</mark></h3>
-      <h3>Status: <mark>{JSON.stringify(error.status)}</mark></h3>
-      <h3>Data: {JSON.stringify(data.results[0])}</h3>
+      {error && <h3>Status: <mark>{JSON.stringify(error.status)}</mark></h3>}
+      {data && data.results && data.results.length > 0 ? (
+        <h3>Data: {JSON.stringify(data.results[0])}</h3>
+      ) : (
+        <p>Loading data...</p>
+      )}
     </>
   )
 }
