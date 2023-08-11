@@ -2,7 +2,6 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import React from 'react'
 import ClassComponent from './components/01_ClassComponent'
 import FunctionComponent from './components/02_FunctionComponent'
 import ExpresedComponent from './components/03_ExpresedComponent'
@@ -18,6 +17,7 @@ import ContadorHooks from './function-components/ContadorHooks'
 import ScrollHooks from './function-components/ScrollHooks'
 import RelojHooks from './function-components/RelojHooks'
 import AjaxHooks from './function-components/AjaxHooks'
+import CustomHooks from './custom/CustomHooks'
 
 
 
@@ -140,6 +140,10 @@ function App() {
       <hr />
       <section>
         <AjaxHooks /> {/* async fetch & hooks */}
+      </section>
+      <hr />
+      <section>
+        <CustomHooks /> {/* hooks personalizados */}
       </section>
     </>
   )
