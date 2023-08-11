@@ -129,6 +129,7 @@ function App() {
         <ContadorHooks /> {/*useState(estado)*/}
       </section>
       <hr />
+      <h2>Hooks useEffect y el Siclo de Vida</h2>
       <section className='fix yellow'>
         <ScrollHooks /> {/*useEffect(Ciclo de Vida)*/}
       </section>
@@ -136,6 +137,7 @@ function App() {
       <section>
         <RelojHooks /> {/* UseEffect(ComponentWillUnmount)*/}
       </section>
+      <hr />
       <section>
         <AjaxHooks /> {/* async fetch & hooks */}
       </section>

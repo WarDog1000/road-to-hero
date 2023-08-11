@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -57,4 +63,17 @@
 .black {
   background-color: black;
   color: #fff;
+}
+.post-card {
+  margin: 0;
+  padding: 1rem;
+  width: 1fr;
+  height: 1fr;
+  background-color: black;
+}
+.grid-fluid {
+  margin: 1rem auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
