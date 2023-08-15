@@ -18,6 +18,7 @@ import ScrollHooks from './components/function/ScrollHooks'
 import RelojHooks from './components/function/RelojHooks'
 import AjaxHooks from './components/function/AjaxHooks'
 import CustomHooks from './custom/CustomHooks'
+import Referencias from './components/function/Referencias'
 
 
 
@@ -144,6 +145,10 @@ function App() {
       <hr />
       <section>
         <CustomHooks /> {/* hooks personalizados */}
+      </section>
+      <hr />
+      <section>
+        <Referencias /> {/* references DOM */}
       </section>
     </>
   )
