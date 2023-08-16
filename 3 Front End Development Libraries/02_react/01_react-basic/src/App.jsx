@@ -19,6 +19,7 @@ import RelojHooks from './components/function/RelojHooks'
 import AjaxHooks from './components/function/AjaxHooks'
 import CustomHooks from './custom/CustomHooks'
 import Referencias from './components/function/Referencias'
+import Formulario from './components/function/Formularios'
 
 
 
@@ -149,6 +150,10 @@ function App() {
       <hr />
       <section>
         <Referencias /> {/* references DOM */}
+      </section>
+      <hr />
+      <section>
+        <Formulario />
       </section>
     </>
   )
