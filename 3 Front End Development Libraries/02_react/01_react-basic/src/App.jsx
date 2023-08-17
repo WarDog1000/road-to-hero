@@ -20,6 +20,8 @@ import AjaxHooks from './components/function/AjaxHooks'
 import CustomHooks from './custom/CustomHooks'
 import Referencias from './components/function/Referencias'
 import Formulario from './components/function/Formularios'
+import Estilos from './components/styles/Estilos'
+import StyledComponent from './components/styled-components/StyledComponent'
 
 
 
@@ -154,6 +156,14 @@ function App() {
       <hr />
       <section>
         <Formulario />
+      </section>
+      <hr />
+      <section>
+        <Estilos />
+      </section>
+      <hr />
+      <section>
+        <StyledComponent />
       </section>
     </>
   )
