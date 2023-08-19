@@ -1,45 +1,42 @@
-# What is "Road to Hero" in programming?
+# Qué es "Road to Hero" en la programación?
 
-"Road to Hero" is a term used in the programming community to describe the process of learning and constant improvement in programming.
+"Road to Hero" es un término utilizado en la comunidad de programación para describir el proceso de aprendizaje y mejora constante en la programación.
 
-This path includes learning the basics of programming, such as syntax and structure of programming languages, as well as problem-solving, algorithm design, and implementation of efficient solutions.
+Este camino incluye el aprendizaje de los conceptos básicos de la programación, como la sintaxis y la estructura de los lenguajes de programación, así como la resolución de problemas, el diseño de algoritmos y la implementación de soluciones eficientes.
 
-To become a "hero" in programming, it is necessary to devote constant time and effort to learning and improving skills. This includes practicing problem-solving and implementing programming projects, as well as learning new technologies and programming languages.
+Para convertirse en un "héroe" en la programación, es necesario dedicar tiempo y esfuerzo constantes a aprender y mejorar las habilidades. Esto incluye practicar la resolución de problemas e implementar proyectos de programación, así como aprender nuevas tecnologías y lenguajes de programación.
 
-In summary, the "Road to Hero" in programming is a continuous learning process and constant improvement, which allows programmers to acquire skills and knowledge to create increasingly advanced and efficient solutions in the world of programming.
+En resumen, el “Road to Hero” en programación es un proceso de aprendizaje continuo y mejora constante, que permite a los programadores adquirir habilidades y conocimientos para crear soluciones cada vez más avanzadas y eficientes en el mundo de la programación.
 
 ---
 
 # FreeCodeCamp
 
-[FreeCodeCamp](https://www.freecodecamp.org/learn) is a free online learning platform that offers a wide variety of programming courses and projects, from web development to data science and beyond. 
+[FreeCodeCamp](https://www.freecodecamp.org/learn) es una plataforma de aprendizaje en línea gratuita que ofrece una amplia variedad de cursos y proyectos de programación, desde desarrollo web hasta ciencia de datos y más.
+## Descripción
 
-## Description
+FreeCodeCamp ofrece una amplia gama de cursos que le permiten aprender:
 
-FreeCodeCamp offers a vast range of courses that enable you to learn:
+- Desarrollo web: HTML, CSS, JavaScript, React, Node.js y más.
+- Desarrollo de aplicaciones móviles: Android e iOS.
+- Ciencia de datos: Python, SQL, análisis de datos, aprendizaje automático y más.
+- Desarrollo de juegos: Unity, C# y más.
+- Habilidades de codificación y pensamiento crítico: algoritmos, estructuras de datos y más.
 
-- Web development: HTML, CSS, JavaScript, React, Node.js, and more.
-- Mobile app development: Android and iOS.
-- Data science: Python, SQL, data analysis, machine learning, and more.
-- Game development: Unity, C#, and more.
-- Coding and critical thinking skills: algorithms, data structures, and more.
+Además de los cursos, FreeCodeCamp también ofrece proyectos prácticos que le permiten aplicar sus habilidades recién adquiridas y construir una cartera sólida. También hay una comunidad de aprendizaje en línea donde puede hacer preguntas, recibir comentarios y conectarse con otros estudiantes y mentores.
 
-In addition to the courses, FreeCodeCamp also offers practical projects that enable you to apply your newly acquired skills and build a solid portfolio. There is also an online learning community where you can ask questions, receive feedback, and connect with other students and mentors.
+En general, FreeCodeCamp es una excelente opción para quienes desean aprender a codificar y desarrollar habilidades de TI de forma gratuita y en línea.
 
-Overall, FreeCodeCamp is an excellent choice for those who want to learn to code and develop IT skills for free and online.
 
-## How to Use
+## Rutas
 
-To use FreeCodeCamp, you need to create a free account on their website. Once you have signed up, you can start taking courses and working on projects right away. The platform is designed to be easy to use, and you can progress through the courses at your own pace.
+![frontent](./sources/frontend-route.jpg)
 
-## Requirements
+![backend](./sources/backend-route.jpg)
 
-FreeCodeCamp does not require any specific software or hardware requirements. However, you will need access to a computer or mobile device with a modern web browser and a stable internet connection.
+![datacience](./sources/dataciende-route.jpg)
 
-## Support
+# Herramientas de estudio
+![datacience](./sources/learn-apps.jpg)
 
-FreeCodeCamp has a dedicated support team that can help you with any issues you encounter while using the platform. You can contact the support team through the online community or by email.
 
-## Contributing
-
-FreeCodeCamp welcomes contributions from the community in the form of bug reports, feature requests, and code contributions.
