@@ -1,25 +1,18 @@
 # Responsive Web Design
 
-This repository contains exercises and projects completed as part of the [FreeCodeCamp Responsive Web Design course](https://www.freecodecamp.org/learn/2022/responsive-web-design/).
+Este repositorio contiene ejercicios y proyectos completados como parte del [FreeCodeCamp Responsive Web Design course](https://www.freecodecamp.org/learn/2022/responsive-web-design/).
 
-## Description
+## Descripción
 
-The Responsive Web Design course is a set of lessons and exercises designed to teach the basic skills necessary to create websites that are adaptable to different devices and screens. The course covers the following topics:
+El curso de Diseño web receptivo es un conjunto de lecciones y ejercicios diseñados para enseñar las habilidades básicas necesarias para crear sitios web que se adapten a diferentes dispositivos y pantallas. El curso cubre los siguientes temas:
 
-- HTML5 and CSS3
-- Responsive web design
-- Use of advanced design techniques such as Grid and Flexbox
-- Web accessibility and good coding practices
+- HTML5 y CSS3
+- Diseño web adaptable
+- Uso de técnicas de diseño avanzadas como Grid y Flexbox
+- Accesibilidad web y buenas prácticas de codificación
 
-This course is suitable for beginners as well as those looking to improve their skills in web design and development.
+Este curso es adecuado tanto para principiantes como para aquellos que buscan mejorar sus habilidades en diseño y desarrollo web.
 
-## Contents
+# Ruta
 
-This repository contains the following files and folders:
-
-- `exercises/`: This folder contains practical exercises completed during the course.
-- `projects/`: This folder contains final projects completed as part of the course.
-
-## Requirements
-
-To complete this course, it is recommended to have basic knowledge of HTML and CSS. Additionally, access to a text editor and modern web browser is recommended.
+![frontend](../sources/frontend-route.jpg)
