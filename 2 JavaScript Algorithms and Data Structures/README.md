@@ -1,30 +1,23 @@
 # Algorithms and Data Structures
 
-This repository contains the exercises and projects completed as part of the [FreeCodeCamp Algorithms and Data Structures course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/).
+Este repositorio contiene los ejercicios y proyectos realizados como parte del [FreeCodeCamp Algorithms and Data Structures course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/).
 
-## Description
+## Descripción
 
-The Algorithms and Data Structures course is designed to teach the fundamentals of data structures and algorithms, as well as their implementation in JavaScript.
+El curso de Algoritmos y Estructuras de Datos está diseñado para enseñar los fundamentos de las estructuras de datos y algoritmos, así como su implementación en JavaScript.
 
-In this course, you will learn about the following topics:
+En este curso aprenderás sobre los siguientes temas:
 
-- Basic data structures such as arrays, objects, and linked lists.
-- Search and sort algorithms such as linear search, binary search, bubble sort, selection sort, and insertion sort.
-- Advanced data structures such as binary trees, graphs, and hash tables.
-- Depth-first search, breadth-first search, and graph traversal algorithms.
-- Dynamic programming and recursion algorithms.
+- Estructuras de datos básicos como arreglos, objetos y listas enlazadas.
+- Algoritmos de búsqueda y clasificación, como búsqueda lineal, búsqueda binaria, clasificación de burbuja, clasificación de selección y clasificación de inserción.
+- Estructuras de datos avanzadas como árboles binarios, gráficos y tablas hash.
+- Búsqueda en profundidad, búsqueda en amplitud y algoritmos de recorrido de gráfico.
+- Programación dinámica y algoritmos de recursión.
 
-Additionally, you will learn how to apply these concepts to solve real-world programming problems and improve your algorithmic problem-solving skills.
+Además, aprenderá cómo aplicar estos conceptos para resolver problemas de programación del mundo real y mejorar sus habilidades de resolución de problemas algorítmicos.
 
-This course is ideal for those looking to improve their programming skills in JavaScript, as well as those preparing for programming job interviews or other advanced computer science courses.
+Este curso es ideal para quienes buscan mejorar sus habilidades de programación en JavaScript, así como para quienes se preparan para programar entrevistas de trabajo u otros cursos avanzados de informática.
 
-## Contents
+# Ruta
 
-This repository contains the following files and folders:
-
-- `exercises/`: This folder contains practical exercises completed during the course.
-- `projects/`: This folder contains final projects completed as part of the course.
-
-## Requirements
-
-To complete this course, it is recommended to have basic knowledge of JavaScript and programming concepts. Additionally, access to a text editor and a modern web browser is recommended.
+![frontend](../sources/frontend-route.jpg)

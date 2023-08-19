@@ -1,26 +1,30 @@
 # Front End Development Libraries
 
-This repository contains the exercises and projects completed as part of the [FreeCodeCamp Front End Development Libraries course](https://www.freecodecamp.org/learn/front-end-development-libraries/)
+Este repositorio contiene los ejercicios y proyectos realizados como parte del [FreeCodeCamp Front End Development Libraries course](https://www.freecodecamp.org/learn/front-end-development-libraries/)
 .
 
-## Description
+## Descripción
 
-The Front End Development Libraries course is designed to teach students how to build modern and dynamic web applications using popular JavaScript libraries and frameworks.
+El curso de bibliotecas de desarrollo front-end está diseñado para enseñar a los estudiantes cómo crear aplicaciones web modernas y dinámicas utilizando bibliotecas y marcos de JavaScript populares.
 
-In this course, you will learn about the following topics:
+En este curso aprenderás sobre los siguientes temas:
 
-- React: a JavaScript library for building user interfaces.
-- Redux: a JavaScript library for managing application state.
-- jQuery: a JavaScript library that makes DOM manipulation and animation easier.
-- Sass: a CSS preprocessor that allows for more efficient and reusable styling.
-- Bootstrap: a CSS library with components for creating responsive websites and mobile applications.
-- TailwindCss: a CSS library for creating fast responsive websites and mobile applications.
-- Vite - ClienSideRendering javaScript framework.
-- Next.js - ServerSideRendering javaScript framework.
-- Remix - SSR javaScript framework.
-- Parcel - a editable javascript framework.
-- Gatsby - a static site generator, javacript framework.
+- React: una biblioteca de JavaScript para crear interfaces de usuario.
+- Redux: una biblioteca de JavaScript para administrar el estado de la aplicación.
+- jQuery: una biblioteca de JavaScript que facilita la manipulación y animación de DOM.
+- Sass: un preprocesador de CSS que permite un estilo más eficiente y reutilizable.
+- Bootstrap: una biblioteca CSS con componentes para crear sitios web receptivos y aplicaciones móviles.
+- TailwindCss: una biblioteca CSS para crear sitios web y aplicaciones móviles de respuesta rápida.
+- Vite - Marco de JavaScript de renderizado de CLIENSIDE.
+- Next.js - Marco de javaScript ServerSideRendering.
+- Remix - Marco SSR javaScript.
+- Parcel: un marco javascript editable.
+- Gatsby: un generador de sitios estáticos, marco javacript.
 
-Additionally, you will learn how to use these libraries and frameworks together to create complete and modern web applications.
+Además, aprenderá a usar estas bibliotecas y marcos juntos para crear aplicaciones web completas y modernas.
 
-This course is ideal for those looking to learn how to build modern and advanced web applications using popular JavaScript tools. It is also useful for those looking to improve their skills in user interface design and application state management.
+Este curso es ideal para aquellos que buscan aprender a crear aplicaciones web modernas y avanzadas utilizando herramientas populares de JavaScript. También es útil para aquellos que buscan mejorar sus habilidades en el diseño de interfaz de usuario y la gestión del estado de la aplicación.
+
+# Ruta
+
+![frontend](../sources/frontend-route.jpg)
