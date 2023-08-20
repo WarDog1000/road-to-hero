@@ -1,0 +1,31 @@
+{
+  "name": "02_libs-css",
+  "version": "1.0.0",
+  "private": true,
+  "description": "02_libs-css",
+  "author": "Jhony Souza",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "dev": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "boots": "docs-serve"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-provide-react": "^1.0.2",
+    "gatsby-plugin-sass": "^6.11.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}
