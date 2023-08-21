@@ -6,6 +6,7 @@ export default function Navigation() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
+
           <button
             className="navbar-toggler"
             type="button"
@@ -17,27 +18,30 @@ export default function Navigation() {
           >
             <span className="navbar-toggler-icon" />
           </button>
+
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
-              Hidden brand
-            </a>
+            <Link to="/" className="navbar-brand">
+              Home
+            </Link>
+
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link className="nav-link active" aria-current="page" to="/frameworks-css">
+                  Frameworks Css React
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              {/* <li className="nav-item">
+                <Link className="nav-link" href="#">
                   Link
-                </a>
-              </li>
+                </Link>
+              </li> */}
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
+                <Link className="nav-link disabled" aria-disabled="true">
                   Disabled
-                </a>
+                </Link>
               </li>
             </ul>
+
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -49,6 +53,7 @@ export default function Navigation() {
                 Search
               </button>
             </form>
+            
           </div>
         </div>
       </nav>

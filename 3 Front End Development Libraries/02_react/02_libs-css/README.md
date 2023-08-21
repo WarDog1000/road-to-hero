@@ -29,14 +29,35 @@
     npm run dev
     ```
 
+    **Solucion de errores**
+    
+    A la hora de compilar, Gatsby puede presentar errores debido a la memoria cache cuando se eliminan componentes, una buena salucion es limpiar la cache.
+
+    ```
+    "scripts": {
+    "cdev": "gatsby clean && gatsby develop",
+    "cbuild": "gatsby clean && gatsby build",
+    },
+    ```
+
+
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
+## Frameworks Css para React
 
-# Plugins
+- `Material UI` [MUI](https://mui.com/material-ui/getting-started/installation/)
+- React-Bootstrap
+- Boostrap
+- Bulma
+- Sass
+- Tailwindcss
+
+
+### Plugins
 
 ### JSX
 
@@ -50,20 +71,26 @@ npm i gatsby-plugin-provide-react
 npm install sass gatsby-plugin-sass
 ```
 
+
 ## Cómo utilizar
 Agregue el complemento a su archivo `gatsby-config.js.`
 
 ```
 module.exports = {
   plugins: [
+    `gatsby-plugin-provide-react`,
     `gatsby-plugin-provide-react`
   ]
 }
 ```
 
+- `placeimg.com` dejo de funcionar el 30/07/23
+puede usar en su lugar [loremipsum.io](https://loremipsum.io/)
+
+- Convertir `html` a `jsx` [HTML to JSX](https://transform.tools/html-to-jsx)
 
 
-4.  **Learn more**
+1.  **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
     - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
