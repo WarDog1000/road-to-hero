@@ -30,11 +30,11 @@ export default function Navigation() {
                   Frameworks Css React
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" href="#">
-                  Link
+              <li className="nav-item">
+                <Link className="nav-link" to="/crud-app">
+                  CRUD App
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <Link className="nav-link disabled" aria-disabled="true">
                   Disabled
