@@ -15,7 +15,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "boots": "docs-serve"
+    "boots": "docs-serve",
+    "japi": "json-server --watch src/ejercicios/tarea_2/api/db.json --port 8001"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
