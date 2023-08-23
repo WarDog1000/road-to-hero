@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 const initialForm = {
   "id": null,
   "name": "",
@@ -35,9 +35,18 @@ export default function TableForm({createData, updateData, toEdit, setToEdit}) {
       setForm(initialForm)
       setToEdit(null)
     }
-
+    
+    useEffect(() => {
+      if(toEdit) {
+        setForm(toEdit)
+      } else {
+        setForm(initialForm)
+      }
+    }, [toEdit])
+    
   return (
     <div>
+      <h3>{toEdit ? "Editar" : "Agregar"}</h3>
       <form onSubmit={handleSubmit} >
       <input type="text" name="name" placeholder="Agregar Nombre" onChange={handleChange} value={form.name}/>
       <input type="text" name="type" placeholder="Agregar Tipo" onChange={handleChange} value={form.type}/>

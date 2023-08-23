@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/Container'
-import Tarea1 from '../ejercicios/Tarea1';
+import Tarea1 from '../ejercicios/tarea _1/Tarea1';
 import { BulmaSection } from '../components/Bulma';
 
 export default () => {

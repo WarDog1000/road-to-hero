@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TableForm from "./TableForm";
 import Table from "./Table";
 
@@ -41,11 +41,26 @@ function Tarea1() {
   const [toEdit, setToEdit] = useState(null);
 
   const createData = (data) => {
-    db.ide = Date.now()
+    data.id = Date.now()
     setDb([...db, data])
   };
-  const updateData = (data) => {};
-  const deleteData = (id) => {};
+
+  const updateData = (data) => {
+    let newData = db.map(el => el.id === data.id ? data : el);
+    setDb(newData)
+  };
+
+  const deleteData = (id) => {
+    // comfirm flag
+    let isDelete = window.confirm(`??estas seguro de eliminar el id ${id}.`)
+
+    if(isDelete) {
+      let newData = db.filter(el => el.id !== id)
+      setDb(newData);
+    } else {
+      return;
+    }
+  };
 
   return (
     <>
@@ -60,7 +75,7 @@ function Tarea1() {
       />
       <br />
       {/* TABLE */}
-      <Table db={db}
+      <Table data ={db}
         setToEdit={setToEdit}
        deleteData={deleteData}
        />
