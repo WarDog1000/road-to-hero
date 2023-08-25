@@ -1,11 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TableForm from "./TableForm";
 import Table from "./Table";
+import { helpHttp } from "./helpers/helpHttp";
+import Message from "./components/Message";
+import Loader from "./components/Loader";
 
 function Tarea2() {
-    const [db, setDb] = useState([]);
-
+  const [db, setDb] = useState(null);
   const [toEdit, setToEdit] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  let api = helpHttp();
+  let url = "http://localhost:8001/santos";
+
+  useEffect(() => {
+    setLoading(true)
+    api.get(url).then((res) => {
+      if(!res.err) {
+        setDb(res);
+        setError(null)
+      } else {
+        setDb(null);
+        setError(res)
+      }
+
+      setLoading(false)
+    });
+  }, [url])
+  
 
   const createData = (data) => {
     data.id = Date.now()
@@ -41,11 +64,15 @@ function Tarea2() {
         setToEdit={setToEdit}
       />
       <br />
+      {/* estos elementos solo se renderisan si la condicion se cumple como true */}
+      {loading && <Loader />}
+      {error && <Message msg={`Error: ${error.status} ${error.statusText}`} bgColor="#0dc3545" />}
       {/* TABLE */}
-      <Table data ={db}
+      {db && <Table data ={db}
         setToEdit={setToEdit}
        deleteData={deleteData}
-       />
+       />}
+
     </>
   );
 }

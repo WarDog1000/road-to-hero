@@ -89,6 +89,8 @@ puede usar en su lugar [loremipsum.io](https://loremipsum.io/)
 
 - Convertir `html` a `jsx` [HTML to JSX](https://transform.tools/html-to-jsx)
 
+- Loaders gratis para descargar y utilizar [loading.io](https://loading.io/)
+
 
 1.  **Learn more**
 

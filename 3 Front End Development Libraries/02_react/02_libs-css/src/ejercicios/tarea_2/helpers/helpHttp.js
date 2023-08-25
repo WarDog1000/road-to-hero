@@ -1,5 +1,6 @@
 export const helpHttp = () => {
-  const customFetch = (end, opt) => {
+
+  const customFetch = (end, opt) => { 
     const defaultHeader = {
       accept: "application/json",
     };
@@ -12,34 +13,39 @@ export const helpHttp = () => {
       ? { ...defaultHeader, ...opt.headers }
       : defaultHeader;
     opt.body = JSON.stringify(opt.body) || false;
-    if (!opt.body) delete Option.body;
+    if (!opt.body) delete opt.body;
 
     setTimeout(() => controller.abort(), 100);
 
-    let fetchError = {
-      err: true,
-      status: res.status || "00",
-      statusText: res.statusText || "ocurrio un error",
-    };
-
     return fetch(end, opt)
-      .then((res) => (res.ok ? res.json() : Promise.reject(fetchError)))
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : Promise.reject({
+              err: true,
+              status: res.status || "00",
+              statusText: res.statusText || "ocurrio un error",
+            })
+      )
       .catch((err) => err);
   };
 
   const get = (url, opt = {}) => customFetch(url, opt);
+
   const post = (url, opt = {}) => {
     opt.method = "POST";
     return customFetch(url, opt);
   };
+
   const put = (url, opt = {}) => {
     opt.method = "PUT";
     return customFetch(url, opt);
   };
+
   const del = (url, opt = {}) => {
     opt.method = "DELETE";
     return customFetch(url, opt);
   };
 
-  return {get, post, put, del};
+  return { get, post, put, del };
 };

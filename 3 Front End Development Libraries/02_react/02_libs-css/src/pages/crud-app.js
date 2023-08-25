@@ -10,10 +10,10 @@ export default () => {
     <Container>
       <h2>React CRUD & APIS</h2>
       <BulmaSection>
-        <Tarea1 />
+        <Tarea2 />
       </BulmaSection>
       <BulmaSection>
-        <Tarea2 />
+        <Tarea1 />
       </BulmaSection>
     </Container>
     </>
