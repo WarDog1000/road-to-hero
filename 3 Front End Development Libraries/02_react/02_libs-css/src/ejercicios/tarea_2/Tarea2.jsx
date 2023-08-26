@@ -31,24 +31,66 @@ function Tarea2() {
   
 
   const createData = (data) => {
+    // agrega un id basado en la fecha para el nuevo elemento
     data.id = Date.now()
-    setDb([...db, data])
+    let options = {
+      body: data,
+      headers: {"content-type": "application/json"}
+    }
+
+    api.post(url, options)
+    .then((res) => {
+      console.log(res)
+      if(!res.err) {
+        setDb([...db, res])
+      } else {
+        setError(res)
+      }
+    } )
+    // setDb([...db, data])
   };
 
   const updateData = (data) => {
-    let newData = db.map(el => el.id === data.id ? data : el);
-    setDb(newData)
+    let enpoint = `${url}/${data.id}`;
+    let options = {
+      body: data,
+      headers: {"content-type": "application/json"}
+    }
+    api.put(enpoint, options).then( (res) => {
+      if(!res.err) {
+        let newData = db.map(el => el.id === data.id ? data : el);
+        setDb(newData)
+      } else {
+        setError(res);
+      }
+    })
+
+    // let newData = db.map(el => el.id === data.id ? data : el);
+    // setDb(newData)
   };
 
   const deleteData = (id) => {
     // comfirm flag
     let isDelete = window.confirm(`??estas seguro de eliminar el id ${id}.`)
+    let endpoint = `${url}/${id}`;
+    let options = {
+      // body: data, No requiere un cuerpo
+      headers: {"content-type": "application/json"}
+    }
 
     if(isDelete) {
-      let newData = db.filter(el => el.id !== id)
-      setDb(newData);
+      api.del(endpoint, options).then( (res) => {
+        if(!res.err) {
+          let newData = db.filter(el => el.id !== id)
+          setDb(newData);
+        } else {
+          setError(res)
+        }
+      }) 
+      // let newData = db.filter(el => el.id !== id)
+      // setDb(newData);
     } else {
-      return;
+      return
     }
   };
 
