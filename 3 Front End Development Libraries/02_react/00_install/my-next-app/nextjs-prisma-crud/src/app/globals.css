@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-950 text-white;
+}
+
+label {
+  @apply font-bold text-sm;
+}
+
+textarea, input {
+  @apply border border-gray-400 mb-4 w-full text-black;
+}
+
+.home-tasks {
+  @apply grid grid-cols-3 gap-3 mt-10;
+}
+
+nav {
+  @apply bg-slate-900;
+} 
+
+.nav-container {
+  @apply container mx-auto flex justify-between items-center py-3;
+}
+
+.nav-container h3 {
+  @apply font-bold;
+}
+
+.nav-container ul {
+  @apply flex gap-x-2 text-lg font-bold;
+}
