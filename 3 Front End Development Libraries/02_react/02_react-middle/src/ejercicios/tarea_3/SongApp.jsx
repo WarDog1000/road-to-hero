@@ -6,7 +6,7 @@ import { helpHttp } from './helpers/helpHttp';
 
 const SongSearch = () => {
   const [search, setSearch] = useState(null);
-  const [liric, setLiric] = useState(null);
+  const [lyric, setLyric] = useState(null);
   const [bio, setBio] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +22,7 @@ const SongSearch = () => {
       const [artistRes, songRes] = await Promise.all([helpHttp().get(artistUrl), helpHttp().get(songUrl)]);
       console.log(artistRes, songRes)
       setBio(artistRes);
-      setLiric(songRes);
+      setLyric(songRes);
       setLoading(false);
     }
 
@@ -40,7 +40,7 @@ const SongSearch = () => {
     {loading && <Loader />}
     <SongForm handleSearch={handleSearch} />
     {search && !loading && (
-    <SongDetails search={search} liric={liric} bio={bio} />
+    <SongDetails search={search} lyric={lyric} bio={bio} />
     )}
     </>
    );

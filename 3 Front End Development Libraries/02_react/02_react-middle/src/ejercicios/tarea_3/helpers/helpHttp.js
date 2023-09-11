@@ -15,7 +15,7 @@ export const helpHttp = () => {
     opt.body = JSON.stringify(opt.body) || false;
     if (!opt.body) delete opt.body;
 
-    setTimeout(() => controller.abort(), 100);
+    setTimeout(() => controller.abort(), 3000); // aborta peticiones al API s estas se demoran
 
     return fetch(end, opt)
       .then((res) =>
