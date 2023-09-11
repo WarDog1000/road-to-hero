@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SongLirics = () => {
+const SongLyrics = () => {
   return (
     <div>
       <h2>Lirics</h2>
@@ -8,4 +8,4 @@ const SongLirics = () => {
   )
 }
 
-export default SongLirics
+export default SongLyrics

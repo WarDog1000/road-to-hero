@@ -1,28 +1,23 @@
-//  import mongoose from "mongoose";
-import mongoose, { connect, connection } from "mongoose";
+import {connect, connection} from "mongoose";
 
 const conn = {
   isConnected: false
-};
-
-export async function connectionDb() {
-
-  // si esta conectado, ya no vuelve a establecer una coneccion
-  if(connection.isConnected) return;
-
-  // se conecta por primera vez
-  const db = await mongoose.connect(`mongodb://localhost/nextmongocrud`);
-  console.log(db.connection.db.databaseName);
-  // conn.isConnected = true;
-  conn.isConnected = db.connections[0].readyState;
 }
 
-// maneja la coneccion exitosa
-connection.on('connected', () => {
-  console.log("Mongoose is conected");
+export async function connectDB() {
+
+  if(conn.isConnected) return;
+
+  const db = await connect("mongodb://localhost:27017/nextmongocrud")
+  // conn.isconnected = true
+  conn.isConnected = db.connection[0].readySate
+  console.log(db.connection.db.databaseName)
+}
+
+connection.on("connected", () => {
+  console.log("Mongoose is connected");
 });
 
-// maneja la coneccion erronea
-connection.on('error', (err) => {
-  console.log("Mongoose is not conected " + err);
+connection.on("error", (err) => {
+  console.log("Mongoose connection error", err);
 });

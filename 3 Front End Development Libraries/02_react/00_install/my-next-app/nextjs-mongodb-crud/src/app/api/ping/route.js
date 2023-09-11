@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { connectionDb } from "@/utils/mongoose";
+import {connectDB} from "@/utils/mongoose";
+
 export async function GET() {
-  connectionDb();
-  return NextResponse.json(
-    {mesage: "Hello World!"}
-  )
+  connectDB()
+  return NextResponse.json({
+    message: "hello World"
+  })
 }
