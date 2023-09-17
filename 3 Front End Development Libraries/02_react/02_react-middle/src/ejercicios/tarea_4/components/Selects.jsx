@@ -1,6 +1,9 @@
 import React from 'react'
+import { useCity } from '../hooks/useCity'
 
-const Selects = () => {
+const Selects = ({title, url, handleChange}) => {
+  const {data, error,loading} = useCity(url);
+  if(!data) return null;
   return (
     <>
       <select name="" id="">
