@@ -7,13 +7,13 @@ export const useCity = (url) => {
 
   useEffect(() => {
     const abortController = new AbortController(); // para manejar los tiempos de respuestas del servidor
-    const signal = abortController.signal();
+    const signal = abortController.signal;
 
     const fecthData =  async () => {
       setLoading(true);
       try {
 
-        const res = await fecth(url);
+        const res = await fetch(url);
 
         if(!res.ok) { // si la res falla, crea y lansa un "error"
           let err = new Error("Error en la peticion 'fetch'");

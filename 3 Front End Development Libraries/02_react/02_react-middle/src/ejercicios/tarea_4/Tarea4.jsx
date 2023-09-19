@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import Selects from "./components/Selects";
 
 const Tarea4 = () => {
-  const [state, setState] = useState("");
-  const [town, setTown] = useState("");
-  const [suburb, setSuburb] = useState("");
+  const [country, setCountry] = useState("");
+  // const [state, setState] = useState("");
+  const [capital, setCapital] = useState("");
+  let url = "https://countryapi.io/api";
   return (
     <>
       <h2>Selects Anidados</h2>
-      <Selects title="estado" url="https://www.universal-tutorial.com/api/countries/states/" handleChange={(e) => {setState(e.target.value)}} />
-      {state &&  <Selects title="town" url="url" handleChange={(e) => {setTown(e.target.value)}} />}
-      {town && <Selects title="suburb" url="url" handleChange={(e) => {setSuburb(e.target.value)}} />}
+      <Selects title="country" url={`${url}/all`} handleChange={(e) => {setCountry(e.target.value)}} />
+      {/* {country &&  <Selects title="state" url={`${url}/name/${country}`} handleChange={(e) => {setState(e.target.value)}} />} */}
+      {country && <Selects title="capital" url={`${url}/name/${country}`} handleChange={(e) => {setCapital(e.target.value)}} />}
       <pre>
-        {suburb &&
+        {capital &&
         <code>
-          {state} - {town} - {suburb}
+          {country} - {capital}
         </code>
         }
       </pre>
