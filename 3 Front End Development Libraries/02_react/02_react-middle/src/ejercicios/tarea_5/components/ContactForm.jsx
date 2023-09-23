@@ -8,10 +8,16 @@ const initialForm = {
 }; // valor inicial del formulario
 
 const validateForm = (form) => {
-  let errors = {};
-  if(!form.name. trim()) {
-    errors.name = "Name is required";
+  let errors = {}; // crea un objeto de errores
+
+  // si no se escribe nada en el input de "nombre"
+  if(!form.name.trim()) {
+    errors.name = "Name is required"; // crea un error { name: "Name is required"}
+  } else if(!form.email.trim()) {
+    errors.email = "Email is required"; // crea un error { email: "Email is required"}
   }
+
+  return errors;
 }; // funcion para validar el formulario
 
 function ContactForm() {
@@ -31,6 +37,11 @@ function ContactForm() {
     backgroundColor: "transpartent",
     fontFamily: "inherit", resize: "none" 
   }
+
+  const errorStyles = {
+    fontWeight: "bold",
+    color: "dc3545"
+  }
   
   return (
     <>
@@ -46,6 +57,7 @@ function ContactForm() {
           onBlur={handleBlur}
           required
           />
+          {errors.name && <p style={errorStyles}>{erros.name}</p>}
         <input
           type="email"
           style={inputStyles}
@@ -56,6 +68,7 @@ function ContactForm() {
           onBlur={handleBlur}
           required
           />
+          {errors.email && <p style={errorStyles}>{erros.email}</p>}
         <input
           type="text"
           style={inputStyles}
@@ -65,7 +78,8 @@ function ContactForm() {
           onChange={handleChange}
           onBlur={handleBlur}
           required
-            />
+          />
+          {errors.subject && <p style={errorStyles}>{erros.subject}</p>}
         <textarea 
           style={inputStyles}
           name="comments"

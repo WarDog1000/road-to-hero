@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export function useForm(iniForm, validateForm) {
   const [form, setForm] = useState(iniForm);
-  const [err, setErr] = useState({});
+  const [error, setError] = useState({});
   const [loading, setLoading] = useState(false);
   const [res, setRes] = useState(null);
 
@@ -18,11 +18,11 @@ export function useForm(iniForm, validateForm) {
   // donde se pierde el foco de un elemento
   const handleBlur = (e) => {
      handleChange(e);
-     setErr()
+     setError(validateForm(form)) // recibe las propriedades del form y actualiza la variable de "error"
   }
 
   // cuando se envia un formulario
   const handleSubmit = (e) => {}
 
-  return {form, err, loading, res, handleBlur, handleChange, handleSubmit};
+  return {form, error, loading, res, handleBlur, handleChange, handleSubmit};
 }
