@@ -4,45 +4,63 @@ const initialForm = {
   name: "",
   email: "",
   subject: "",
-  comment: ""
+  comments: ""
 }; // valor inicial del formulario
 
 const validateForm = (form) => {
   let errors = {}; // crea un objeto de errores
+  let regexName = /^[A-Za-z\s]+$/;
+  let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  let regexComments = /^.{1,255}$/;
 
   // si no se escribe nada en el input de "nombre"
   if(!form.name.trim()) {
     errors.name = "Name is required"; // crea un error { name: "Name is required"}
-  } else if(!form.email.trim()) {
+  } else if(regexName.test(form.name.trim())) {
+    errors.name = "Name only letters required";
+  }
+  // si no se escribe nada en el input de "email"
+  if(!form.email.trim()) {
     errors.email = "Email is required"; // crea un error { email: "Email is required"}
+  } else if(regexEmail.test(form.email.trim())) {
+    errors.email = "valid email is required";
+  }
+  // si no se escribe nada en el input de "subject"
+  if(!form.subject.trim()) {
+    errors.subject = "Subject is required"; // crea un error { subject: "Subject is required"}
+  }
+  // si no se escribe nada en el input de "email"
+  if(!form.comments.trim()) {
+    errors.comments = "Comments is required"; // crea un error { comments: "Comments is required"}
+  } else if(regexComments.test(form.comments.trim())) {
+    errors.comments = "Comments should be no more than 255 letters";
   }
 
-  return errors;
+  return errors;           
 }; // funcion para validar el formulario
+
+const inputStyles = {
+  border: "thin solid #dedede",
+  borderRadius: "0.25rem",
+  padding: "0.75rem",
+  marginBottom: "1rem",
+  outline: "none",
+  display: "block",
+  width: "100%",
+  fontSize: "1rem",
+  lineHeight: 1,
+  backgroundColor: "transpartent",
+  fontFamily: "inherit", resize: "none" 
+}
+
+const errorStyles = {
+  fontWeight: "bold",
+  color: "dc3545"
+}
 
 function ContactForm() {
   // guarda la des-tructuracion del objeto de datos proveniente de hooks/useForm
-  const {form, errloading, res, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validateForm);
-
-  const inputStyles = {
-    border: "thin solid #dedede",
-    borderRadius: "0.25rem",
-    padding: "0.75rem",
-    marginBottom: "1rem",
-    outline: "none",
-    display: "block",
-    width: "100%",
-    fontSize: "1rem",
-    lineHeight: 1,
-    backgroundColor: "transpartent",
-    fontFamily: "inherit", resize: "none" 
-  }
-
-  const errorStyles = {
-    fontWeight: "bold",
-    color: "dc3545"
-  }
-  
+  const {form, loading, res, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validateForm);
   return (
     <>
       <h2>Contact Form</h2>
@@ -89,8 +107,11 @@ function ContactForm() {
           placeholder="escribe tu comentario" 
           onChange={handleChange} onBlur={handleBlur} >
         </textarea>
+            {errors.comments && <p style={errorStyles}>{erros.comments}</p>}
         <input type="submit" value="Enviar" />
       </form>
+      {loading && <p>Enviando...</p>}
+      {res && (<p>E-mail was sent</p>)}
     </>
   );
 }

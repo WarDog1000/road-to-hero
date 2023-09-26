@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { helpHttp } from '../helpers/helpHttp';
 
 export function useForm(iniForm, validateForm) {
   const [form, setForm] = useState(iniForm);
@@ -8,7 +9,7 @@ export function useForm(iniForm, validateForm) {
 
   // donde ocuurre un cambio en el elemento
   const handleChange = (e) => {
-    const {name, value} = e.target
+    const {name, value} = e.target;
     setForm({
       ...form,
       [name]: value
@@ -22,7 +23,31 @@ export function useForm(iniForm, validateForm) {
   }
 
   // cuando se envia un formulario
-  const handleSubmit = (e) => {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError(validateForm(form));
+
+    // valida que el objeto de errro viene vacio
+    if(Object.keys(error).length === 0) {
+      alert("Enviando Formulario");
+      setLoading(true);
+      helpHttp()
+      .post(`https://formsubmit.co/ajax/jhonatansouzameza100@gmail.com`, {
+        body: form,
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      })
+      .then((res) => {
+        setLoading(false);
+        setRes(true);
+        setTimeout(() => {
+          setRes(false);
+        }, 3000);
+      });
+    } else { return; }
+  }
 
   return {form, error, loading, res, handleBlur, handleChange, handleSubmit};
 }
