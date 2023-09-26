@@ -42,6 +42,7 @@ export function useForm(iniForm, validateForm) {
       .then((res) => {
         setLoading(false);
         setRes(true);
+        setForm(iniForm);
         setTimeout(() => {
           setRes(false);
         }, 3000);
