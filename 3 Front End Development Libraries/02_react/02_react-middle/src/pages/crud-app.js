@@ -6,12 +6,16 @@ import Tarea2 from '../ejercicios/tarea_2/Tarea2';
 import SongApp from '../ejercicios/tarea_3/SongApp';
 import Tarea4 from '../ejercicios/tarea_4/Tarea4';
 import Tarea5 from '../ejercicios/tarea_5/Tarea5';
+import Tarea6 from '../ejercicios/tarea_6/Tarea6';
 
 export default () => {
   return (
     <>
     <Container>
       <h2>React CRUD & APIS</h2>
+      <BulmaSection>
+        <Tarea6 />
+      </BulmaSection>
       <BulmaSection>
         <Tarea5 />
       </BulmaSection>
