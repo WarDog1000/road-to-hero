@@ -16,14 +16,14 @@ const validateForm = (form) => {
   // si no se escribe nada en el input de "nombre"
   if(!form.name.trim()) {
     errors.name = "Name is required"; // crea un error { name: "Name is required"}
-  } else if(regexName.test(form.name.trim())) {
+  } else if(!regexName.test(form.name.trim())) {
     errors.name = "Name only letters required";
   }
   // si no se escribe nada en el input de "email"
   if(!form.email.trim()) {
     errors.email = "Email is required"; // crea un error { email: "Email is required"}
-  } else if(regexEmail.test(form.email.trim())) {
-    errors.email = "valid email is required";
+  } else if(!regexEmail.test(form.email.trim())) {
+    errors.email = "Valid email is required";
   }
   // si no se escribe nada en el input de "subject"
   if(!form.subject.trim()) {
@@ -32,7 +32,7 @@ const validateForm = (form) => {
   // si no se escribe nada en el input de "email"
   if(!form.comments.trim()) {
     errors.comments = "Comments is required"; // crea un error { comments: "Comments is required"}
-  } else if(regexComments.test(form.comments.trim())) {
+  } else if(!regexComments.test(form.comments.trim())) {
     errors.comments = "Comments should be no more than 255 letters";
   }
 
@@ -60,7 +60,7 @@ const errorStyles = {
 
 function ContactForm() {
   // guarda la des-tructuracion del objeto de datos proveniente de hooks/useForm
-  const {form, loading, res, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validateForm);
+  const {form, error, loading, res, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validateForm);
   return (
     <>
       <h2>Contact Form</h2>
@@ -75,7 +75,7 @@ function ContactForm() {
           onBlur={handleBlur}
           required
           />
-          {errors.name && <p style={errorStyles}>{erros.name}</p>}
+          {error.name && <p style={errorStyles}>{error.name}</p>}
         <input
           type="email"
           style={inputStyles}
@@ -86,7 +86,7 @@ function ContactForm() {
           onBlur={handleBlur}
           required
           />
-          {errors.email && <p style={errorStyles}>{erros.email}</p>}
+          {error.email && <p style={errorStyles}>{error.email}</p>}
         <input
           type="text"
           style={inputStyles}
@@ -97,7 +97,7 @@ function ContactForm() {
           onBlur={handleBlur}
           required
           />
-          {errors.subject && <p style={errorStyles}>{erros.subject}</p>}
+          {error.subject && <p style={errorStyles}>{error.subject}</p>}
         <textarea 
           style={inputStyles}
           name="comments"
@@ -107,7 +107,7 @@ function ContactForm() {
           placeholder="escribe tu comentario" 
           onChange={handleChange} onBlur={handleBlur} >
         </textarea>
-            {errors.comments && <p style={errorStyles}>{erros.comments}</p>}
+            {error.comments && <p style={errorStyles}>{error.comments}</p>}
         <input type="submit" value="Enviar" />
       </form>
       {loading && <p>Enviando...</p>}
