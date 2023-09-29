@@ -1,6 +1,19 @@
+ ## Vite.js
 ```
-- 1. Vite - ClienSideRendering - 0.15MB : npm create vite@latest
+- 1. Vite - ClienSideRendering 
+
+// install - 0.15MB :
+
+npm create vite@latest my-vite-app --template -react
+npm install
 ```
+### Supported
+- vanilla
+- vue
+- svelte
+- react
+- preact
+- lit
 
 ```
 1. Next.js - ServerSideRendering - 0.5MB: npx create-next-app
