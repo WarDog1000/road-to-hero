@@ -1,5 +1,5 @@
 // import { BrowserRouter as Router, Routes as Switch, Route} from 'react-router-dom'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Acerca from './pages/Acerca'
@@ -37,6 +37,22 @@ export default function App() {
           <Route path='/*' element={<Error404 />} />
         </Routes>
       </BrowserRouter>
+      {/* <HashRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/acerca' element={<Acerca />} />
+          <Route path='/about' element={<Navigate to="/acerca" />} />
+          <Route path='/contacto' element={<Contacto />} />
+          <Route path='/productos' element={<Productos productos={productos} />}>
+            <Route path='/productos/:id' element={<ProductoDetalles productos={productos} />} />
+          </Route>
+          <Route path="/servicios" element={<Servicios />}>
+            <Route index element={<h2>Este el el anidado de /servicios</h2>} />
+          </Route>
+          <Route path='/*' element={<Error404 />} />
+        </Routes>
+      </HashRouter> */}
     </>
   )
 }
