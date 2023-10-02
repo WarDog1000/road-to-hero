@@ -6,6 +6,8 @@ function NavBar() {
     <nav className="menu">
       <Link to="/">Home</Link>
       <Link to="/router">Router</Link>
+      <Link to="/params">Params</Link>
+      <Link to="/query">Query</Link>
     </nav>
     </>
   );
