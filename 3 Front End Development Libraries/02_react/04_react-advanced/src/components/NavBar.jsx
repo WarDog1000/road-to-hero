@@ -8,6 +8,8 @@ function NavBar() {
       <Link to="/router">Router</Link>
       <Link to="/params">Params</Link>
       <Link to="/query">Query</Link>
+      <Link to="/redirections">Redirections</Link>
+      <Link to="/routematch">RouteMatch</Link>
     </nav>
     </>
   );
