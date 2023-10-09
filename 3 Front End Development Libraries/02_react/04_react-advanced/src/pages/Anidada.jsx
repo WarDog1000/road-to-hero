@@ -1,7 +1,7 @@
 function Anidada() {
   return (
     <>
-      <button>Anidado</button>
+    <h1>Ruta Anidada 1</h1>
     </>
   );
 }

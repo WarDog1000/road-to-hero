@@ -10,6 +10,7 @@ function NavBar() {
       <Link to="/query">Query</Link>
       <Link to="/redirections">Redirections</Link>
       <Link to="/routematch">RouteMatch</Link>
+      <Link to="/protectedroutes">PrivateRoute</Link>
     </nav>
     </>
   );
