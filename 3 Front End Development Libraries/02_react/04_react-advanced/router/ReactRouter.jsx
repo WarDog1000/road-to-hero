@@ -16,7 +16,7 @@ import ProtectedRoute from '../src/components/ProtectedRoute';
 function ReactRouter() {
 
   const [auth, setAuth] = useState(null)
-  const login = () => { setAuth({id: 1, name: "jhony"})}
+  const login = () => { setAuth({id: 1, name: "jhony", permissions: ["analize"], roles: ["admin"]})}
   const logout =() => { setAuth(null)}
 
 
@@ -42,14 +42,19 @@ function ReactRouter() {
               <Route path='home' element={!auth ? <Navigate to='/protectedroutes/landing' /> : <HomePage />} />
               {/* rutas protegidas personalizadas */}
               <Route path='admin' element={
-                <ProtectedRoute auth={auth} to="/">
+                <ProtectedRoute auth={!!auth && auth.roles.includes("admin")} to="/protectedroutes/home">
                   <AdminPage />
                 </ProtectedRoute>
               } />
+              <Route path='analytics' element={
+                <ProtectedRoute auth={!!auth && auth.permissions.includes("analize")} to="/protectedroutes/home">
+                  <AnalyticsPage />
+                </ProtectedRoute>
+              } />
                {/* anidacion de "varias" rutas protegidas */}
-              <Route element={<ProtectedRoute auth={auth} />}>
+              <Route element={<ProtectedRoute auth={!!auth} />}>
                 <Route path='dashboard' element={<DashboardPage  />} />
-                <Route path='analytics' element={<AnalyticsPage />} />
+                <Route path='home' element={<HomePage />} />
               </Route>
             </Route>
             <Route index element={<Home />} />
