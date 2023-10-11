@@ -23,11 +23,15 @@ function App() {
         </ul>
         <h2>useCallback</h2>
         <ul>
-          <li></li>
+          <li>memoriza una funcion, para no tener que volverla a definir en cada render.</li>
+          <li>Usalo siempre que se pase una funcion como <m>prop</m> a un componente memorizado.</li>
+          <li>Usalo siempre que se pase una funcion como parametro de un efecto.</li>
         </ul>
         <h2>useMemo</h2>
         <ul>
-          <li></li>
+          <li>Memoriza un valor calculado, es decir, el resultado de una funcion.</li>
+          <li>Genera propriedades computadas.</li>
+          <li>Usalo en procesos pesados.</li>
         </ul>
       </section>
       <hr />
