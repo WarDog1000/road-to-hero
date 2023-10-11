@@ -1,4 +1,4 @@
-import React, { ReactDOM } from "react";
+import { ReactDOM } from "react";
 import "./Modal.css";
 function ModalPortal({ children, isOpen, closeModal }) {
   // funcion evitar el cierre cunado ocurre un click en el "container" del modal

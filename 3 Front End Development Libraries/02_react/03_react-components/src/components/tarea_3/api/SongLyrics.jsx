@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SongLyrics = () => {
   return (
     <div>
@@ -8,4 +6,4 @@ const SongLyrics = () => {
   )
 }
 
-export default SongLyrics
+export default SongLyrics;
