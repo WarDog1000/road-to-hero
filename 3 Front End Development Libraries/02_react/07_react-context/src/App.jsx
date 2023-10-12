@@ -1,4 +1,5 @@
 import MyPage from "./components/MyPage";
+import MyPageContext from "./components/MyPageContext";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <hr />
       <section>
         <MyPage />
+        <MyPageContext />
       </section>
     </>
   );

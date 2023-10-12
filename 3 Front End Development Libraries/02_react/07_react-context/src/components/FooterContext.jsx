@@ -1,4 +1,4 @@
-function Footer({theme, translate: text}) {
+function FooterContext({theme, translate: text}) {
   return (
     <footer className={theme}>
       <h4>{text.footerTitle}</h4>
@@ -6,4 +6,4 @@ function Footer({theme, translate: text}) {
   );
 }
 
-export default Footer;
+export default FooterContext;
