@@ -1,8 +1,7 @@
-function Main({theme, translate: text}) {
+function Main({theme, translate: text, auth}) {
   return (
     <main className={theme}>
-      <p>{text.mainWelcome}</p>
-      <p>{text.mainHello}</p>
+      { auth ? <p>{text.mainHello}</p> : <p>{text.mainWelcome}</p> }
       <p>{text.mainContent}</p>
     </main>
   );

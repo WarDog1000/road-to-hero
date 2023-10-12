@@ -37,6 +37,7 @@ function MyPage() {
   const [theme, setTheme] = useState(initialTheme);
   const [language, setLanguage] = useState(initialLanguage);
   const [translate, setTranslate] = useState(traducciones[language])
+  const [auth, setAuth] = useState(false)
 
   const handleTheme = (e) => {
     // console.log(e.target.value);
@@ -56,6 +57,14 @@ function MyPage() {
     }
   }
 
+  const handleAuth = (e) => {
+    if(auth === false) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }
+
   return (
     <div
       className="my-page"
@@ -66,9 +75,9 @@ function MyPage() {
         color: "#000",
         backgroundColor: "#ccc" }}
     >
-      <Header theme={theme} handleTheme={handleTheme} translate={translate} handleLanguage={handleLanguage} />
+      <Header theme={theme} handleTheme={handleTheme} translate={translate} handleLanguage={handleLanguage} auth={auth} handleAuth={handleAuth} />
       <hr />
-      <Main theme={theme} translate={translate} />
+      <Main theme={theme} translate={translate} auth={auth} />
       <hr />
       <Footer theme={theme} translate={translate} />
     </div>
