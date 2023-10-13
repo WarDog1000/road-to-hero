@@ -1,4 +1,13 @@
-function HeaderContext({theme, auth, translate: text, handleTheme, handleLanguage, handleAuth}) {
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
+import LanguageContext from "../context/LanguageContext";
+
+function HeaderContext({auth, handleAuth}) {
+
+  // obtiene "theme" y "handleTheme function" del CONTEXTO del objeto wrapper padre
+  const {theme, handleTheme} = useContext(ThemeContext);
+  const {translate: text, handleLanguage} = useContext(LanguageContext);
+
   return (
     <header className={theme}>
       <h2>{text.headerTitle}</h2>
