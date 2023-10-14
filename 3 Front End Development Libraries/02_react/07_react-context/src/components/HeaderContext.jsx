@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 import LanguageContext from "../context/LanguageContext";
+import AuthContext from "../context/AauthContext";
 
-function HeaderContext({auth, handleAuth}) {
+function HeaderContext() {
 
   // obtiene "theme" y "handleTheme function" del CONTEXTO del objeto wrapper padre
   const {theme, handleTheme} = useContext(ThemeContext);
   const {translate: text, handleLanguage} = useContext(LanguageContext);
+  const {auth, handleAuth} = useContext(AuthContext);
 
   return (
     <header className={theme}>

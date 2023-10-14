@@ -1,19 +1,11 @@
 import HeaderContext from "./HeaderContext.jsx";
 import MainContext from "./MainContext.jsx";
 import FooterContext from "./FooterContext.jsx";
-import { useState } from "react";
 import { ThemeProvider } from "../context/ThemeContext";
 import { LanguageProvider } from "../context/LanguageContext.jsx";
+import { AuthProvider } from "../context/AauthContext.jsx";
 
 function MyPageContext() {
-  const [auth, setAuth] = useState(false)
-  const handleAuth = (e) => {
-    if(auth === false) {
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
-  }
 
   return (
     <div
@@ -27,11 +19,13 @@ function MyPageContext() {
     >
       <ThemeProvider>
         <LanguageProvider>
-          <HeaderContext auth={auth} handleAuth={handleAuth} />
-          <hr />
-          <MainContext auth={auth} />
-          <hr />
-          <FooterContext />
+          <AuthProvider>
+            <HeaderContext />
+            <hr />
+            <MainContext />
+            <hr />
+            <FooterContext />
+          </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
     </div>
