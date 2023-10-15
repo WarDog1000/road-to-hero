@@ -1,5 +1,6 @@
 import Contador from './components/Contador';
 import ContadorMejorado from './components/ContadorMejorado';
+import ShoppingCart from './components/ShoppingCart';
 function App() {
   return (
     <>
@@ -8,6 +9,8 @@ function App() {
       <Contador />
       <hr />
       <ContadorMejorado />
+      <hr />
+      <ShoppingCart />
     </>
   );
 }
