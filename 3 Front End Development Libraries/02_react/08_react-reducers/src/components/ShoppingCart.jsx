@@ -12,9 +12,14 @@ function ShoppingCart() {
 
   //FUNCIONES
   const addToCart = (id) => { dispatch({type: TYPES.ADD_TO_CART, payload: id})};
-  const delFromCart = (id) => { dispatch({type: TYPES.REMOVE_FROM_CART, payload: id})};
-  const removeAll = () => {};
-  const clearCart = () => { dispatch({type: TYPES.REMOVE_ALL_FROM_CART})};
+  const removeFromCart = (id, all = false) =>  { 
+    if(all) {
+      dispatch({type: TYPES.REMOVE_ALL_FROM_CART, payload: id})
+    } else {
+      dispatch({type: TYPES.REMOVE_ONE_FROM_CART, payload: id})}
+    }
+    
+  const clearCart = () => { dispatch({type: TYPES.CLEAR_CART})};
 
   
   return (
@@ -25,8 +30,8 @@ function ShoppingCart() {
         {productos.map((el) => <ProductItem key={el.id} data={el} addToCart={addToCart} />)}
       </article>
         <h3>Carrito</h3>
-      <article className="box grid-responsive">
-        {cart.map((item, index) => <CartItem key={item.id} data={item} delFromCart={delFromCart} />)}
+      <article className="box grid-responsive"> 
+        {cart.map((item, index) => <CartItem key={item.id} data={item} removeFromCart={removeFromCart} />)}
         <button onClick={clearCart}>Limpiar Carrito</button>
       </article>
     </div>

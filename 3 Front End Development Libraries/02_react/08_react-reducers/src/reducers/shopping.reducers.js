@@ -34,14 +34,13 @@ export function shoppingReducer(state, action) {
     }
 
     case TYPES.REMOVE_ONE_FROM_CART: {
-
+      break;
     }
     case TYPES.REMOVE_ALL_FROM_CART: {
-
+      break;
     }
-    case TYPES.CLEAR_CART: {
-
-    }
+    case TYPES.CLEAR_CART: 
+      return shoppingCartInitialState;
     default:
       return state;
   }
