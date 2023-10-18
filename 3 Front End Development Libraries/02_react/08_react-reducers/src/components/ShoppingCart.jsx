@@ -23,7 +23,7 @@ function ShoppingCart() {
 
   
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <h2>Carrito de Compras con Reducers</h2>
       <h3>Productos</h3>
       <article className="box grid-responsive">

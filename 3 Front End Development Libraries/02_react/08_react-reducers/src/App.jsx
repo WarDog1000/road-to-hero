@@ -1,6 +1,7 @@
 import Contador from './components/Contador';
 import ContadorMejorado from './components/ContadorMejorado';
 import ShoppingCart from './components/ShoppingCart';
+import Crud from './crud/Crud';
 function App() {
   return (
     <>
@@ -11,6 +12,8 @@ function App() {
       <ContadorMejorado />
       <hr />
       <ShoppingCart />
+      <hr />
+      <Crud />
     </>
   );
 }
