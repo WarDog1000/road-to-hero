@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
+import { CrudReducers, crudInitialState } from "./reducers/crud.reducers";
+import { TYPES } from "./actions/crud.actions";
 import TableForm from "./TableForm";
 import Table from "./Table";
 import { helpHttp } from "./helpers/helpHttp";
@@ -6,7 +8,9 @@ import Message from "./components/Message";
 import Loader from "./components/Loader";
 
 function Crud() {
-  const [db, setDb] = useState(null);
+  // const [db, setDb] = useState(null);
+  const [state, dispatch] = useReducer(CrudReducers, crudInitialState)
+  const {db} = state;
   const [toEdit, setToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,10 +22,12 @@ function Crud() {
     setLoading(true)
     api.get(url).then((res) => {
       if(!res.err) {
-        setDb(res);
+        // setDb(res);
+        dispatch({type:TYPES.READ_ALL_DATA, payload: res})
         setError(null)
       } else {
-        setDb(null);
+        // setDb(null);
+        dispatch({type:TYPES.NO_DATA})
         setError(res)
       }
 
@@ -42,7 +48,8 @@ function Crud() {
     .then((res) => {
       console.log(res)
       if(!res.err) {
-        setDb([...db, res])
+        // setDb([...db, res])
+        dispatch({type:TYPES.CREATE_DATA, payload: res})
       } else {
         setError(res)
       }
@@ -58,15 +65,13 @@ function Crud() {
     }
     api.put(enpoint, options).then( (res) => {
       if(!res.err) {
-        let newData = db.map(el => el.id === data.id ? data : el);
-        setDb(newData)
+        // let newData = db.map(el => el.id === data.id ? data : el);
+        // setDb(newData)
+        dispatch({type: TYPES.UPDATE_DATA, payload: data})
       } else {
         setError(res);
       }
     })
-
-    // let newData = db.map(el => el.id === data.id ? data : el);
-    // setDb(newData)
   };
 
   const deleteData = (id) => {
@@ -81,17 +86,14 @@ function Crud() {
     if(isDelete) {
       api.del(endpoint, options).then( (res) => {
         if(!res.err) {
-          let newData = db.filter(el => el.id !== id)
-          setDb(newData);
+          // let newData = db.filter(el => el.id !== id)
+          // setDb(newData);
+          dispatch({type: TYPES.DELETE_DATA, payload: id})
         } else {
           setError(res)
         }
       }) 
-      // let newData = db.filter(el => el.id !== id)
-      // setDb(newData);
-    } else {
-      return
-    }
+    } else { return }
   };
 
   return (

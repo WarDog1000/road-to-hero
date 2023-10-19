@@ -1,5 +1,3 @@
-import React from "react";
-
 function TableRow({el, setToEdit, deleteData}) {
   let {name, type, id} = el;
   return (
