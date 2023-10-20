@@ -3,7 +3,7 @@ import TeaoriaRedux from "./components/TeaoriaRedux";
 import store from "./store";
 import Contador from "./components/Contador";
 import ShoppingCart from "./components/ShoppingCart";
-// import Crud from "./crud/Crud";
+import Crud from "./crud/Crud";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <hr />
         <ShoppingCart />
         <hr />
-        {/* <Crud /> */}
+        <Crud />
         <hr />
         <TeaoriaRedux />
       </Provider>
