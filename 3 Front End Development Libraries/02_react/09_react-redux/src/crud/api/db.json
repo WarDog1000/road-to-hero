@@ -29,12 +29,6 @@
       "name": "player",
       "type": "common",
       "desc": "individuo standar, no posee gran nivel pero tiene un gran potencial oculto"
-    },
-    {
-      "id": 1697723182007,
-      "name": "newdata",
-      "type": "digital",
-      "desc": ""
     }
   ]
 }

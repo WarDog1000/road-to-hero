@@ -1,10 +1,10 @@
 import { CREATE_DATA, DELETE_DATA, NO_DATA, READ_ALL_DATA, UPDATE_DATA } from "../types";
 
-export const crudInitialState = {
-  db: null
+export const initialState = {
+  db: []
 }
 
-export function CrudReducers(state, action) {
+export function CrudReducers(state = initialState, action) {
   switch(action.type) {
     case READ_ALL_DATA: { return {...state, db: action.payload.map((data) => data)}}
     case CREATE_DATA: { return {...state, db: [...state.db, action.payload]}}
@@ -16,7 +16,7 @@ export function CrudReducers(state, action) {
       let newData = state.db.filter(el => el.id !== action.payload)
       return {...state, db: newData}
     }
-    case NO_DATA: { return crudInitialState}
+    case NO_DATA: { return initialState}
     default: 
       return state;
   }

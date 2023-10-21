@@ -1,16 +1,17 @@
-import { useEffect, useReducer, useState } from "react";
-import { CrudReducers, crudInitialState } from "./reducers/crud.reducers";
-import { TYPES } from "./actions/crud.actions";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { helpHttp } from "./helpers/helpHttp";
 import TableForm from "./TableForm";
 import Table from "./Table";
-import { helpHttp } from "./helpers/helpHttp";
-import Message from "./components/Message";
 import Loader from "./components/Loader";
+import Message from "./components/Message";
+import { createAction, deleteAction, noAction, readAllAction, updateAction } from "../actions/crud.actions";
 
 function Crud() {
-  // const [db, setDb] = useState(null);
-  const [state, dispatch] = useReducer(CrudReducers, crudInitialState)
-  const {db} = state;
+  const {crud} = useSelector(state => state);
+  const {db} = crud;
+  const dispatch = useDispatch();
+
   const [toEdit, setToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -22,12 +23,10 @@ function Crud() {
     setLoading(true)
     api.get(url).then((res) => {
       if(!res.err) {
-        // setDb(res);
-        dispatch({type:TYPES.READ_ALL_DATA, payload: res})
+        dispatch(readAllAction(res))
         setError(null)
       } else {
-        // setDb(null);
-        dispatch({type:TYPES.NO_DATA})
+        dispatch(noAction())
         setError(res)
       }
 
@@ -48,8 +47,7 @@ function Crud() {
     .then((res) => {
       console.log(res)
       if(!res.err) {
-        // setDb([...db, res])
-        dispatch({type:TYPES.CREATE_DATA, payload: res})
+        dispatch(createAction(res))
       } else {
         setError(res)
       }
@@ -65,9 +63,7 @@ function Crud() {
     }
     api.put(enpoint, options).then( (res) => {
       if(!res.err) {
-        // let newData = db.map(el => el.id === data.id ? data : el);
-        // setDb(newData)
-        dispatch({type: TYPES.UPDATE_DATA, payload: data})
+        dispatch(updateAction(res))
       } else {
         setError(res);
       }
@@ -86,9 +82,7 @@ function Crud() {
     if(isDelete) {
       api.del(endpoint, options).then( (res) => {
         if(!res.err) {
-          // let newData = db.filter(el => el.id !== id)
-          // setDb(newData);
-          dispatch({type: TYPES.DELETE_DATA, payload: id})
+          dispatch(deleteAction(id))
         } else {
           setError(res)
         }
