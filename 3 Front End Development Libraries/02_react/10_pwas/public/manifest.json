@@ -1,6 +1,13 @@
 {
-  "short_name": "React App",
+  "short_name": "React Progresive Web App",
   "name": "Progresive Web App",
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "theme_color": "#F0DB4F",
+  "background_color": "#2B2B2B",
+  "orientation": "portrait",
+  "scope": "./",
+  "lan": "es-AR",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +24,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
