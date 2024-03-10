@@ -8,7 +8,7 @@ function TaskList({tasks}: Props) {
   return (
     <div>
       {tasks.map((task) => (
-        <div className="col-md-4">
+        <div className="col-md-4 pb-2" key={task.id}>
           <TaskCard task={task} />
         </div>
       ))}      
