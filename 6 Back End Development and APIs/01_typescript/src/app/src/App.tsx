@@ -28,7 +28,7 @@ export default function App({ title }: Props) {
 
   // funcion para eliminar
   const deleteTask = (id: number) => {
-    tasks.filter( task => task.id !== id)
+    setTasks(tasks.filter( task => task.id !== id))
   }
 
   return (
@@ -46,7 +46,7 @@ export default function App({ title }: Props) {
           <div className="col-md-4"><TaskForm addNewTask={addNewTask}/></div>
           <div className="col-md-8">
             <div className="row">
-              <TaskList tasks={tasks} />
+              <TaskList deleteTask={deleteTask} tasks={tasks} />
             </div>
           </div>
         </div>

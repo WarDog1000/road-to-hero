@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState, useRef } from 'react'
 import {AiOutlinePlus} from 'react-icons/ai'
 import { Tasks } from '../interfaces'
 
@@ -16,7 +16,9 @@ const initialState = {
 
 function TaskForm({addNewTask}: Props) {
 
-  const [task, setTask] = useState(initialState)
+  const [task, setTask] = useState<Tasks>(initialState)
+
+  const inputFocus = useRef<HTMLInputElement>(null);
 
   const handleChange = ({target}: HandleInputChange ) => {
     setTask({...task, [target.name]: target.value})
@@ -26,13 +28,21 @@ function TaskForm({addNewTask}: Props) {
     e.preventDefault()
     addNewTask(task)
     setTask(initialState)
+    inputFocus.current?.focus() // focus al elemento
   }
 
   return (
     <div className="card card-body bg-secondary text-dark">
       <h2>Add Task</h2>
       <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} value={task.title} type="text" name="title" id="title" placeholder="Write a title" className="form-control mb-3 rounded-8 shadow-none border-0" />
+        <input onChange={handleChange}
+         value={task.title} 
+         type="text" 
+         name="title" 
+         id="title" 
+         placeholder="Write a title" 
+         className="form-control mb-3 rounded-8 shadow-none border-0"
+         />
         <textarea  onChange={handleChange} value={task.description} name="description" id="" rows={2} className="description form-control mb-3 shadow-none border-0" placeholder="Description"></textarea>
         <button className="btn btn-primary"><AiOutlinePlus /> Save</button>
       </form>
