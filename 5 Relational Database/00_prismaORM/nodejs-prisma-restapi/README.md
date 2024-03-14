@@ -2,8 +2,6 @@
 
 REST API usando Nodejs junto con el Framework Express en el backend, junto con Prisma como ORM para poder comunicar con bases de datos SQL como seria PostgreSQL, MySQL, Sqlite, o Mongodb.  Ademas que usando Prisma también para hacer consultas, además de poder generar migraciones.
 
-[image]("www.google.com")
-
 ### Prerequisitos
 
 - Nesesitas Node.js v16.13.0
