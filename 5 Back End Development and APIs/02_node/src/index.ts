@@ -15,7 +15,7 @@ app.use(cors(
     // {origin: [''],}
     ))
 
-db().then(() => console.log("Conexion Ready"))
+db().then(() => console.log("Data Base conexion ready"))
 
 // Middleware para manejar solicitudes JSON
 app.use(express.json())
