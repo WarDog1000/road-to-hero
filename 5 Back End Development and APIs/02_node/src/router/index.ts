@@ -14,7 +14,7 @@ const router = Router()
 
 const cleanFileName = (filename: string) => {
   const file = filename.split('.').shift()
-  return file
+  return file?.replace('.routes', '')
 }
 
 readdirSync(PATH_ROUTER).filter((filename) => {

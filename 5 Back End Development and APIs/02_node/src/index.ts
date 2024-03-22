@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import express, { Request, Response } from 'express'
 import cors from 'cors'
-import { router } from './routes'
+import { router } from './router'
 import db from './config/mongo'
 
 // Configurar el puerto en el que el servidor escuchará
@@ -15,7 +15,7 @@ app.use(cors(
     // {origin: [''],}
     ))
 
-db().then(() => console.log("Data Base conexion ready"))
+db().then(() => console.log("DataBase conexion ready"))
 
 // Middleware para manejar solicitudes JSON
 app.use(express.json())
@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(router)
 
 // Ruta de ejemplo
-app.get('/items', (req: Request, res: Response) => {
+app.get('/hello', (req: Request, res: Response) => {
     res.send('¡Hola, mundo!')
 })
 
