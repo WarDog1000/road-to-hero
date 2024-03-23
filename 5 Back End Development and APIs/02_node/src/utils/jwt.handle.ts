@@ -7,11 +7,13 @@ const generateToken = async (id: string) => {
   const jwt = sign({id}, JWT_SECRET, {expiresIn: "12h"})
 
   return jwt
-
 }
 
-const verifyToken = async () => {
+const verifyToken = (reqToken: string) => {
 
+ const jwt = verify(reqToken, JWT_SECRET)
+ 
+ return jwt
 }
 
 export { generateToken, verifyToken }

@@ -1,5 +1,4 @@
 import { Request, Response } from "express"
-import { handleHTTP } from "../utils/error.handle"
 import { loginUser, registerNewUser } from "../services/auth.service"
 
 const registerCtrl = async (req: Request, res: Response) => {
@@ -32,4 +31,4 @@ const loginCtrl = async (req: Request, res: Response) => {
   }
 }
 
-export { registerCtrl, loginCtrl}
+export { registerCtrl, loginCtrl }
