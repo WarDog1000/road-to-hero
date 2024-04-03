@@ -5,13 +5,15 @@ import { getToken, verifyToken }  from '../utils/jwt'
 
 type Token = string
 
-const checkJWT = (req: RequestExt, res: Response, next: NextFunction) => {
+const checkJWT = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
 
     const token = getToken(req) as Token
 
-    const session = verifyToken(token)
+    const session = await verifyToken(token) as {id: string, etc: string}
 
+    console.log("token:", token, `\nsession:`, session)
+    
     if(!session){
 
       handleError(res, 401, "INVALID_SESSION")
@@ -19,8 +21,10 @@ const checkJWT = (req: RequestExt, res: Response, next: NextFunction) => {
     } else {
 
       req.user = session
-
+      
+      next()
     }
+
     
   } catch (error) {
     handleError(res, 401, "INVALID_TOKEN")

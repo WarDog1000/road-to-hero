@@ -33,7 +33,7 @@ const loginService = async (body: User) => {
 
   // Generate token
 
-  const token = await generateToken(getUser.id)
+  const token = await generateToken(getUser.id, getUser.email ) // puede recibir un parametro etc
 
   return {token, auth: true}
 
