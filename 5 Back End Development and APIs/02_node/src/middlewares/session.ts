@@ -13,6 +13,7 @@ const checkJWT =(req: RequestExt, res: Response, next: NextFunction ) => {
     const cleanToken: CleanToken = reqToken.split(' ').pop() as CleanToken // ['Bearer', '*****'] 
 
     const token = verifyToken(cleanToken) as {id: string}
+    
     if(!token) {
 
       res.status(401).send("INVALID_SESSION")

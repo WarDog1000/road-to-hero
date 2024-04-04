@@ -10,9 +10,11 @@ const checkJWT = async (req: RequestExt, res: Response, next: NextFunction) => {
 
     const token = getToken(req) as Token
 
+    if(!token) return handleError(res, 403, "NO_TOKEN_PROVIDED")
+
     const session = await verifyToken(token) as {id: string, etc: string}
 
-    console.log("token:", token, `\nsession:`, session)
+    // console.log("token:", token, `\nsession:`, session)
     
     if(!session){
 
@@ -24,7 +26,6 @@ const checkJWT = async (req: RequestExt, res: Response, next: NextFunction) => {
       
       next()
     }
-
     
   } catch (error) {
     handleError(res, 401, "INVALID_TOKEN")
