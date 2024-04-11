@@ -1,14 +1,27 @@
 # Node + Express
 
-### Paso 1: iniciar el proyecto: instalar dependencias de desarrollo y TypeScript
+### Paso 1: Iniciar el proyecto
 
-- Iniciar *package.json*
+> Iniciar *package.json*
 ```bash
 npm init -y
 ```
 
+### Paso 2: Instalar paquetes
 
-### Paso 2: Configurar TypeScript
+> Dependencies
+
+```bash
+npm i express cors dotenv mongoose morgan bcrypt jsonwebtoken
+```
+
+> Development
+
+```bash
+npm i -D typescript @types/node @types/express @types/cors @types/dotenv @types/mongoose @types/jsonwebtoken @types/morgan
+```
+
+### Paso 3: Configurar TypeScript
 
 > Instala `typescript` de manera glogal para "desarrollo"
 
@@ -35,6 +48,7 @@ tsc --init
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true
@@ -42,7 +56,7 @@ tsc --init
 }
 ```
 
-### Paso 3: Agregar scripts en el archivo package.json
+### Paso 4: Agregar scripts en el archivo `package.json`
 > Abre tu archivo package.json y agrega los siguientes scripts:
 
 `./package.json`
@@ -55,20 +69,6 @@ tsc --init
     "start": "node dist/index.js"
   }
 }
-```
-
-### Paso 4: Instalar Paquetes
-
-> Dependencies
-
-```bash
-npm i express cors dotenv mongoose
-```
-
-> Development
-
-```bash
-npm i @types/node @types/express @types/cors @types/dotenv @types/mongoose @types/jsonwebtoken -D
 ```
 
 ### Paso 5: Crear el servidor
