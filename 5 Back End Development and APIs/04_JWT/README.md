@@ -1,15 +1,15 @@
-# JSON Web Tokens (JWT) + bcrypt + passport
+# JSON Web Tokens (JWT) + bcrypt
 
 > Install
 
 ```bash
-npm i jsonwebtoken bcryptjs passport
+npm i jsonwebtoken bcryptjs
 ```
 
 > Install `types` 
 
 ```bash
-npm i @types/jsonwebtoken @types/bcryptjs @types/passport
+npm i @types/jsonwebtoken @types/bcryptjs
 ```
 
 > Import

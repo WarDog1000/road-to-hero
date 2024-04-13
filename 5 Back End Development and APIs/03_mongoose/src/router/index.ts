@@ -1,4 +1,4 @@
-// "Cragador dinamico de Rutas"
+// "Creador dinamico de Rutas"
 import { Router } from 'express'
 import { readdirSync } from 'fs'
 

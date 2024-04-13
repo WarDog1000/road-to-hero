@@ -64,7 +64,7 @@ tsc --init
 ```json
 {
   "scripts": {
-    "dev": "nodemon ./src/index.ts",
+    "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   }
