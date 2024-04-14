@@ -22,7 +22,7 @@ readdirSync(PATH_ROUTER).filter((filename) => {
   if(cleanName !== 'index') {
     import(`./${cleanName}.routes`).then((moduleRouter) => {
       console.log(cleanName) // items
-      router.use(`/${cleanName}`, moduleRouter.router)
+      router.use(`/api/${cleanName}`, moduleRouter.router)
     })
   }
 })

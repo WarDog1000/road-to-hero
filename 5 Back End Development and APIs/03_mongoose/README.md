@@ -1,4 +1,4 @@
-# Nodejs + Mongoose
+# Nodejs + Mongoose + Bcrypt
 
 ### Inicializar Proyecto
 > Crear `package.json`
@@ -138,7 +138,7 @@ readdirSync(PATH_ROUTER).filter((filename) => {
   if(cleanName !== 'index') {
     import(`./${cleanName}.routes`).then((moduleRouter) => {
       console.log(cleanName) // items
-      router.use(`/${cleanName}`, moduleRouter.router)
+      router.use(`/api/${cleanName}`, moduleRouter.router)
     })
   }
 })
@@ -168,26 +168,31 @@ export { connection }
 
 ```
 
-### Mongoose methods
+## Mongoose interface
 
-* `.find()`
-* `.create({})`
-* `.findOne({param: value})`
-* `.deleteOne({param: value})`
-* `.findOneAndUpdate({param: where}, data, {new: true})`
+> `/src/interfaces/user.interface.ts`
 
-### Mongoose models
+```javascript
+export interface User {
+  email: string
+  password: string
+  comparePassword: (arg: string) => Promise<boolean>
+}
+```
+
+## Mongoose model
 
 > `/src/models/user.model.ts`
 
 ```javascript
-import { model, Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import { User } from '../interfaces/user.interface'
-import { generateBcrypt, compareBcrypt } from '../utils/bcrypt'
+import { encrypt, verify } from '../utils/bcrypt'
 
 
-const userSchema = new Schema<User>(
-  {
+const UserSchema = new Schema <User>(
+   {
+    username: String,
     email: {
       type: String,
       unique: true,
@@ -207,40 +212,112 @@ const userSchema = new Schema<User>(
 )
 
 // encrypt the password
-userSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function(next) {
   
   const user = this
 
   if(!user.isModified('password')) return next()
 
-  const encryptedPass = await generateBcrypt(user.password)
+  const encryptedPass = await encrypt(user.password)
 
   user.password = encryptedPass
 
   next()
-
 })
 
 // decode the password
-userSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
+UserSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
 
-  return await compareBcrypt(password, this.password)
+  return await verify(password, this.password)
 
 }
 
-export default model<User>('usersPass', userSchema)
+export default model<User>('usersPass', UserSchema)
 ```
 
-### Mongoose interfaces
+## Bcrypt
 
-> `/src/interfaces/user.interface.ts`
+> `src/utils/bcrypt.ts`
 
 ```javascript
-import { Document } from 'mongoose'
+import { hash, compare } from 'bcrypt'
 
-export interface User extends Document {
-  email: string
-  password: string
-  comparePassword: (password: string) => Promise<boolean>
+const encrypt = async (arg: string) => {
+  
+  const response = await hash(arg, 10)
+
+  return response
+  
+}
+
+const verify = async (data: string, encrypted: string) => {
+
+  const response = await compare(data, encrypted)
+
+  return response
+
+}
+
+export { encrypt, verify }
+```
+
+# Usage
+
+### Mongoose methods
+
+* `.find()`
+* `.create({})`
+* `.findOne({param: value})`
+* `.deleteOne({param: value})`
+* `.findOneAndUpdate({param: where}, data, {new: true})`
+
+
+```javascript
+import User from "../interfaces/users.interface"
+import usersModel from "../models/users.model"
+
+const createNewUser = async (body: User) => {
+
+  const already = await usersModel.findOne({ email: body.email })
+  
+  if(already) throw new Error("USER_ALREADY_EXISTS")
+
+  const response = await usersModel.create({...body})
+
+  return response
+
+}
+
+const getAllUsers = async ( ) => {
+  
+  const response = await usersModel.find({})
+
+  if(!response) throw new Error("USERS_NOT_FOUND")
+
+  return response
+
+}
+
+export { createNewUser, getAllUsers }
+```
+
+## HTTP Request
+
+```php
+POST https://localhost:3000/api/user/create
+
+json body: {
+  "username":"jhon doe",
+  "email":"jhondoe@gmail.com",
+  "password":"123"
+}
+
+response: {
+  "username": "jhon doe",
+  "email": "jhondoe@gmail.com",
+  "password": "$2b$10$RWP5jtzcj3xI9Kcbn/zUUu5E7KqvcrEWyv9dwN.aaPP0Fd.IPrjPu",
+  "_id": "661b61113d0d68cf4c3a763a",
+  "createdAt": "2024-04-14T04:52:33.148Z",
+  "updatedAt": "2024-04-14T04:52:33.148Z"
 }
 ```
