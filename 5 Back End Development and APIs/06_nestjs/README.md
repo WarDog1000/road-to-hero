@@ -310,7 +310,7 @@ export interface UpdateTaskInterface {
 }
 ```
 
-## Validaciones en Nestjs
+## Validaciones en Nestjs: 
 
 ```bash
 npm install --save class-validator class-transformer
@@ -420,3 +420,150 @@ export class CreateUserDto {
   age: number
 }
 ```
+
+## HTTP Status Code: @HttpCode()
+
+```javascript
+import { HttpCode } from '@nestjs/common';
+
+@Get('/404')
+@HttpCode(404)
+notFoundPage() {
+  return 'Se lanzo un nuevo error'
+}
+```
+
+```javascript
+import { NotFoundException } from '@nestjs/common';
+
+@Get('/error')
+@HttpCode(404)
+launchError() {
+  const error = true;
+
+  if(error) return new NotFoundException('La tarea no fue encontrada') 
+}
+```
+
+## Pipes: 
+
+* ParseIntPipe
+
+```javascript
+import { ParseIntPipe } from '@nestjs/common';
+
+@Get('ticket/:num')
+getNumber(@Param('num', ParseIntPipe) num: number) {
+  return num + 14;
+}
+```
+
+* ParseBoolPipe
+
+```javascript
+@Get('active/:status')
+getNumber(@Param('status', ParseBoolPipe) status: boolean) {
+  return status;
+}
+```
+
+## Pipes Personalizados
+
+```bash
+nest g pipe hello/pipes/ValidateQuery
+```
+
+> `src/hello/pipes/validate-query/validate-query.pipe.ts`
+
+```javascript
+import { ArgumentMetadata, HttpException, HttpStatus, Injectable, PipeTransform } from '@nestjs/common';
+
+@Injectable()
+export class ValidateQueryPipe implements PipeTransform {
+  transform(value: any, metadata: ArgumentMetadata) {
+
+    const ageNumber = parseInt(value.age.toString(), 10)
+ 
+    if(isNaN(ageNumber)){ // hello => NaN
+      throw new HttpException('age must be a number', HttpStatus.BAD_REQUEST)
+    }
+
+    return {...value, age: ageNumber};
+  }
+}
+
+
+```
+
+```javascript
+import { ValidateQueryPipe } from './pipes/validate-query/validate-query.pipe';
+
+@Get('/greet')
+greet(@Query(ValidateQueryPipe) query: {name: string, description: string, age: number}) {
+  return `Hello ${query.name}, ${query.description}, tienes: ${age} años a partir de ahora`
+  /**
+   * 
+   * Valida que age sea un number
+   * 
+   * GET http://localhost:3000/hello/greet?name=jhon&description=como estas?&age=20
+   * 
+   * "response": "Hello jhon, como estas, tienes 20 años apartir de ahora?"
+   * 
+   * */
+}
+```
+
+## Guards
+
+```bash
+nest g guard hello/guards/auth
+```
+
+> `src/hello/guards/auth/auth.guards.ts
+
+```javascript
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class AuthGuard implements CanActivate {
+  canActivate(
+    context: ExecutionContext,
+  ): boolean | Promise<boolean> | Observable<boolean> {
+
+    const request = context.switchToHttp().getRequest() as Request
+
+    if(!request.headers['authorization']) return false;
+
+    return true;
+  }
+}
+```
+
+```javascript
+import { UseGuards } from '@nestjs/common';
+
+@Get('/guards')
+@UseGuards(AuthGuard)
+privateAccessRoute() {
+  return 'Acceso a la ruta protegida'
+  /**
+   * 
+   * GET http://localhost:3000/hello/guards
+   * 
+   * "headers": {
+   * "Accept": "application/json,
+   * "Content-Type": "application,
+   * "Authorization": "Bearer 123"
+   * }
+   * 
+   * "response": {
+   *  "message": "Acceso a la ruta protegida"
+   * }
+   * 
+   * */
+}
+```
+
+
+
