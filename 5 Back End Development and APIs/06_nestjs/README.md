@@ -1,4 +1,4 @@
-# Nestjs 
+# Nestjs + class-validator
 
 Nestjs es uno de los Frameworks de Nodejs mas populares actualmente para la creación de aplicaciones web Backend profesionales y que necesiten escalar en algun momento. Este Framework posee una arquitectura limpia para escribir codigo y crear API REST, APIs de GraphQL, Websockets y microservicios, todo usando sintaxis y paquetes de Typescript, ademas que posee una comunidad muy grande y documentación de todos sus modelos principales para que podamos crear rápidamente código de Backend.
 
@@ -47,7 +47,7 @@ nest g s tasks
 
 ## Module
 
-> `tasks/tasks.module.ts`
+> `src/tasks/tasks.module.ts`
 
 ```javascript
 import { Module } from '@nestjs/common'
@@ -62,7 +62,7 @@ import { TaskService } from './tasks.service';
 
 ## Controller
 
-> `/tasks/tasks.controller.ts`
+> `src/tasks/tasks.controller.ts`
 
 ```javascript
 import { Controller, Delete, Get, Patch, Post, Put } from "@nestjs/common";
@@ -111,7 +111,7 @@ export class TaskController {
 
 ## Service
 
-> `tasks/tasks.service.ts`
+> `src/tasks/tasks.service.ts`
 
 
 ```javascript
@@ -282,4 +282,141 @@ import { NotFoundException } from '@nestjs/cli';
 
     if(error) return new NotFoundException('La tarea no fue encontrada') 
   }
+```
+
+## DTO (Data Transfer Object)
+
+Se puede utilizar como clases
+
+> `src/tasks/dto/tasks.dto.ts`
+
+```javascript
+export class CreateTaskDTO {
+  title: string
+  description: string
+  status: boolean
+}
+```
+
+Se pueden utilizar tambien como interfaces
+
+> `tasks/interfaces/tasks.interfaces.ts`
+
+```javascript
+export interface UpdateTaskInterface {
+  title?: string
+  description?: string
+  status?:: boolean
+}
+```
+
+## Validaciones en Nestjs
+
+```bash
+npm install --save class-validator class-transformer
+```
+> `src/tasks/tasks.interface.ts`
+
+```javascript
+import { IsString, IsBoolean, MinLength, MaxLength } from 'class-validator'
+
+export class CreateTaskDTO {
+
+  @IsString()
+  @MinLength(1)
+  title: string
+
+  @MinLength(1)
+  @MaxLength(10)
+  @IsString()
+  description: string
+
+  @IsBoolean()
+  status: boolean
+}
+```
+
+> `src/tasks/tasks.controller.ts`
+
+```javascript
+ import fom { UsePipes, ValidationPipe } from "@nestjs/common";
+ 
+  @Post('/create')
+  @UsePipes(new ValidationPipe()) // decorador para ejecutar validaciones provenientes de la interface | DTO
+  createTask(@Body() task: CreateTaskDTO) {
+    return this.taskService.createTask(task);
+
+    /**
+     * 
+     * POST http://localhost:3000/tasks/create
+     * 
+     * "body": {
+     *    "name": "new task",
+     *    "description": "a new task",
+     *    "status": "true"
+     *  }
+     * 
+     * "reponse": {
+     *    "message: ["status must be a boolean value"],
+     *    "error": "Bad Request",
+     *    "statusCode": 400
+     *  }
+     * 
+     * */
+  }
+ ```
+
+ O user el `ValidationPipe` de manera global desde el `main.ts`
+
+ > `src/main.ts`
+
+ ```javascript
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true // ignora los datos que no esten especificados en el DTO
+  }))
+  
+  await app.listen(3000);
+}
+bootstrap();
+
+```
+> `src/tasks/tasks.controller.ts`
+
+```javascript
+@Post('/create')
+  createUser(@Body() user: CreateUserDto) {
+    return this.usersService.createUser(user)
+}```
+
+> `src/tasks/dto/create-task.dto.ts`
+
+```javascript
+import { IsEmail, IsString, IsNumber, IsNotEmpty, Max } from 'class-validator'
+
+export class CreateUserDto {
+
+  @IsEmail()
+  @IsString()
+  @IsNotEmpty()
+  email: string
+
+  @IsString()
+  @IsNotEmpty()
+  password: string
+
+  @IsString()
+  @IsNotEmpty()
+  username: string
+
+  @IsNumber()
+  @Max(100)
+  age: number
+}
 ```

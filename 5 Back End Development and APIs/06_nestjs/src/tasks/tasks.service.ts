@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common'
+import { CreateTaskDTO } from './dto/tasks.interface'
+import { UpdateTaskDTO } from './dto/update-task.dto'
 
 export interface Task {
   name: string
@@ -19,12 +21,13 @@ export class TaskService {
     return this.tasks.find(task => task.id === id)
   }
 
-  createTask(task: any) {
+  createTask(task: CreateTaskDTO) {
     this.tasks.push({...task, id: crypto.randomUUID()})
     return this.tasks 
   }
 
-  updateTask() {
+  updateTask(task: UpdateTaskDTO) {
+    console.log(task.title, task.description, task.status)
     return 'Tarea modificada'
   }
 
