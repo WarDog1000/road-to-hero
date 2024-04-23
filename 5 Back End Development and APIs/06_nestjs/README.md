@@ -7,7 +7,7 @@ Nestjs es uno de los Frameworks de Nodejs mas populares actualmente para la crea
 > Instalar Nest en el PC
 
 ```bash
-npm i -G @nestjs/cli
+npm i -g @nestjs/cli
 ```
 
 > Crear un nuevo proyecto
@@ -223,7 +223,7 @@ import { Query } from '@nestjs/common'
      * 
      * GET
      * 
-     * http://localhsote:3000/tasks?query=123{}
+     * http://localhsote:3000/tasks/for?query=123
      * 
      * "response": {query: '123'}
      * 
@@ -565,5 +565,8 @@ privateAccessRoute() {
 }
 ```
 
+## Middlewares
 
-
+```bash
+nest g middleware auth/logger
+```
