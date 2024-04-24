@@ -568,5 +568,175 @@ privateAccessRoute() {
 ## Middlewares
 
 ```bash
-nest g middleware auth/logger
+nest g middleware auth/middlewares/login
+```
+
+> `src/auth/middlewares/login.middleware.ts`
+
+```javascript
+
+import { HttpException, HttpStatus, Injectable, NestMiddleware } from '@nestjs/common';
+import { Request, Response } from 'express';
+
+@Injectable()
+export class SignerMiddleware implements NestMiddleware {
+  use(req: Request, res: Response, next: () => void) {
+
+    const { authorization } = req.headers;
+
+    if(!authorization) throw new HttpException('UNAUTHORIZAED', HttpStatus.UNAUTHORIZED)
+
+    if(authorization !== 'Bearer 123') throw new HttpException('FORBIDDEN', HttpStatus.FORBIDDEN)
+    
+    next();
+  }
+}
+
+```
+
+> `src/auth/auth.module.ts`
+
+```javascript
+import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import { AuthController } from './auth.controller';
+import { AuthService } from './auth.service';
+import { LoginMiddleware } from './logger/logger.middleware';
+import { SigninMiddleware } from './signer/signer.middleware';
+
+@Module({
+  controllers: [AuthController],
+  providers: [AuthService]
+})
+export class AuthModule implements NestModule {
+
+  configure(consumer: MiddlewareConsumer) { // permite utilizar el logger/middleware
+
+    consumer.apply(LoginMiddleware).forRoutes(
+      {path: 'auth/login', method: RequestMethod.GET},
+      {path: 'auth/login', method: RequestMethod.POST}
+    )
+    .apply(SigninMiddleware).forRoutes('auth/signin')
+
+    /**
+     * 
+     * POST http://localhost:3000/auth/login
+     * 
+     * "headers": {
+     *    Authorization: "Bearer algo"
+     * }
+     * 
+     * "response": {
+     *    "statusCode": 200,
+     *    "message": "AUTHORIZED"
+     * }
+     * 
+     * "headers": {
+     *    Authorization: ""
+     * }
+     * 
+     * "response": {
+     *    "statusCode": 401,
+     *    "message": "UNAUTHORIZED",
+     * }
+     * 
+     * */
+
+  }
+
+}
+```
+
+## Cors
+
+> `src/main.ts`
+
+```javascript
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.enableCors({
+    origin: 'https://www.google.com'
+  })
+  
+  await app.listen(process.env.PORT);
+}
+bootstrap();
+```
+
+## Enviroment
+
+```bash
+npm i --save @nestjs/config
+```
+
+> `app.module.ts`
+
+```javascript
+
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+})
+export class AppModule {}
+```
+
+## Resources
+
+Genera un proyecto completo
+
+```bash
+nest g resource algo
+```
+
+## Swagger
+
+```bash
+npm i @nestjs/swagger
+```
+
+> `src/main.ts`
+
+```javascript
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const config = new DocumentBuilder()
+  .setTitle('Cats example')
+  .setDescription('The cats API description')
+  .setVersion('1.0')
+  .addTag('cats')
+  .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+  
+  await app.listen(process.env.PORT);
+}
+bootstrap();
+```
+
+> `src/users/users.controller.ts`
+
+```javascript
+import { ApiTags } from '@nestjs/swagger';
+
+  @ApiTags('users')
+  @Get('/get')
+  getUsers() {
+    return this.usersService.getUsers();
+  }
+  
+  @ApiTags('users')
+  @Post('/create')
+  createUser(@Body() user: CreateUserDto) {
+    return this.usersService.createUser(user)
+  }
 ```
