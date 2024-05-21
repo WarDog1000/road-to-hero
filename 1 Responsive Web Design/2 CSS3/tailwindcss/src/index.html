@@ -9,21 +9,49 @@
 </head>
 
 <body>
+
+  <h2 class="font-extrabold">Colores</h2>
   <h2 class="bg-lime-600">Tailwindcss</h2>
   <h2 class="bg-lime-700">en</h2>
   <h2 class="bg-lime-800">CodingTube</h2>
-  
   <button class="bg-azul-claro text-[#fff] p-2 w-24 mx-auto block rounded-lg transition-color duration-300 hover:bg-azul-oscuro">Boton</button>
-  
   <div class="bg-gradient-to-r from-azul-claro to-azul-oscuro">Gradient</div>
-  
   <div class="border-red-500 border-2">Border</div>
-  
   <div class="bg-azul-claro/50">Opacity</div>
-
   <div class="text-4xl font-extrabold">
     <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Cropping Text</span>
   </div>
+
+  <h2 class="font-extrabold">Medidas</h2>
+  <div class="bg-cyan-600 w-4">Medidas w-4</div>
+  <div class="bg-cyan-600 w-40">width w-40</div>
+  <div class="bg-cyan-600 w-[170px]">width [prop]</div>
+  <div class="bg-cyan-600 w-42">width extend spacing</div>
+  <div class="bg-rose-600 h-42">height extend spacing</div>
+  <div class="bg-cyan-600 w-43">width extend width</div>
+  <div class="bg-cyan-600 w-1/2">w-1/2 width: 50%</div>
+  <div class="bg-cyan-600 w-1/3">w-1/3 width: 33.33%</div>
+  <div class="bg-cyan-600 w-1/4">w-1/4 width: 25%</div>
+  <div class="bg-rose-600 h-screen">h-screen height: 100vh</div>
+  <div class="h-[100px]">
+    <div class="bg-rose-500 h-full">h-full height: 100%</div>
+  </div>
+  <div class="h-[100px]">
+    <div class="bg-rose-400 h-1/2">h-1/2 height: 50%</div>
+  </div>
+
+  <h2 class="font-extrabold">Estados</h2>
+  <div class="bg-blue-400">
+    <form action="" class="bg-white w-80 mx-auto mt-8 rounded-lg p-6 space-y-4">
+      <input class="border border-gray-300 w-full px-3 py-2 rounded-md focus:outline-none focus:ring-1" type="text" placeholder="Nombre">
+      <input class="peer border border-gray-300 w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 invalid:ring-red-600" type="email" placeholder="Correo">
+      <p class="text-white bg-red-700 rounded-md p-2 hidden peer-invalid:block">Correo invalido</p>
+      <input disabled class="border border-gray-300 w-full px-3 py-2 rounded-md disabled:bg-red-200 disabled:text-white" type="password" placeholder="Password">
+      <input class="bg-blue-400 text-white w-full py-2 rounded-md cursor-pointer hover:bg-blue-500" type="submit" value="Ingresar">
+    </form>
+  </div>
+
+
 </body>
 
 </html>
