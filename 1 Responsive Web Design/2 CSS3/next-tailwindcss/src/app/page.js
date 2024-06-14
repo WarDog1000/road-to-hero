@@ -4,7 +4,7 @@ export default function Home() {
   return (
     
     
-    // Mark Webber reacted to your recent post My first tournament today!
+  // Mark Webber reacted to your recent post My first tournament today!
   // 1m ago
   
   // Angela Gray followed you
